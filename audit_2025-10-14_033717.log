@@ -1,0 +1,39 @@
+[1;33m• 0) Context: /Users/iipatino8/iip_secure_stack[0m
+[1;33m• 1) Containers up[0m
+ Container iip_secure_stack-app-1  Running
+ Container iip_secure_stack-nginx-1  Running
+NAME                       IMAGE                  COMMAND                  SERVICE   CREATED       STATUS       PORTS
+iip_secure_stack-app-1     iip_secure_stack-app   "python app.py"          app       7 hours ago   Up 7 hours   5000/tcp
+iip_secure_stack-nginx-1   nginx:stable           "/docker-entrypoint.…"   nginx     7 hours ago   Up 6 hours   0.0.0.0:80->80/tcp, [::]:80->80/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp
+[0;32m✔ compose services running[0m
+[1;33m• 2) Nginx config test[0m
+[0;32m✔ nginx -t OK[0m
+[1;33m• 3) Edge checks (HTTP→HTTPS, TLS, app response)[0m
+[0;32m✔ edge OK[0m
+[1;33m• 4) Inside Nginx → App connectivity[0m
+[0;32m✔ nginx ↔ app OK[0m
+[1;33m• 5) TLS certs and expiry[0m
+[1;33m• cert expires: Oct 14 03:56:04 2026 GMT[0m
+[0;32m✔ certs OK[0m
+[1;33m• 6) Published listeners[0m
+[0;32m✔ ports OK[0m
+[1;33m• 7) App container self-health[0m
+[0;32m✔ app OK[0m
+[1;33m• 8) Python environment[0m
+Python 3.12.12
+pip 25.0.1 from /usr/local/lib/python3.12/site-packages/pip (python 3.12)
+Package      Version
+------------ -------
+blinker      1.9.0
+click        8.3.0
+Flask        3.1.2
+itsdangerous 2.2.0
+Jinja2       3.1.6
+MarkupSafe   3.0.3
+pip          25.0.1
+Werkzeug     3.1.3
+[0;32m✔ python/pip OK[0m
+[1;33m• 9) Logs scan[0m
+[0;32m✔ logs clean[0m
+
+[0;32mALL CHECKS PASSED — stack is sealed and healthy. Log: audit_2025-10-14_033717.log[0m

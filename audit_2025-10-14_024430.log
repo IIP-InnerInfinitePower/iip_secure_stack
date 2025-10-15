@@ -1,0 +1,19 @@
+[1;33m• 0) Context: /Users/iipatino8/iip_secure_stack[0m
+[1;33m• 1) Containers up[0m
+ Container iip_secure_stack-app-1  Running
+ Container iip_secure_stack-nginx-1  Running
+NAME                       IMAGE                  COMMAND                  SERVICE   CREATED       STATUS       PORTS
+iip_secure_stack-app-1     iip_secure_stack-app   "python app.py"          app       6 hours ago   Up 6 hours   5000/tcp
+iip_secure_stack-nginx-1   nginx:stable           "/docker-entrypoint.…"   nginx     6 hours ago   Up 5 hours   0.0.0.0:80->80/tcp, [::]:80->80/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp
+[0;32m✔ compose services running[0m
+[1;33m• 2) Nginx config test[0m
+[0;32m✔ nginx -t OK[0m
+[1;33m• 3) Edge checks (HTTP→HTTPS, TLS, app response)[0m
+[0;32m✔ edge OK[0m
+[1;33m• 4) Inside Nginx → App connectivity[0m
+[0;32m✔ nginx ↔ app OK[0m
+[1;33m• 5) TLS certs and expiry[0m
+[1;33m• cert expires: Oct 14 03:56:04 2026 GMT[0m
+[0;32m✔ certs OK[0m
+[1;33m• 6) Published listeners[0m
+[0;31m✘ no listener on 80[0m
