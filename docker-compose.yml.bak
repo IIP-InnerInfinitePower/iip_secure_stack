@@ -1,0 +1,27 @@
+services:
+  app:
+    build: ./app
+    image: iip_secure_stack-app
+    expose:
+      - "5000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import http.client as h; c=h.HTTPConnection('localhost',5000,timeout=2); c.request('GET','/health'); r=c.getresponse(); exit(0 if r.status==200 else 1)"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    networks: [stacknet]
+
+  nginx:
+    image: nginx:stable
+    depends_on:
+      - app
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./certs:/etc/nginx/certs:ro
+    ports:
+      - "80:80"
+      - "443:443"
+    networks: [stacknet]
+
+networks:
+  stacknet: {}
