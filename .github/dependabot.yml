@@ -4,11 +4,29 @@ updates:
     directory: "/app"
     schedule:
       interval: "weekly"
+    groups:
+      pip-minor-patch:
+        patterns:
+          - "*"
   - package-ecosystem: "docker"
     directory: "/app"
     schedule:
       interval: "weekly"
+    ignore:
+      - dependency-name: "python"
+        update-types:
+          - "version-update:semver-major"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+    ignore:
+      - dependency-name: "actions/checkout"
+        update-types:
+          - "version-update:semver-major"
+      - dependency-name: "actions/setup-python"
+        update-types:
+          - "version-update:semver-major"
+      - dependency-name: "aquasecurity/trivy-action"
+        update-types:
+          - "version-update:semver-major"
