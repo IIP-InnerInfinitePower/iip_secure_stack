@@ -1,14 +1,17 @@
+import logging
+import sys
+
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
-from pythonjsonlogger import jsonlogger
-from prometheus_client import Counter, generate_latest, CONTENT_TYPE_LATEST
+from prometheus_client import CONTENT_TYPE_LATEST, Counter, generate_latest
 from pydantic import ValidationError
-from app.config import API_KEY, RATE_PER_MIN, CORS_ORIGINS
+from pythonjsonlogger import jsonlogger
+
+from app.config import API_KEY, CORS_ORIGINS, RATE_PER_MIN
+
 from .schemas import PlanRequest
-import logging
-import sys
 
 app = Flask(__name__)
 
