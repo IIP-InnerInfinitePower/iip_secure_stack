@@ -1,5 +1,6 @@
 import jwt
-from .config import JWT_PUBLIC_KEY, JWT_ALG
+
+from .config import JWT_ALG, JWT_PUBLIC_KEY
 
 
 def verify_jwt(token: str) -> dict:
