@@ -5,7 +5,7 @@ from flask_limiter.util import get_remote_address
 from pythonjsonlogger import jsonlogger
 from prometheus_client import Counter, generate_latest, CONTENT_TYPE_LATEST
 from pydantic import ValidationError
-from config import API_KEY, RATE_PER_MIN, CORS_ORIGINS
+from app.config import API_KEY, RATE_PER_MIN, CORS_ORIGINS
 from schemas import PlanRequest
 import logging, sys
 
