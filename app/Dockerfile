@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.14-slim
 ARG UID=10001
 ARG GID=10001
 RUN addgroup --system --gid $GID appgroup && adduser --system --uid $UID --ingroup appgroup appuser
