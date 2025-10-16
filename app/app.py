@@ -21,7 +21,8 @@ if CORS_ORIGINS:
 
 limiter = Limiter(get_remote_address, app=app, default_limits=[f"{RATE_PER_MIN}/minute"])
 
-REQS = Counter("api_requests_total", "Total API requests", ["route","method","code"])
+REQS = Counter("api_requests_total", "Total API requests", ["route", "method", "code"])
+
 
 @app.after_request
 def after(resp):
@@ -31,13 +32,16 @@ def after(resp):
         app.logger.warning("after_request error", extra={"error": str(e)})
     return resp
 
+
 @app.get("/health")
 def health():
     return jsonify(status="ok")
 
+
 @app.get("/metrics")
 def metrics():
     return app.response_class(generate_latest(), mimetype=CONTENT_TYPE_LATEST)
+
 
 @app.post("/plan")
 @limiter.limit("10/minute")
@@ -49,6 +53,4 @@ def plan():
         req = PlanRequest(**data)
     except ValidationError as e:
         return jsonify(error="validation", details=e.errors()), 400
-    return jsonify(plan={"client_id": req.client_id, "goal": req.goal, "message":"generated"}), 200
-
-
+    return jsonify(plan={"client_id": req.client_id, "goal": req.goal, "message": "generated"}), 200
