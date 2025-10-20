@@ -4,15 +4,49 @@ run-name: "Build & Deploy · ${{ github.ref_name }} · ${{ github.sha }}"
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
   workflow_dispatch: {}
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  packages: write
+  # If you migrate to ghcr.io and OIDC, enable id-token: write
+
 env:
-  IMAGE_APP: docker.io/${{ secrets.REGISTRY_USER }}/iip-app
-  IMAGE_NGX: docker.io/${{ secrets.REGISTRY_USER }}/iip-nginx
+  REGISTRY: docker.io
+  IMAGE_APP: ${{ env.REGISTRY }}/${{ secrets.REGISTRY_USER }}/iip-app
+  IMAGE_NGX: ${{ env.REGISTRY }}/${{ secrets.REGISTRY_USER }}/iip-nginx
   SHA: ${{ github.sha }}
 
 jobs:
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run project tests (update this to your test command)
+        run: |
+          # Replace the commands below with real test steps for your app
+          if [ -f app/package.json ]; then
+            cd app
+            npm ci
+            npm test
+          elif [ -f app/requirements.txt ]; then
+            echo "Run Python tests here (update workflow)"
+            # e.g. python -m pytest
+          else
+            echo "No tests configured — update the workflow to run tests"
+            exit 1
+          fi
+
   build_push:
+    name: Build & Push images
+    needs: test
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -20,41 +54,78 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: docker/login-action@v3
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to registry
+        uses: docker/login-action@v3
         with:
-          registry: docker.io
+          registry: ${{ env.REGISTRY }}
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_TOKEN }}
 
-      - uses: docker/setup-buildx-action@v3
-
-      - uses: docker/build-push-action@v6
+      - name: Build & push: app
+        uses: docker/build-push-action@v6
         with:
           context: ./app
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: |
             ${{ env.IMAGE_APP }}:latest
             ${{ env.IMAGE_APP }}:${{ env.SHA }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
-      - uses: docker/build-push-action@v6
+      - name: Build & push: nginx
+        uses: docker/build-push-action@v6
         with:
           context: ./nginx
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: |
             ${{ env.IMAGE_NGX }}:latest
-            ${{ env.IMAGE_NGX }}:${{ env.SHA }} 
+            ${{ env.IMAGE_NGX }}:${{ env.SHA }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
   deploy:
+    name: Deploy to VPS
     needs: build_push
     runs-on: ubuntu-latest
     steps:
-      - uses: appleboy/ssh-action@v1.0.3
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
+          # safer to pass the registry string consistently; expand env vars are substituted on runner before sending
           script: |
-            docker login ${{ secrets.REGISTRY }} -u ${{ secrets.REGISTRY_USER }} -p ${{ secrets.REGISTRY_TOKEN }}
-            docker pull ${{ env.IMAGE_APP }}:latest
-            docker pull ${{ env.IMAGE_NGX }}:latest
-            docker compose -f ${{ secrets.COMPOSE_FILE }} up -d
-            curl -fsS http://localhost/health || exit 1
+            set -euo pipefail
+            REGISTRY="${{ env.REGISTRY }}"
+            IMAGE_APP="${{ env.IMAGE_APP }}:latest"
+            IMAGE_NGX="${{ env.IMAGE_NGX }}:latest"
+
+            # Login using password-stdin (avoids showing token in process list)
+            echo "${{ secrets.REGISTRY_TOKEN }}" | docker login "$REGISTRY" -u "${{ secrets.REGISTRY_USER }}" --password-stdin
+
+            # Pull latest images and bring compose up (pull first to reduce downtime)
+            docker pull "$IMAGE_APP" || true
+            docker pull "$IMAGE_NGX" || true
+            docker compose -f "${{ secrets.COMPOSE_FILE }}" pull
+            docker compose -f "${{ secrets.COMPOSE_FILE }}" up -d --remove-orphans
+
+            # Confirm health endpoint (adjust port/path as needed)
+            for i in 1 2 3 4 5; do
+              if curl -fsS http://localhost/health; then
+                echo "Health OK"
+                exit 0
+              fi
+              echo "Waiting for service..."
+              sleep 5
+            done
+            echo "Health check failed" >&2
+            exit 1
