@@ -1,0 +1,14 @@
+rules:
+  - match:
+      alertname: IIP_Synthetic_Alert
+      severity: test
+    on_firing:
+      - type: log
+        message: "would_remediate: clear-cache"
+      - type: set_integrity
+        value: 0
+    on_resolved:
+      - type: log
+        message: "would_remediate: restore-normal"
+      - type: set_integrity
+        value: 1
