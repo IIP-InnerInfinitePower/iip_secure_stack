@@ -1,0 +1,79 @@
+version: "3.9"
+
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: iip_secure_stack-prometheus-1
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    depends_on:
+      - loki
+    networks:
+      - iip_net
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: iip_secure_stack-grafana-1
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=Admin#2025!
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+      - loki
+    networks:
+      - iip_net
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+
+  loki:
+    image: grafana/loki:2.9.1
+    container_name: iip_secure_stack-loki-1
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    networks:
+      - iip_net
+
+  promtail:
+    image: grafana/promtail:2.9.1
+    container_name: iip_secure_stack-promtail-1
+    volumes:
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: -config.file=/etc/promtail/config.yml
+    networks:
+      - iip_net
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: iip_secure_stack-cadvisor-1
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    ports:
+      - "8080:8080"
+    networks:
+      - iip_net
+
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: iip_secure_stack-node-exporter-1
+    pid: host
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    ports:
+      - "9100:9100"
+    networks:
+      - iip_net
+
+networks:
+  iip_net:
+    external: false
