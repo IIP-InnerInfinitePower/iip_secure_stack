@@ -1,3 +1,4 @@
+import os
 import logging
 import sys
 
@@ -9,8 +10,7 @@ from prometheus_client import CONTENT_TYPE_LATEST, Counter, generate_latest
 from pydantic import ValidationError
 from pythonjsonlogger import jsonlogger
 
-from app.config import API_KEY, CORS_ORIGINS, RATE_PER_MIN
-
+from .config import API_KEY, CORS_ORIGINS, RATE_PER_MIN
 from .schemas import PlanRequest
 
 app = Flask(__name__)
@@ -22,8 +22,12 @@ app.logger.addHandler(handler)
 
 if CORS_ORIGINS:
     CORS(app, resources={r"/*": {"origins": CORS_ORIGINS}})
-
-limiter = Limiter(get_remote_address, app=app, default_limits=[f"{RATE_PER_MIN}/minute"])
+limiter = Limiter(
+    key_func=get_remote_address,
+    app=app,
+    default_limits=[f"{RATE_PER_MIN}/minute"],
+    storage_uri=os.getenv("RATELIMIT_STORAGE_URI", "memory://"),
+)
 
 REQS = Counter("api_requests_total", "Total API requests", ["route", "method", "code"])
 
@@ -35,6 +39,8 @@ def after(resp):
     except Exception as e:
         app.logger.warning("after_request error", extra={"error": str(e)})
     return resp
+
+
 
 
 @app.get("/health")
@@ -52,9 +58,14 @@ def metrics():
 def plan():
     if API_KEY and request.headers.get("X-API-Key") != API_KEY:
         return jsonify(error="unauthorized"), 401
+
     data = request.get_json(silent=True) or {}
     try:
         req = PlanRequest(**data)
     except ValidationError as e:
         return jsonify(error="validation", details=e.errors()), 400
+
     return jsonify(plan={"client_id": req.client_id, "goal": req.goal, "message": "generated"}), 200
+@app.route("/")
+def index():
+    return "IIP_SECURE_STACK is live."
