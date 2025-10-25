@@ -1,0 +1,4 @@
+services:
+  app:
+    image: iip_secure_stack-app
+    build: null
