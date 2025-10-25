@@ -1,1 +1,8 @@
 secrets/
+.env
+__pycache__/
+*.pyc
+.DS_Store
+reports/
+monitoring/
+grafana/
