@@ -1,0 +1,14 @@
+services:
+  webhook-listener:
+    build: ./webhook-listener
+    container_name: iip_secure_stack-webhook-1
+    ports: ["5001:5001"]
+    networks: [iip_net]
+    environment:
+      - IIP_POLICY=/app/policies.yml
+    volumes:
+      - ./webhook-listener/policies.yml:/app/policies.yml:ro
+
+networks:
+  iip_net:
+    external: true
