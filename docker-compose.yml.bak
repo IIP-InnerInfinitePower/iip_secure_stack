@@ -1,27 +1,64 @@
+version: "3.9"
+
 services:
   app:
-    build: ./app
-    image: iip_secure_stack-app
-    expose:
-      - "5000"
-    healthcheck:
-      test: ["CMD", "python", "-c", "import http.client as h; c=h.HTTPConnection('localhost',5000,timeout=2); c.request('GET','/health'); r=c.getresponse(); exit(0 if r.status==200 else 1)"]
-      interval: 10s
-      timeout: 3s
-      retries: 5
+    build: .
+    depends_on:
+      - redis
+      - postgres
+    env_file:
+      - .env
+    networks:
+      - stacknet
+    secrets:
+      - app_secret
+      - postgres_password
+
+  redis:
+    image: redis:7-alpine
     networks: [stacknet]
 
-  nginx:
-    image: nginx:stable
-    depends_on:
-      - app
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: iip
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+      POSTGRES_DB: iipdb
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./certs:/etc/nginx/certs:ro
-    ports:
-      - "80:80"
-      - "443:443"
+      - pg_data:/var/lib/postgresql/data
+    networks:
+      stacknet:
+        aliases:
+          - postgres
+    secrets:
+      - postgres_password
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U iip"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  nginx:
+    image: nginx:alpine
+    depends_on: [app]
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./tls/server.crt:/etc/ssl/certs/server.crt:ro
+      - ./tls/server.key:/etc/ssl/private/server.key:ro
+      - nginx_cache:/var/cache/nginx
+    ports: ["80:80", "443:443"]
     networks: [stacknet]
+    restart: unless-stopped
 
 networks:
   stacknet: {}
+
+volumes:
+  nginx_cache: {}
+  pg_data: {}
+
+secrets:
+  app_secret:
+    file: ./secrets/app_secret
+  postgres_password:
+    file: ./secrets/postgres_password
