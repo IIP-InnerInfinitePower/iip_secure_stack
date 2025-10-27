@@ -1,0 +1,26 @@
+openapi: 3.0.3
+info: {title: IIP Public API, version: "1.0.0"}
+servers: [{url: http://localhost:8081/v1}]
+paths:
+  /health:
+    get:
+      summary: Liveness
+      responses: {"200": {description: OK}}
+  /integrity:
+    get:
+      summary: Current integrity score
+      responses:
+        "200": {description: OK}
+  /intake:
+    post:
+      summary: Create intake record (stub)
+      requestBody: {required: true, content: {"application/json": {schema: {type: object}}}}
+      responses: {"201": {description: Created}}
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.example.local/oauth/token
+          scopes: {read:intake: Read intake, write:intake: Write intake}
