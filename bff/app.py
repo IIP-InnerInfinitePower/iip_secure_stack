@@ -1,29 +1,45 @@
 from flask import Flask, request, jsonify
-import requests, os, re
+import requests, time
+from prometheus_client import Counter, Histogram, generate_latest, CONTENT_TYPE_LATEST
 
-APP = Flask(__name__)
+app = Flask(__name__)
 
-WEBHOOK_METRICS = os.environ.get("WEBHOOK_METRICS_URL","http://webhook-listener:5001/metrics")
+REQS = Counter("api_requests_total", "Total API requests", ["route","method","code"])
+LAT  = Histogram("api_latency_seconds", "Request latency", ["route","method","code"])
 
-@APP.get("/v1/health")
+def observe(route, method, code, start):
+    REQS.labels(route, method, str(code)).inc()
+    LAT.labels(route, method, str(code)).observe(time.time()-start)
+
+@app.get("/v1/health")
 def health():
-    return jsonify(ok=True)
+    t=time.time()
+    resp = jsonify(ok=True); code=200
+    observe("/v1/health","GET",code,t); return resp, code
 
-@APP.get("/v1/integrity")
+@app.get("/v1/integrity")
 def integrity():
+    t=time.time()
     try:
-        r = requests.get(WEBHOOK_METRICS, timeout=2)
-        m = re.search(r"^iip_integrity_score\s+([0-9.]+)$", r.text, re.M)
-        val = float(m.group(1)) if m else None
-        return jsonify(score=val, source="webhook-listener"), 200
+        m = requests.get("http://webhook-listener:5001/metrics", timeout=2).text
+        score = 0.0
+        for line in m.splitlines():
+            if line.startswith("iip_integrity_score "):
+                score = float(line.split()[1]); break
+        resp = jsonify(score=score, source="webhook-listener"); code=200
     except Exception as e:
-        return jsonify(error=str(e)), 502
+        resp = jsonify(error=str(e)); code=502
+    observe("/v1/integrity","GET",code,t); return resp, code
 
-@APP.post("/v1/intake")
+@app.post("/v1/intake")
 def intake():
-    payload = request.get_json(silent=True) or {}
-    # stub: accept and echo
-    return jsonify(id="stub-001", data=payload), 201
+    t=time.time()
+    resp = jsonify(id="stub-001", data=request.get_json(silent=True)); code=201
+    observe("/v1/intake","POST",code,t); return resp, code
+
+@app.get("/metrics")
+def metrics():
+    return generate_latest(), 200, {"Content-Type": CONTENT_TYPE_LATEST}
 
 if __name__ == "__main__":
-    APP.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5000)

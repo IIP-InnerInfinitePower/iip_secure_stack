@@ -3,5 +3,4 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY app.py .
-ENV WEBHOOK_METRICS_URL=http://webhook-listener:5001/metrics
-CMD ["gunicorn","-b","0.0.0.0:5000","app:APP","--workers","2","--threads","2"]
+CMD ["gunicorn","-w","2","-k","gthread","-b","0.0.0.0:5000","app:app"]
