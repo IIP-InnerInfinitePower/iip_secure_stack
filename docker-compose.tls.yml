@@ -1,0 +1,6 @@
+services:
+  api-gateway:
+    ports:
+      - "8443:8443"
+    volumes:
+      - ./api-gateway/certs:/etc/nginx/certs:ro
