@@ -265,28 +265,67 @@ Thank you for contributing to Inner Infinite Power™ Secure Stack.
 
 ### **`LICENSE`** (MIT)
 
-```text
-MIT License
+Inner Infinite Power™ Proprietary License
 
 Copyright (c) 2025 Ivan Israel Patiño
+All Rights Reserved.
+Founder & Architect, Inner Infinite Power™ (IIP)
+Buckeye, Arizona, USA
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+⸻
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+License Terms
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+This software and all associated documentation, data schemas, AI models, and integration frameworks (collectively, the “Software”) are the confidential and proprietary property of Ivan Israel Patiño and Inner Infinite Power™.
+
+Unauthorized copying, reproduction, modification, redistribution, public display, or use of the Software, in whole or in part, is strictly prohibited without prior written consent of the copyright holder.
+
+No license or rights are granted to any individual, organization, or entity except through a formal, written, and signed agreement with Inner Infinite Power™.
+
+⸻
+
+Permitted Internal Use
+
+Authorized collaborators or licensees may use the Software solely for:
+	•	Internal research and development
+	•	System integration testing
+	•	Educational or technical demonstrations approved in writing
+
+All other uses, including commercial distribution, derivative products, or resale, are expressly forbidden without explicit authorization.
+
+⸻
+
+Confidentiality
+
+All source code, data models, neural interfaces, and configuration frameworks are confidential.
+Redistribution, exposure, or publication of proprietary logic, schema structures, or AI workflows is prohibited under penalty of law.
+
+⸻
+
+Liability and Warranty Disclaimer
+
+The Software is provided “AS IS,” without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement.
+In no event shall the author or copyright holder be liable for any claim, damages, or other liability arising from use of the Software.
+
+⸻
+
+Trademark and Brand Notice
+
+Inner Infinite Power™, Infused Alignment Method™, Pyramium™, and IIP_SECURE_STACK™
+are protected trademarks and proprietary systems of Ivan Israel Patiño.
+Any unauthorized use, reproduction, or misrepresentation of these marks is strictly prohibited.
+
+⸻
+
+Contact
+
+Inner Infinite Power™ (IIP)
+Email: iipower.automation@gmail.com
+Location: Buckeye, Arizona, USA
+
+⸻
+
+Would you like me to generate a PDF version of this (with your gold + white branding and digital signature line) so you can upload it to the /legal/ folder of your GitHub repository? It would be formatted for investor and filing purposes.
 
 
 ⸻
