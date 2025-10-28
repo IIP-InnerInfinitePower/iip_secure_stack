@@ -1,0 +1,1 @@
+Updated README to reflect Phase 12 (AI-SQL Bridge Integration), architecture, and verified LLM data loop.
