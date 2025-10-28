@@ -41,8 +41,6 @@ def after(resp):
     return resp
 
 
-
-
 @app.get("/health")
 def health():
     return jsonify(status="ok")
@@ -66,6 +64,8 @@ def plan():
         return jsonify(error="validation", details=e.errors()), 400
 
     return jsonify(plan={"client_id": req.client_id, "goal": req.goal, "message": "generated"}), 200
+
+
 @app.route("/")
 def index():
     return "IIP_SECURE_STACK is live."
