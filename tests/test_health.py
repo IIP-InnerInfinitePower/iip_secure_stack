@@ -1,3 +1,7 @@
+import os, sys
+cat > tests/test_health.py <<'PY'
+import os, sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from bridge import app
 
 def test_health():
