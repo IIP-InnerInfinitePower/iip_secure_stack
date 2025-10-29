@@ -405,7 +405,31 @@ IIP_SECURE_STACK is built around **data sovereignty, audit transparency, and min
 Every component is designed to run **locally, verifiably, and privately**—free from vendor lock-in or opaque dependencies.
 
 ---
+---
 
+🛡️ Compliance and Security Framework
+
+**Inner Infinite Power™ LLC** operates a **HIPAA-aligned, SOC 2-ready DevSecOps ecosystem** known as **IIP_SECURE_STACK** — a private infrastructure designed for continuous integrity, confidentiality, and observability of client and wellness data.
+
+### Core Safeguards
+- End-to-end encryption (TLS 1.3 / AES-256)
+- Containerized isolation and RBAC segmentation
+- Continuous integration / continuous delivery (CI/CD) with automated security scanning
+- Immutable audit logging (Grafana + Loki + Promtail)
+- Version-controlled compliance documentation under `docs/compliance/`
+
+### Compliance Artifacts
+- [`BAA_TEMPLATE.md`](docs/compliance/BAA_TEMPLATE.md) — Business Associate Agreement  
+- [`SOC2_HIPAA_READINESS_BRIEF.md`](docs/compliance/SOC2_HIPAA_READINESS_BRIEF.md) — Executive compliance overview  
+- [`SECURITY_PRIVACY_POLICY.md`](docs/compliance/SECURITY_PRIVACY_POLICY.md) — Technical and administrative safeguard policy  
+
+**Status:**  
+IIP_SECURE_STACK is designed for HIPAA §164 Subpart C and SOC 2 Type II alignment and is ready for third-party audit verification.
+
+
+Date: 10/28/2025 -  Inner Infinite Power™ LLC — All rights reserved.*
+
+---
 *Maintained by:*  
 **Ivan Israel Patiño**  
 Founder & Architect — *Inner Infinite Power™*  
