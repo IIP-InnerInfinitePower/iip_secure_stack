@@ -1,5 +1,5 @@
 import os, json, requests, duckdb, psycopg2
-from flask import Flask, request, jsonify
+from flask import Flask, jsonify, request
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -15,6 +15,21 @@ LLM_BASE = os.getenv("LLM_BASE", "http://127.0.0.1:8000/v1")
 LLM_MODEL = os.getenv("LLM_MODEL")
 
 app = Flask(__name__)
+
+
+
+@app.get("/health")
+def health():
+    return jsonify(status="ok"), 200
+API_KEY = os.getenv("BRIDGE_API_KEY", "")
+
+
+@app.before_request
+def _auth():
+    if request.path == "/health":
+        return
+    if request.headers.get("X-API-Key") != API_KEY:
+        return jsonify(error="unauthorized"), 401
 
 
 def q_postgres(sql):
@@ -34,17 +49,21 @@ def q_duckdb(sql):
         con.close()
 
 
-def llm_complete(prompt):
-    payload = {
+def llm_complete(prompt: str) -> str:
+    body = {
         "model": LLM_MODEL,
         "prompt": prompt,
-        "max_tokens": 128,
-        "temperature": 0.1,
-        "stop": ["\n\n", "A:", "```"],
+        "max_tokens": 32,
+        "temperature": 0.0,
+        "stop": ["\n\n", "Rows JSON:", "Question:", "Answer:"],
     }
-    r = requests.post(f"{LLM_BASE}/completions", json=payload, timeout=120)
+    r = requests.post(f"{LLM_BASE}/completions", json=body, timeout=60)
     r.raise_for_status()
-    return r.json()["choices"][0]["text"]
+    return r.json()["choices"][0]["text"].strip()
+
+def _read_only(sql: str) -> bool:
+    s = (sql or "").strip().lower()
+    return s.startswith("select ") or s.startswith("with ")
 
 
 @app.post("/ask")
@@ -57,6 +76,9 @@ def ask():
         if not question or not sql:
             return jsonify(error="Provide 'question' and 'sql'"), 400
 
+        if not _read_only(sql):
+            return jsonify(error="Only read-only SELECT/CTE allowed"), 400
+
         rows = q_postgres(sql) if source == "pg" else q_duckdb(sql)
         sample = rows[:30]
         prompt = (
@@ -67,11 +89,15 @@ def ask():
             f"Rows JSON: {json.dumps(sample, ensure_ascii=False)}\n"
             "Answer:"
         )
-        answer = llm_complete(prompt).strip()
+        answer = llm_complete(prompt)
         return jsonify(answer=answer, rows=len(rows), sample=sample)
     except Exception as e:
         return jsonify(error=str(e)), 500
 
 
+
+
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5002)
+    app.run(host="127.0.0.1", port=5002)
+
+
