@@ -1,0 +1,7 @@
+pytest
+black
+ruff
+isort
+mypy
+bandit
+pip-audit

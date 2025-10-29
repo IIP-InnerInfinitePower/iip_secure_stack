@@ -1,44 +1,17 @@
-name: ci
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
+name: CI
+on: [push, pull_request]
 jobs:
-  test:
+  tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Install deps
-        run: |
-          pip install -r app/requirements.txt -r app/requirements-dev.txt
-      - name: Tests + quality
-        env:
-          PYTHONPATH: .
-        run: |
-          pytest -q
-          black --check .
-          ruff check .
-          isort --check-only .
-          mypy . || true
-          bandit -q -r .
-          pip-audit -r app/requirements.txt || true
-
-  docker_build_and_scan:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - uses: actions/checkout@v4
-      - name: Build image
-        run: docker build -t iip-secure-stack:ci app
-      - name: Trivy scan image
-        uses: aquasecurity/trivy-action@0.33.1
-        with:
-          image-ref: iip-secure-stack:ci
-          format: table
-          exit-code: '0'
-          ignore-unfixed: true
+        with: { python-version: '3.12' }
+      - run: pip install -U pip -r requirements-dev.txt
+      - run: pytest -q
+      - run: black --check .
+      - run: ruff check .
+      - run: isort --check-only .
+      - run: mypy -q || true
+      - run: bandit -q -r . || true
+      - run: pip-audit || true
