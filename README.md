@@ -49,19 +49,18 @@ A functional private AI gateway—no external API calls, fully containerized, au
 ---
 
 ### System Flow
-mkdir -p docs
-cat > docs/system_flow.mmd <<'MERMAID'
-graph LR
-    A[Client] --> B[Nginx Reverse Proxy]
-    B --> C[Flask API]
-    C --> D[AI Bridge (LLM Integration)]
-    D --> E[SQL Engines<br>(Postgres + DuckDB)]
-    E --> F[Streamlit / Superset Dashboards]
-    F --> G[Grafana Monitoring]
-MERMAID
 
+![Client](https://img.shields.io/badge/Client-Browser-555) ➜
+![Nginx](https://img.shields.io/badge/Nginx-009639?logo=nginx&logoColor=white) ➜
+![Flask%20API](https://img.shields.io/badge/Flask_API-000000?logo=flask&logoColor=white) ➜
+![AI%20Bridge](https://img.shields.io/badge/AI_Bridge-LLM_Integration-111111) ➜
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white) +
+![DuckDB](https://img.shields.io/badge/DuckDB-FFE800) ➜
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white) /
+![Apache%20Superset](https://img.shields.io/badge/Apache_Superset-1A73E8?logo=apache&logoColor=white) ➜
+![Grafana](https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=white)
 
-npx -y @mermaid-js/mermaid-cli -i docs/system_flow.mmd -o docs/system_flow.png
+*Client → Nginx → Flask API → AI Bridge → Postgres/DuckDB → Streamlit/Superset → Grafana*
 
 ---
 
