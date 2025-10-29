@@ -1,4 +1,6 @@
-import sys, pandas as pd, sqlalchemy as sa
+import sys
+import pandas as pd
+import sqlalchemy as sa
 
 PORT = "0"  # replace after getting it
 engine = sa.create_engine(
