@@ -1,57 +1,67 @@
 # Inner Infinite Power™ LLC — Security & Privacy Policy
 
-## 1. Purpose and Scope
-This policy establishes administrative, physical, and technical safeguards for Inner Infinite Power™ LLC (“IIP™”) to ensure confidentiality, integrity, and availability of all protected data managed within the **IIP_SECURE_STACK** ecosystem.  
-It aligns with the HIPAA Security Rule (45 CFR Part 164) and SOC 2 Trust Services Principles.
+## 1. Purpose
+This policy defines how **Inner Infinite Power™ LLC (“IIP™”)** protects the confidentiality, integrity, and availability of all information assets within the **IIP_SECURE_STACK** ecosystem.  
+It establishes the administrative, physical, and technical safeguards necessary for compliance with **HIPAA (45 CFR §164 Subpart C)** and **SOC 2 Type II** Trust Services Criteria.
 
-## 2. Governance
-- **Policy Owner:** Chief Security Architect  
-- **Effective Date:** $(date +%Y-%m-%d)  
-- **Review Cycle:** Annual, or after any major infrastructure change.  
-- **Applies To:** All employees, contractors, and automated agents of Inner Infinite Power™ LLC.
+---
+
+## 2. Scope
+Applies to all systems, personnel, and third-party partners that process, transmit, or store:
+- Client data, including wellness metrics and personal identifiers.  
+- Operational data generated within IIP_SECURE_STACK services.  
+- Any derivative datasets subject to privacy or regulatory protection.
+
+---
 
 ## 3. Administrative Safeguards
-1. **Access Control:**  
-   - Role-based permissions are enforced at the API, database, and container level.  
-   - Multi-factor authentication is required for administrative access.  
-2. **Security Awareness & Training:**  
-   - Annual HIPAA and cybersecurity training is mandatory for all authorized personnel.  
-3. **Incident Response:**  
-   - Incidents are logged in Grafana/Loki and escalated via documented procedures.  
-   - Notification to affected entities within 72 hours if PHI breach confirmed.  
-4. **Change Management:**  
-   - All code merges and infrastructure changes occur through the GitHub CI/CD workflow with peer review.  
-5. **Contingency Planning:**  
-   - Daily encrypted backups of PostgreSQL and DuckDB data.  
-   - Recovery testing performed quarterly.
+| Control | Description |
+|----------|-------------|
+| **Access Control Policy** | User access is based on least privilege; roles managed via RBAC and periodic review. |
+| **Incident Response** | All security events logged via Grafana + Loki. Breaches reported within 72 hours. |
+| **Training & Awareness** | All team members complete annual HIPAA & data-security training. |
+| **Vendor Management** | Third parties must sign a BAA and undergo security review. |
+| **Policy Review** | This policy is reviewed and version-controlled every 12 months or after major changes. |
 
-## 4. Technical Safeguards
-1. **Encryption:**  
-   - TLS 1.3 enforced on all external endpoints.  
-   - AES-256 encryption at rest for all persistent volumes.  
-2. **Audit Controls:**  
-   - System logs centralized in Loki; immutable retention for 12 months.  
-3. **Integrity Controls:**  
-   - Git commit signing and container image digest verification via SHA256.  
-4. **Authentication & Authorization:**  
-   - API-key verification enforced in Flask gateway.  
-   - Principle of least privilege applied to all IAM roles.
+---
 
-## 5. Physical Safeguards
-- Hosted environments utilize encrypted storage on devices with full-disk protection.  
-- Remote access restricted to VPN with endpoint verification.  
-- Backups stored in geographically redundant, access-controlled environments.
+## 4. Physical Safeguards
+| Control | Description |
+|----------|-------------|
+| **Secure Workstations** | All endpoints use full-disk encryption and password-protected screensavers. |
+| **Backups & Storage** | Encrypted backups stored in geographically redundant secure facilities. |
+| **Remote Access** | VPN and MFA required for all administrative access. |
 
-## 6. Data Privacy
-IIP™ processes only the minimum necessary data required for service delivery.  
-No PHI is transmitted to third parties without a Business Associate Agreement (BAA).
+---
 
-## 7. Compliance Review
-Quarterly internal audits validate adherence to this policy.  
-Findings are reported to executive leadership and remediation plans tracked to closure.
+## 5. Technical Safeguards
+| Control | Description |
+|----------|-------------|
+| **Encryption** | AES-256 at rest, TLS 1.3 in transit. |
+| **Authentication** | API-key and JWT-based authentication enforced at gateway level. |
+| **Audit Logging** | Immutable logs maintained in Grafana Loki; retention ≥ 6 months. |
+| **Vulnerability Management** | Automated scans via `bandit`, `pip-audit`, and CI workflows. |
+| **Change Management** | GitHub Actions CI/CD enforces signed commits and deployment approvals. |
+| **Data Minimization** | Only minimum necessary PHI is collected or processed. |
+
+---
+
+## 6. Privacy Principles
+1. Clients retain ownership of their personal and wellness data.  
+2. IIP™ acts solely as a data processor/business associate.  
+3. Data is never sold, shared, or used for non-authorized analytics.  
+4. Users may request deletion or export of their data at any time.  
+
+---
+
+## 7. Monitoring and Continuous Improvement
+- Metrics and security dashboards monitored 24/7.  
+- Regular internal audits verify adherence to this policy.  
+- All updates tracked via Git commits under `docs/compliance/`.
 
 ---
 
 **Approved by:**  
-Chief Executive Officer, Inner Infinite Power™ LLC  
-Chief Security Architect, Inner Infinite Power™ LLC
+Chief Security Architect – Inner Infinite Power™ LLC  
+**Effective Date:** $(date +%Y-%m-%d)  
+**Version:** 1.0  
