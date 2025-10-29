@@ -1,6 +1,10 @@
 from flask import Flask, request, jsonify
 from datetime import datetime, timezone
-import os, threading, queue, time, yaml
+import os
+import threading
+import queue
+import time
+import yaml
 from prometheus_client import Counter, Gauge, Histogram, generate_latest, CONTENT_TYPE_LATEST
 
 app = Flask(__name__)

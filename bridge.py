@@ -1,4 +1,8 @@
-import os, json, requests, duckdb, psycopg2
+import os
+import json
+import requests
+import duckdb
+import psycopg2
 from flask import Flask, jsonify, request
 from dotenv import load_dotenv
 
