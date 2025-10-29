@@ -1,5 +1,5 @@
-import os
 import logging
+import os
 import sys
 
 from flask import Flask, jsonify, request
@@ -63,7 +63,12 @@ def plan():
     except ValidationError as e:
         return jsonify(error="validation", details=e.errors()), 400
 
-    return jsonify(plan={"client_id": req.client_id, "goal": req.goal, "message": "generated"}), 200
+    return (
+        jsonify(
+            plan={"client_id": req.client_id, "goal": req.goal, "message": "generated"}
+        ),
+        200,
+    )
 
 
 @app.route("/")
