@@ -1,1 +1,2 @@
 duckdb
+psycopg2-binary
