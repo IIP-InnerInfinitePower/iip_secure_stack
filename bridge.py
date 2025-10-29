@@ -17,10 +17,11 @@ LLM_MODEL = os.getenv("LLM_MODEL")
 app = Flask(__name__)
 
 
-
 @app.get("/health")
 def health():
     return jsonify(status="ok"), 200
+
+
 API_KEY = <redacted> "")
 
 
@@ -61,6 +62,7 @@ def llm_complete(prompt: str) -> str:
     r.raise_for_status()
     return r.json()["choices"][0]["text"].strip()
 
+
 def _read_only(sql: str) -> bool:
     s = (sql or "").strip().lower()
     return s.startswith("select ") or s.startswith("with ")
@@ -95,9 +97,5 @@ def ask():
         return jsonify(error=str(e)), 500
 
 
-
-
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=5002)
-
-
