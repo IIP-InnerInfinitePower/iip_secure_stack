@@ -1,7 +1,8 @@
-from flask import Flask, request, jsonify
-import requests
 import time
-from prometheus_client import Counter, Histogram, generate_latest, CONTENT_TYPE_LATEST
+
+import requests
+from flask import Flask, jsonify, request
+from prometheus_client import CONTENT_TYPE_LATEST, Counter, Histogram, generate_latest
 
 app = Flask(__name__)
 
