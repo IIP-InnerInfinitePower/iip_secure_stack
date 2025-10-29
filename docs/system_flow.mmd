@@ -1,0 +1,8 @@
+%%{init: {'theme':'neutral', 'themeVariables': { 'primaryColor': '#E8C547', 'edgeLabelBackground':'#ffffff', 'tertiaryColor':'#ffffff', 'fontSize':'16px'}}}%%
+graph LR
+    A[Client / User Portal] --> B[Nginx Reverse Proxy]
+    B --> C[Flask API Gateway]
+    C --> D[AI Bridge<br>(Phi-2 LLM Integration)]
+    D --> E[SQL Engines<br>(Postgres + DuckDB)]
+    E --> F[Visualization Layer<br>Streamlit / Superset]
+    F --> G[Grafana Monitoring & Alerts]
