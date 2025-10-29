@@ -48,12 +48,20 @@ A functional private AI gateway—no external API calls, fully containerized, au
 
 ---
 
-## 🔄 System Diagram
+### System Flow
+mkdir -p docs
+cat > docs/system_flow.mmd <<'MERMAID'
+graph LR
+    A[Client] --> B[Nginx Reverse Proxy]
+    B --> C[Flask API]
+    C --> D[AI Bridge (LLM Integration)]
+    D --> E[SQL Engines<br>(Postgres + DuckDB)]
+    E --> F[Streamlit / Superset Dashboards]
+    F --> G[Grafana Monitoring]
+MERMAID
 
-![System Flow](docs/system_flow.png)  
-*(If not rendered, create using Mermaid or draw.io and save as `docs/system_flow.png`)*
 
-Client → Nginx → Flask API → AI Bridge → SQL Engine → Streamlit/Superset → Grafana
+npx -y @mermaid-js/mermaid-cli -i docs/system_flow.mmd -o docs/system_flow.png
 
 ---
 
