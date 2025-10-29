@@ -3,3 +3,4 @@ psycopg2-binary
 Flask
 requests
 python-dotenv
+duckdb==1.4.1
