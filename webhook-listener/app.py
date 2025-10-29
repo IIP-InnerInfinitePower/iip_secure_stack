@@ -1,17 +1,26 @@
-from flask import Flask, request, jsonify
-from datetime import datetime, timezone
 import os
-import threading
 import queue
+import threading
 import time
+from datetime import datetime, timezone
+
 import yaml
-from prometheus_client import Counter, Gauge, Histogram, generate_latest, CONTENT_TYPE_LATEST
+from flask import Flask, jsonify, request
+from prometheus_client import (
+    CONTENT_TYPE_LATEST,
+    Counter,
+    Gauge,
+    Histogram,
+    generate_latest,
+)
 
 app = Flask(__name__)
 
 ALERTS_TOTAL = Counter("iip_alerts_total", "Total alerts received", ["status"])
 INTEGRITY = Gauge("iip_integrity_score", "Integrity score")
-ACTIONS = Counter("iip_actions_total", "Remediation actions taken", ["action", "result"])
+ACTIONS = Counter(
+    "iip_actions_total", "Remediation actions taken", ["action", "result"]
+)
 ACTIVE = Gauge("iip_remediation_active", "Active remediations")
 DURATION = Histogram("iip_remediation_seconds", "Remediation duration seconds")
 

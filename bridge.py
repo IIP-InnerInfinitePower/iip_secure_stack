@@ -1,10 +1,11 @@
-import os
 import json
-import requests
+import os
+
 import duckdb
 import psycopg2
-from flask import Flask, jsonify, request
+import requests
 from dotenv import load_dotenv
+from flask import Flask, jsonify, request
 
 load_dotenv()
 PG_CONN = dict(
@@ -14,7 +15,9 @@ PG_CONN = dict(
     user=os.getenv("PG_USER", "postgres"),
     password=os.getenv("PG_PASS", "postgres"),
 )
-DUCK_PATH = os.getenv("DUCK_PATH", os.path.expanduser("~/IIP_SECURE_STACK/data/iip.duckdb"))
+DUCK_PATH = os.getenv(
+    "DUCK_PATH", os.path.expanduser("~/IIP_SECURE_STACK/data/iip.duckdb")
+)
 LLM_BASE = os.getenv("LLM_BASE", "http://127.0.0.1:8000/v1")
 LLM_MODEL = os.getenv("LLM_MODEL")
 
