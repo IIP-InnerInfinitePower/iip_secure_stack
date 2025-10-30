@@ -47,7 +47,22 @@ It enables contextual query translation, automated data analysis, and GPT-compat
 A functional private AI gateway—no external API calls, fully containerized, auditable, and scalable.
 
 ---
+## 🧭 Phase 13 — Governance & Orchestration (Airflow)
 
+This phase establishes **Apache Airflow** as the centralized governance and orchestration layer for `IIP_SECURE_STACK`.  
+It ensures that all system workflows, validations, and policy checks run under a unified scheduling and compliance engine.
+
+**Pipeline:**
+1. Airflow scheduler and webserver running on `localhost:8080`
+2. DAG serialization enabled (`store_serialized_dags=True`)
+3. Governance DAG (`governance_check`) validates `policies.yaml`
+4. Logs and metadata stored in `phase13_orchestration/airflow.db`
+
+**Result:**
+✅ Governance engine operational  
+✅ Scheduler / Webserver / Metadatabase healthy  
+✅ Policy validation automated through Airflow
+--
 ### System Flow
 
 ![Client](https://img.shields.io/badge/Client-Browser-555) ➜
