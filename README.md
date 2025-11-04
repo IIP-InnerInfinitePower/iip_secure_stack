@@ -18,7 +18,7 @@ It provides a **self-owned infrastructure** for running large language models (L
 
 ---
 
-## ⚙️ System Overview   ( 2.0 ) 
+## ⚙️ System Overview   ( v2.011 ) 
 
 | Layer | Description | Key Components |
 |:------|:-------------|:----------------|
@@ -31,7 +31,7 @@ It provides a **self-owned infrastructure** for running large language models (L
 | **7. AI ↔ SQL Bridge Layer (Phase 12)** | Local inference pipeline linking models to databases. | `llama_cpp.server`, `Phi-2 GGUF`, Flask API |
 
 
-## ⚙️ System Overview  ( 2.1 ) 11/03/2025 - 5:57 PM
+## ⚙️ System Overview  (v3.011) 11/03/2025 - 5:57 PM
 
 | Layer | Description | Key Components |
 |:------|:-------------|:----------------|
@@ -136,7 +136,7 @@ It ensures that all system workflows, validations, and policy checks run under a
 ✅ Scheduler / Webserver / Metadatabase healthy  
 ✅ Policy validation automated through Airflow
 --
-### System Flow (2.0) 
+### System Flow (v2.011) 
 
 ![Client](https://img.shields.io/badge/Client-Browser-555) ➜
 ![Nginx](https://img.shields.io/badge/Nginx-009639?logo=nginx&logoColor=white) ➜
@@ -151,7 +151,7 @@ It ensures that all system workflows, validations, and policy checks run under a
 *Client → Nginx → Flask API → AI Bridge → Postgres/DuckDB → Streamlit/Superset → Grafana*
 -------------------------------------------------------------
 
-### System Flow (v3.011)
+### System Flow (v3.011) 11/03/2025 - 5:57 PM
 
 #### Request/Data Path
 ![Client](https://img.shields.io/badge/Client-Browser-555) ➜
