@@ -203,7 +203,7 @@ Change Log
 
 ---
 
-## 🧠 Tech Stack
+## 🧠 Tech Stack ( v2.011 ) 
 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
@@ -214,7 +214,53 @@ Change Log
 ![Superset](https://img.shields.io/badge/Apache_Superset-1A73E8?logo=apache&logoColor=white)
 
 ---
+## 🧠 Tech Stack (v3.011)
 
+**Core runtime**
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=white)
+![K3s](https://img.shields.io/badge/K3s-FFC107)
+![Helm](https://img.shields.io/badge/Helm-0F1689?logo=helm&logoColor=white)
+![Kustomize](https://img.shields.io/badge/Kustomize-0B3D91)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![Traefik/Nginx Ingress](https://img.shields.io/badge/Ingress-Traefik%2FNginx-0aa?logo=traefikproxy&logoColor=white)
+![Gunicorn](https://img.shields.io/badge/Gunicorn-2A7F62)
+![Celery](https://img.shields.io/badge/Celery-37814A)
+
+**Data & storage**
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
+![DuckDB](https://img.shields.io/badge/DuckDB-FFE800)
+![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)
+![MinIO](https://img.shields.io/badge/MinIO_S3-DD1177)
+
+**API & AI**
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white)
+![llama.cpp_server](https://img.shields.io/badge/llama.cpp_server-111111)
+![llama-cpp-python](https://img.shields.io/badge/llama--cpp--python-111111)
+![Phi-2_GGUF](https://img.shields.io/badge/Phi--2-GGUF-555)
+
+**Frontend & viz**
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)
+![Apache Superset](https://img.shields.io/badge/Apache_Superset-1A73E8)
+
+**Observability & policy**
+![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?logo=prometheus&logoColor=white)
+![Alertmanager](https://img.shields.io/badge/Alertmanager-E6522C)
+![Grafana](https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=white)
+![Loki](https://img.shields.io/badge/Loki-00A37A)
+![Promtail](https://img.shields.io/badge/Promtail-00A37A)
+![Tempo](https://img.shields.io/badge/Tempo-3B82F6)
+![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-6C43F3?logo=opentelemetry&logoColor=white)
+![Kyverno](https://img.shields.io/badge/Kyverno-1C7ED6)
+
+**CI/CD**
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2F80ED?logo=githubactions&logoColor=white)
+![GHCR](https://img.shields.io/badge/Registry-GHCR-24292e?logo=github&logoColor=white)
+
+> Upgraded from **v2.011** → **v3.011** with Kubernetes (K3s), Helm/Kustomize, Kyverno policies, and full OTel-based observability.
+
+
+----------------------------
 ## 🧰 Installation
 
 ```bash
