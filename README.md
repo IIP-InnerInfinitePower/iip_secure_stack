@@ -60,7 +60,7 @@ It provides a **self-owned infrastructure** for running large language models (L
 - Full observability: traces, logs, metrics.
 
 ### Architecture
-```mermaid
+mermaid
 flowchart LR
   U[Client] --> GW[Flask AI↔SQL Gateway :5001]
   subgraph Guardrails
