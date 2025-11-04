@@ -136,7 +136,7 @@ It ensures that all system workflows, validations, and policy checks run under a
 ✅ Scheduler / Webserver / Metadatabase healthy  
 ✅ Policy validation automated through Airflow
 --
-### System Flow
+### System Flow (2.0) 
 
 ![Client](https://img.shields.io/badge/Client-Browser-555) ➜
 ![Nginx](https://img.shields.io/badge/Nginx-009639?logo=nginx&logoColor=white) ➜
@@ -149,6 +149,36 @@ It ensures that all system workflows, validations, and policy checks run under a
 ![Grafana](https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=white)
 
 *Client → Nginx → Flask API → AI Bridge → Postgres/DuckDB → Streamlit/Superset → Grafana*
+-------------------------------------------------------------
+
+### System Flow (v3.011)
+
+#### Request/Data Path
+![Client](https://img.shields.io/badge/Client-Browser-555) ➜
+![Ingress](https://img.shields.io/badge/Ingress-Traefik%2FNginx-0aa) ➜
+![Flask](https://img.shields.io/badge/API-Flask%2FGunicorn-000?logo=flask&logoColor=white) ➜
+![AI%20Bridge](https://img.shields.io/badge/AI_Bridge-llama.cpp_server-111111) ➜
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white) +
+![DuckDB](https://img.shields.io/badge/DuckDB-FFE800) +
+![MinIO](https://img.shields.io/badge/Object_Storage-MinIO_S3-dd1177) ➜
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white) /
+![Apache%20Superset](https://img.shields.io/badge/Apache_Superset-1A73E8) ➜
+![Grafana](https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=white)
+
+#### Control/Observability Path
+![GitHub%20Actions](https://img.shields.io/badge/CI-GitHub_Actions-2f80ed?logo=githubactions&logoColor=white) ➜
+![GHCR](https://img.shields.io/badge/Registry-GHCR-24292e?logo=github&logoColor=white) ➜
+![K3s](https://img.shields.io/badge/Runtime-K3s-ffc107) •
+![Airflow](https://img.shields.io/badge/Governance-Airflow-017CEE?logo=apacheairflow&logoColor=white) ➜ K8s API •
+![Kyverno](https://img.shields.io/badge/Policy-Kyverno-1c7ed6) (admission) •
+![OTel](https://img.shields.io/badge/OTel-Collector-6c43f3) ➜
+![Prometheus](https://img.shields.io/badge/Metrics-Prometheus-E6522C?logo=prometheus&logoColor=white) |
+![Loki](https://img.shields.io/badge/Logs-Loki-00a37a) |
+![Tempo](https://img.shields.io/badge/Traces-Tempo-3b82f6) ➜
+![Grafana](https://img.shields.io/badge/Views-Grafana-F46800?logo=grafana&logoColor=white)
+
+---
+
 
 
 ------------------------
