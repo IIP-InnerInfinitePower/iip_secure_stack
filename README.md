@@ -59,28 +59,7 @@ It provides a **self-owned infrastructure** for running large language models (L
 - Deterministic guardrails: read-only role, DDL/DML blocked, row caps, timeouts.
 - Full observability: traces, logs, metrics.
 
-### Architecture
-mermaid
-flowchart LR
-  U[Client] --> GW[Flask AI↔SQL Gateway :5001]
-  subgraph Guardrails
-    POL[Policy Engine\n(allowlist, keyword bans, row caps)]
-    TPL[Prompt Template\n+ Schema Snapshot]
-  end
-  GW --> POL
-  POL -- sanitized prompt --> LLM[llama_cpp.server :8000\nPhi-2 (GGUF)]
-  LLM -- SQL candidate --> GW
-  GW --> TR[Translator & Validator\n(pydantic + sqlparse)]
-  TR -- prepared stmt --> DB[(SQL Engine)]
-  DB -- rows/json --> GW
-  subgraph Observability
-    OTEL[OTel SDK → Collector]
-    LOG[Loki]
-    MET[Prometheus]
-  end
-  GW -. traces .-> OTEL
-  GW -. logs .-> LOG
-  GW -. metrics .-> MET
+
 
 What Runs Now
 	•	Gateway: Flask app that exposes /query and /explain.
@@ -110,88 +89,7 @@ QUERY_TIMEOUT_S=20
 OTEL_ENABLED=true
 OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4317
 
-Docker Compose
 
-version: "3.9"
-services:
-  gateway:
-    build: ./phase12_ai_sql/app
-    env_file: .env
-    ports: ["5001:5001"]
-    depends_on: [llm, postgres]
-  llm:
-    image: ghcr.io/ggerganov/llama.cpp:server
-    command: ["-m","/models/phi-2.Q4_K_M.gguf","-c","4096","--host","0.0.0.0","--port","8000"]
-    volumes: ["./models:/models:ro"]
-    ports: ["8000:8000"]
-  postgres:
-    image: bitnami/postgresql:16
-    environment:
-      - POSTGRESQL_USERNAME=ro_user
-      - POSTGRESQL_PASSWORD=changeme
-      - POSTGRESQL_DATABASE=iip
-    ports: ["5432:5432"]
-    volumes: ["pgdata:/bitnami/postgresql"]
-volumes:
-  pgdata:
-
-Kubernetes (optional)
-
-# k8s/phase12/ai-sql-gateway.deployment.yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata: {name: ai-sql-gateway, namespace: iip-dev, labels:{app: ai-sql-gateway}}
-spec:
-  replicas: 1
-  selector: {matchLabels:{app: ai-sql-gateway}}
-  template:
-    metadata: {labels:{app: ai-sql-gateway}}
-    spec:
-      securityContext: {runAsNonRoot: true}
-      containers:
-        - name: gateway
-          image: registry.local/iip/ai-sql-gateway:${GIT_SHA}
-          ports: [{containerPort: 5001}]
-          envFrom: [{secretRef:{name: ai-sql-env}}]
-          readinessProbe: {httpGet:{path:"/readyz", port:5001}, initialDelaySeconds:5, periodSeconds:5}
-          livenessProbe:  {httpGet:{path:"/healthz", port:5001}, initialDelaySeconds:10, periodSeconds:10}
-          securityContext:
-            allowPrivilegeEscalation: false
-            readOnlyRootFilesystem: true
-            capabilities: {drop: ["ALL","NET_RAW"]}
----
-apiVersion: v1
-kind: Service
-metadata: {name: ai-sql-gateway, namespace: iip-dev}
-spec:
-  selector: {app: ai-sql-gateway}
-  ports: [{port: 80, targetPort: 5001}]
----
-# Restrict DB access to gateway only
-apiVersion: networking.k8s.io/v1
-kind: NetworkPolicy
-metadata: {name: db-restrict, namespace: iip-dev}
-spec:
-  podSelector: {matchLabels:{app: postgres}}
-  ingress:
-    - from: [{podSelector:{matchLabels:{app: ai-sql-gateway}}}]
-      ports: [{protocol: TCP, port: 5432}]
-  policyTypes: ["Ingress"]
-
-Prompt Template (LLM → SQL)
-
-System: You translate user questions into a single ANSI SQL SELECT statement.
-- Use only tables/columns from: {{ allowed_schemas }}
-- Never modify data.
-- Max rows: {{ max_rows }}
-- Use WHERE, LIMIT, and safe casts.
-- If data is ambiguous, ask for a filter instead of guessing.
-
-Schema:
-{{ schema_snapshot }}
-
-User question:
-{{ question }}
 
 Gateway Logic (summary)
 	•	/query:
