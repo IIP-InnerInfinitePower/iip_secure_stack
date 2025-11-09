@@ -1,0 +1,161 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"kyverno.io/v1","kind":"ClusterPolicy","metadata":{"name":"runtime-hardening"},"spec":{"admission":true,"background":true,"rules":[{"exclude":{"any":[{"resources":{"namespaces":["kube-system","kube-public","kube-node-lease","kyverno","monitoring"]}},{"resources":{"kinds":["DaemonSet"],"names":["kube-prometheus-stack-prometheus-node-exporter"],"namespaces":["monitoring"]}}]},"match":{"any":[{"resources":{"kinds":["Pod"],"namespaceSelector":{"matchExpressions":[{"key":"iip.guardrails/enforce","operator":"In","values":["true"]}]}}}]},"name":"drop-net-raw","skipBackgroundRequests":true,"validate":{"allowExistingViolations":true,"anyPattern":[{"spec":{"=(initContainers)":[{"securityContext":{"capabilities":{"drop":["NET_RAW"]}}}],"containers":[{"securityContext":{"capabilities":{"drop":["NET_RAW"]}}}]}},{"spec":{"containers":[{"securityContext":{"capabilities":{"drop":["ALL"]}}}]}}]}},{"exclude":{"any":[{"resources":{"namespaces":["kube-system","kube-public","kube-node-lease","kyverno","monitoring"]}},{"resources":{"kinds":["DaemonSet"],"names":["kube-prometheus-stack-prometheus-node-exporter"],"namespaces":["monitoring"]}}]},"match":{"any":[{"resources":{"kinds":["Pod"],"namespaceSelector":{"matchExpressions":[{"key":"iip.guardrails/enforce","operator":"In","values":["true"]}]}}}]},"name":"enforce-seccomp-runtime-default","skipBackgroundRequests":true,"validate":{"allowExistingViolations":true,"anyPattern":[{"spec":{"securityContext":{"seccompProfile":{"type":"RuntimeDefault"}}}},{"spec":{"securityContext":{"seccompProfile":{"type":"Localhost"}}}}]}},{"exclude":{"any":[{"resources":{"namespaces":["kube-system","kube-public","kube-node-lease","kyverno","monitoring"]}},{"resources":{"kinds":["DaemonSet"],"names":["kube-prometheus-stack-prometheus-node-exporter"],"namespaces":["monitoring"]}}]},"match":{"any":[{"resources":{"kinds":["Pod"],"namespaceSelector":{"matchExpressions":[{"key":"iip.guardrails/enforce","operator":"In","values":["true"]}]}}}]},"name":"require-readonly-rootfs","skipBackgroundRequests":true,"validate":{"allowExistingViolations":true,"pattern":{"spec":{"=(initContainers)":[{"securityContext":{"readOnlyRootFilesystem":true}}],"containers":[{"securityContext":{"readOnlyRootFilesystem":true}}]}}}}],"validationFailureAction":"Enforce"}}
+  creationTimestamp: "2025-11-03T09:42:16Z"
+  generation: 13
+  name: runtime-hardening
+  resourceVersion: "648994"
+  uid: 476583c9-5c99-437c-9d48-f5ea196c15f2
+spec:
+  admission: true
+  background: true
+  emitWarning: false
+  rules:
+  - exclude:
+      any:
+      - resources:
+          namespaces:
+          - kube-system
+          - kube-public
+          - kube-node-lease
+          - kyverno
+          - monitoring
+      - resources:
+          kinds:
+          - DaemonSet
+          names:
+          - kube-prometheus-stack-prometheus-node-exporter
+          namespaces:
+          - monitoring
+    match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+          namespaceSelector:
+            matchExpressions:
+            - key: iip.guardrails/enforce
+              operator: In
+              values:
+              - "true"
+    name: drop-net-raw
+    skipBackgroundRequests: true
+    validate:
+      allowExistingViolations: true
+      anyPattern:
+      - spec:
+          =(initContainers):
+          - securityContext:
+              capabilities:
+                drop:
+                - NET_RAW
+          containers:
+          - securityContext:
+              capabilities:
+                drop:
+                - NET_RAW
+      - spec:
+          containers:
+          - securityContext:
+              capabilities:
+                drop:
+                - ALL
+  - exclude:
+      any:
+      - resources:
+          namespaces:
+          - kube-system
+          - kube-public
+          - kube-node-lease
+          - kyverno
+          - monitoring
+      - resources:
+          kinds:
+          - DaemonSet
+          names:
+          - kube-prometheus-stack-prometheus-node-exporter
+          namespaces:
+          - monitoring
+    match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+          namespaceSelector:
+            matchExpressions:
+            - key: iip.guardrails/enforce
+              operator: In
+              values:
+              - "true"
+    name: enforce-seccomp-runtime-default
+    skipBackgroundRequests: true
+    validate:
+      allowExistingViolations: true
+      anyPattern:
+      - spec:
+          securityContext:
+            seccompProfile:
+              type: RuntimeDefault
+      - spec:
+          securityContext:
+            seccompProfile:
+              type: Localhost
+  - exclude:
+      any:
+      - resources:
+          namespaces:
+          - kube-system
+          - kube-public
+          - kube-node-lease
+          - kyverno
+          - monitoring
+      - resources:
+          kinds:
+          - DaemonSet
+          names:
+          - kube-prometheus-stack-prometheus-node-exporter
+          namespaces:
+          - monitoring
+    match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+          namespaceSelector:
+            matchExpressions:
+            - key: iip.guardrails/enforce
+              operator: In
+              values:
+              - "true"
+    name: require-readonly-rootfs
+    skipBackgroundRequests: true
+    validate:
+      allowExistingViolations: true
+      pattern:
+        spec:
+          =(initContainers):
+          - securityContext:
+              readOnlyRootFilesystem: true
+          containers:
+          - securityContext:
+              readOnlyRootFilesystem: true
+  validationFailureAction: Enforce
+status:
+  autogen: {}
+  conditions:
+  - lastTransitionTime: "2025-11-09T03:16:52Z"
+    message: Ready
+    reason: Succeeded
+    status: "True"
+    type: Ready
+  rulecount:
+    generate: 0
+    mutate: 0
+    validate: 3
+    verifyimages: 0
+  validatingadmissionpolicy:
+    generated: false
+    message: 'skip generating ValidatingAdmissionPolicy: multiple rules are not applicable.'

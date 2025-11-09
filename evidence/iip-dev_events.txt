@@ -1,0 +1,21 @@
+LAST SEEN   TYPE      REASON            OBJECT                      MESSAGE
+46m         Warning   PolicyViolation   deployment/web              policy image-require-digest/autogen-image-should-use-digest fail: validation failure: Images should use immutable digests (name@sha256:...).
+29s         Normal    Scheduled         pod/kyverno-readonly-test   Successfully assigned iip-dev/kyverno-readonly-test to desktop-control-plane
+48m         Normal    Scheduled         pod/kyverno-readonly-test   Successfully assigned iip-dev/kyverno-readonly-test to desktop-control-plane
+46m         Warning   PolicyViolation   replicaset/web-6c996c594d   policy image-require-digest/autogen-image-should-use-digest fail: validation failure: Images should use immutable digests (name@sha256:...).
+89s         Warning   PolicyViolation   pod/web-6c996c594d-kqzm2    policy image-require-digest/image-should-use-digest fail: validation failure: Images should use immutable digests (name@sha256:...).
+39m         Warning   PolicyViolation   pod/web-6c996c594d-kqzm2    policy image-require-digest/image-should-use-digest fail: validation failure: Images should use immutable digests (name@sha256:...).
+46m         Warning   PolicyViolation   pod/web-6c996c594d-kqzm2    policy image-require-digest/image-should-use-digest fail: validation failure: Images should use immutable digests (name@sha256:...).
+89s         Warning   PolicyViolation   replicaset/web-6c996c594d   policy image-require-digest/autogen-image-should-use-digest fail: validation failure: Images should use immutable digests (name@sha256:...).
+90s         Warning   PolicyViolation   deployment/web              policy image-require-digest/autogen-image-should-use-digest fail: validation failure: Images should use immutable digests (name@sha256:...).
+39m         Warning   PolicyViolation   replicaset/web-6c996c594d   policy image-require-digest/autogen-image-should-use-digest fail: validation failure: Images should use immutable digests (name@sha256:...).
+39m         Warning   PolicyViolation   deployment/web              policy image-require-digest/autogen-image-should-use-digest fail: validation failure: Images should use immutable digests (name@sha256:...).
+50m         Warning   Failed            pod/kyverno-readonly-test   Error: container has runAsNonRoot and image will run as root (pod: "kyverno-readonly-test_iip-dev(153d483c-b5af-447a-a9d1-cf9f3bb1354b)", container: c)
+50m         Normal    Pulled            pod/kyverno-readonly-test   Container image "busybox@sha256:355b3a1bf5609da364166913878a8508d4ba30572d02020a97028c75477e24ff" already present on machine
+48m         Normal    Created           pod/kyverno-readonly-test   Created container: c
+48m         Normal    Pulled            pod/kyverno-readonly-test   Container image "busybox@sha256:355b3a1bf5609da364166913878a8508d4ba30572d02020a97028c75477e24ff" already present on machine
+48m         Normal    Started           pod/kyverno-readonly-test   Started container c
+23m         Normal    Killing           pod/kyverno-readonly-test   Stopping container c
+28s         Normal    Started           pod/kyverno-readonly-test   Started container c
+28s         Normal    Created           pod/kyverno-readonly-test   Created container: c
+28s         Normal    Pulled            pod/kyverno-readonly-test   Container image "busybox@sha256:355b3a1bf5609da364166913878a8508d4ba30572d02020a97028c75477e24ff" already present on machine

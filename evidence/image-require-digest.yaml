@@ -1,0 +1,135 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"kyverno.io/v1","kind":"ClusterPolicy","metadata":{"annotations":{},"name":"image-require-digest"},"spec":{"background":true,"rules":[{"match":{"any":[{"resources":{"kinds":["Pod"]}}]},"name":"image-should-use-digest","validate":{"foreach":[{"deny":{"conditions":{"any":[{"key":"{{ contains(element.image, '@sha256:') }}","operator":"Equals","value":false}]}},"list":"request.object.spec.containers[]"},{"deny":{"conditions":{"any":[{"key":"{{ contains(element.image, '@sha256:') }}","operator":"Equals","value":false}]}},"list":"request.object.spec.initContainers[]"}],"message":"Images should use immutable digests (name@sha256:...)."}}],"validationFailureAction":"Audit"}}
+  creationTimestamp: "2025-11-03T09:50:14Z"
+  generation: 5
+  name: image-require-digest
+  resourceVersion: "611947"
+  uid: 16b44967-21f2-45da-8e27-ebea49325576
+spec:
+  admission: true
+  background: true
+  emitWarning: false
+  rules:
+  - exclude:
+      any:
+      - resources:
+          namespaces:
+          - monitoring
+    match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+    name: image-should-use-digest
+    skipBackgroundRequests: true
+    validate:
+      allowExistingViolations: true
+      foreach:
+      - deny:
+          conditions:
+            any:
+            - key: '{{ contains(element.image, ''@sha256:'') }}'
+              operator: Equals
+              value: false
+        list: request.object.spec.containers[]
+      - deny:
+          conditions:
+            any:
+            - key: '{{ contains(element.image, ''@sha256:'') }}'
+              operator: Equals
+              value: false
+        list: request.object.spec.initContainers[]
+      message: Images should use immutable digests (name@sha256:...).
+  validationFailureAction: Enforce
+status:
+  autogen:
+    rules:
+    - exclude:
+        any:
+        - resources:
+            namespaces:
+            - monitoring
+        resources: {}
+      match:
+        any:
+        - resources:
+            kinds:
+            - DaemonSet
+            - Deployment
+            - Job
+            - ReplicaSet
+            - ReplicationController
+            - StatefulSet
+        resources: {}
+      name: autogen-image-should-use-digest
+      skipBackgroundRequests: true
+      validate:
+        allowExistingViolations: true
+        foreach:
+        - deny:
+            conditions:
+              any:
+              - key: '{{ contains(element.image, ''@sha256:'') }}'
+                operator: Equals
+                value: false
+          list: request.object.spec.template.spec.containers[]
+        - deny:
+            conditions:
+              any:
+              - key: '{{ contains(element.image, ''@sha256:'') }}'
+                operator: Equals
+                value: false
+          list: request.object.spec.template.spec.initContainers[]
+        message: Images should use immutable digests (name@sha256:...).
+    - exclude:
+        any:
+        - resources:
+            kinds:
+            - CronJob
+            namespaces:
+            - monitoring
+        resources: {}
+      match:
+        any:
+        - resources:
+            kinds:
+            - CronJob
+        resources: {}
+      name: autogen-cronjob-image-should-use-digest
+      skipBackgroundRequests: true
+      validate:
+        allowExistingViolations: true
+        foreach:
+        - deny:
+            conditions:
+              any:
+              - key: '{{ contains(element.image, ''@sha256:'') }}'
+                operator: Equals
+                value: false
+          list: request.object.spec.jobTemplate.spec.template.spec.containers[]
+        - deny:
+            conditions:
+              any:
+              - key: '{{ contains(element.image, ''@sha256:'') }}'
+                operator: Equals
+                value: false
+          list: request.object.spec.jobTemplate.spec.template.spec.initContainers[]
+        message: Images should use immutable digests (name@sha256:...).
+  conditions:
+  - lastTransitionTime: "2025-11-09T03:16:52Z"
+    message: Ready
+    reason: Succeeded
+    status: "True"
+    type: Ready
+  rulecount:
+    generate: 0
+    mutate: 0
+    validate: 1
+    verifyimages: 0
+  validatingadmissionpolicy:
+    generated: false
+    message: skip generating ValidatingAdmissionPolicy for non CEL rules.
