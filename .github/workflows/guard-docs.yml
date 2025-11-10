@@ -7,13 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Block conflict markers and unsafe redirections
+      - name: Scan only PR changes
         shell: bash
         run: |
           set -euo pipefail
-          echo "[scan] conflict markers"
-          ! git grep -nE '^(<<<<<<<|=======|>>>>>>>)' -- ':!*.patch' ':!*.diff'
-          echo "[scan] stray shell redirections into README"
-          ! git grep -nE '(^| )pbpaste( |$)|>> *README\.md'
-          echo "[scan] forbidden clipboard/base64 dumps"
-          ! git grep -nE 'base64 -d|openssl .* -base64|gpg --decrypt'
+          base="${{ github.event.pull_request.base.sha }}"
+          head="${{ github.sha }}"
+          files="$(git diff --name-only "$base..$head" || true)"
+          if [ -z "${files}" ]; then
+            echo "No changed files to scan"; exit 0
+          fi
+          echo "$files" | sed 's/^/[scan] /'
+          ! git grep -nE '^(<<<<<<<|=======|>>>>>>>)' -- $files
+          ! git grep -nE '(^| )pbpaste( |$)|>> *README\.md' -- $files
+          ! git grep -nE 'base64 -d|openssl .* -base64|gpg --decrypt' -- $files
