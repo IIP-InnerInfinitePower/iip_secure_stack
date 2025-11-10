@@ -1,0 +1,68 @@
+# Reader/Config Retriever - scoped to ONE secret by name
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: reader-config
+  namespace: iip-dev
+rules:
+- apiGroups: [""]
+  resources: ["configmaps"]
+  verbs: ["get","list","watch"]
+- apiGroups: [""]
+  resources: ["secrets"]
+  resourceNames: ["my-app-config-secret"]   # tighten to one secret
+  verbs: ["get"]
+
+---
+# Bind reader role to SA
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: reader-config-bind
+  namespace: iip-dev
+subjects:
+- kind: ServiceAccount
+  name: my-app-sa
+  namespace: iip-dev
+roleRef:
+  kind: Role
+  name: reader-config
+  apiGroup: rbac.authorization.k8s.io
+
+---
+# Ephemeral Job Executor
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: job-exec-sa
+  namespace: iip-dev
+automountServiceAccountToken: false
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: job-exec
+  namespace: iip-dev
+rules:
+- apiGroups: ["batch"]
+  resources: ["jobs"]
+  verbs: ["create","get","delete","watch"]
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get","watch","delete"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: job-exec-bind
+  namespace: iip-dev
+subjects:
+- kind: ServiceAccount
+  name: job-exec-sa
+  namespace: iip-dev
+roleRef:
+  kind: Role
+  name: job-exec
+  apiGroup: rbac.authorization.k8s.io

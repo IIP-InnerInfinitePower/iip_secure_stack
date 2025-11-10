@@ -1,0 +1,19 @@
+name: Guard Docs
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Block conflict markers and unsafe redirections
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "[scan] conflict markers"
+          ! git grep -nE '^(<<<<<<<|=======|>>>>>>>)' -- ':!*.patch' ':!*.diff'
+          echo "[scan] stray shell redirections into README"
+          ! git grep -nE '(^| )pbpaste( |$)|>> *README\.md'
+          echo "[scan] forbidden clipboard/base64 dumps"
+          ! git grep -nE 'base64 -d|openssl .* -base64|gpg --decrypt'

@@ -5,4 +5,3 @@ Summary:
 - Flask bridge.py live on port 5002
 - Postgres + DuckDB verified
 - Full data-to-LLM reasoning chain confirmed
-

@@ -1,0 +1,4 @@
+services:
+  api-gateway:
+    volumes:
+      - ./certs:/etc/nginx/certs:ro

@@ -1,0 +1,12 @@
+installCRDs: true
+admissionController:
+  replicas: 1
+backgroundController:
+  enabled: true
+  replicas: 1
+cleanupController:
+  enabled: true
+  replicas: 1
+reportsController:
+  enabled: true
+  replicas: 1

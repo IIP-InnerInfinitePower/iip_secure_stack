@@ -1,15 +1,15 @@
 # Inner Infinite Power™ LLC — Security & Privacy Policy
 
 ## 1. Purpose
-This policy defines how **Inner Infinite Power™ LLC (“IIP™”)** protects the confidentiality, integrity, and availability of all information assets within the **IIP_SECURE_STACK** ecosystem.  
+This policy defines how **Inner Infinite Power™ LLC (“IIP™”)** protects the confidentiality, integrity, and availability of all information assets within the **IIP_SECURE_STACK** ecosystem.
 It establishes the administrative, physical, and technical safeguards necessary for compliance with **HIPAA (45 CFR §164 Subpart C)** and **SOC 2 Type II** Trust Services Criteria.
 
 ---
 
 ## 2. Scope
 Applies to all systems, personnel, and third-party partners that process, transmit, or store:
-- Client data, including wellness metrics and personal identifiers.  
-- Operational data generated within IIP_SECURE_STACK services.  
+- Client data, including wellness metrics and personal identifiers.
+- Operational data generated within IIP_SECURE_STACK services.
 - Any derivative datasets subject to privacy or regulatory protection.
 
 ---
@@ -47,21 +47,21 @@ Applies to all systems, personnel, and third-party partners that process, transm
 ---
 
 ## 6. Privacy Principles
-1. Clients retain ownership of their personal and wellness data.  
-2. IIP™ acts solely as a data processor/business associate.  
-3. Data is never sold, shared, or used for non-authorized analytics.  
-4. Users may request deletion or export of their data at any time.  
+1. Clients retain ownership of their personal and wellness data.
+2. IIP™ acts solely as a data processor/business associate.
+3. Data is never sold, shared, or used for non-authorized analytics.
+4. Users may request deletion or export of their data at any time.
 
 ---
 
 ## 7. Monitoring and Continuous Improvement
-- Metrics and security dashboards monitored 24/7.  
-- Regular internal audits verify adherence to this policy.  
+- Metrics and security dashboards monitored 24/7.
+- Regular internal audits verify adherence to this policy.
 - All updates tracked via Git commits under `docs/compliance/`.
 
 ---
 
-**Approved by:**  
-Chief Security Architect – Inner Infinite Power™ LLC  
-**Effective Date:** $(date +%Y-%m-%d)  
-**Version:** 1.0  
+**Approved by:**
+Chief Security Architect – Inner Infinite Power™ LLC
+**Effective Date:** $(date +%Y-%m-%d)
+**Version:** 1.0

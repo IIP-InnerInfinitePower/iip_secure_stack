@@ -4,7 +4,7 @@ services:
     container_name: iip_secure_stack-bff-1
     networks: [iip_net]
     depends_on:
-      - webhook-listener
+      - webhook
   api-gateway:
     image: nginx:alpine
     container_name: iip_secure_stack-api-gateway-1

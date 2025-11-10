@@ -1,0 +1,40 @@
+worker_processes auto;
+events { worker_connections 1024; }
+http {
+  log_format json escape=json '{ "time":"$time_iso8601","ip":"$remote_addr","method":"$request_method","uri":"$request_uri","status":$status,"bytes":$bytes_sent,"ua":"$http_user_agent","req_id":"$request_id","rt":$request_time }';
+  access_log /var/log/nginx/access.log json;
+  limit_req_zone $binary_remote_addr zone=perip:10m rate=60r/s;
+
+  map $http_x_api_key $api_ok {
+    default 0;
+    4ae167336b2f86597ddeacd648953545 1;
+  }
+
+  server {
+    listen 8081;
+    location = /v1/health { proxy_pass http://bff:5000/v1/health; }
+    location /v1/ {
+      if ($api_ok = 0) { return 401; }
+      limit_req zone=perip burst=120 nodelay;
+      proxy_set_header X-Request-ID $request_id;
+      proxy_pass http://bff:5000;
+      proxy_http_version 1.1;
+      proxy_set_header Connection "";
+    }
+  }
+
+  server {
+    listen 8443 ssl;
+    ssl_certificate     /etc/nginx/certs/dev.crt;
+    ssl_certificate_key /etc/nginx/certs/dev.key;
+    location = /v1/health { proxy_pass http://bff:5000/v1/health; }
+    location /v1/ {
+      if ($api_ok = 0) { return 401; }
+      limit_req zone=perip burst=120 nodelay;
+      proxy_set_header X-Request-ID $request_id;
+      proxy_pass http://bff:5000;
+      proxy_http_version 1.1;
+      proxy_set_header Connection "";
+    }
+  }
+}

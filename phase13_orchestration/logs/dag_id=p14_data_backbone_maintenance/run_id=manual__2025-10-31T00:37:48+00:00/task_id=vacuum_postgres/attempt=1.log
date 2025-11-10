@@ -1,0 +1,417 @@
+[2025-10-30T17:37:50.598-0700] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-10-30T17:37:50.610-0700] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: p14_data_backbone_maintenance.vacuum_postgres manual__2025-10-31T00:37:48+00:00 [queued]>
+[2025-10-30T17:37:50.613-0700] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: p14_data_backbone_maintenance.vacuum_postgres manual__2025-10-31T00:37:48+00:00 [queued]>
+[2025-10-30T17:37:50.613-0700] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-10-30T17:37:50.618-0700] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): vacuum_postgres> on 2025-10-31 00:37:48+00:00
+[2025-10-30T17:37:50.621-0700] {standard_task_runner.py:64} INFO - Started process 62933 to run task
+[2025-10-30T17:37:50.626-0700] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'p14_data_backbone_maintenance', 'vacuum_postgres', 'manual__2025-10-31T00:37:48+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/p14_dags/p14_data_backbone_maintenance.py', '--cfg-path', '/var/folders/z8/1pxcrjv52wd_wfjg44_llz7m0000gn/T/tmpxuz9xzbi']
+[2025-10-30T17:37:50.629-0700] {standard_task_runner.py:91} INFO - Job 40: Subtask vacuum_postgres
+[2025-10-30T17:37:50.652-0700] {task_command.py:426} INFO - Running <TaskInstance: p14_data_backbone_maintenance.vacuum_postgres manual__2025-10-31T00:37:48+00:00 [running]> on host ivans-macbook-air.local
+[2025-10-30T17:37:50.683-0700] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='iip_system' AIRFLOW_CTX_DAG_ID='p14_data_backbone_maintenance' AIRFLOW_CTX_TASK_ID='vacuum_postgres' AIRFLOW_CTX_EXECUTION_DATE='2025-10-31T00:37:48+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-31T00:37:48+00:00'
+[2025-10-30T17:37:50.683-0700] {taskinstance.py:430} INFO - ::endgroup::
+[2025-10-30T17:37:50.695-0700] {subprocess.py:63} INFO - Tmp dir root location: /var/folders/z8/1pxcrjv52wd_wfjg44_llz7m0000gn/T
+[2025-10-30T17:37:50.696-0700] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'psql $POSTGRES_CONN -c "VACUUM;"']
+[2025-10-30T17:37:50.700-0700] {subprocess.py:86} INFO - Output:
+[2025-10-30T17:37:50.893-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_statistic" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.893-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_type" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.894-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_1255" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.894-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_1255_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.894-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_1247" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.895-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_1247_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.895-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2604" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.895-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2604_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.895-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2606" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.896-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2606_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.896-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2612" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.896-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2612_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.896-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2600" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.897-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2600_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.897-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2619" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.897-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2619_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.898-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3381" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.898-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3381_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.898-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3429" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.898-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3429_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.899-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2618" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.899-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2618_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.899-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2620" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.900-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2620_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.900-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3466" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.900-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3466_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.900-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2609" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.901-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2609_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.901-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2615" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.901-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2615_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.901-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_foreign_table" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.902-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_1262" --- only superuser can vacuum it
+[2025-10-30T17:37:50.902-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_1262_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.902-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2964" --- only superuser can vacuum it
+[2025-10-30T17:37:50.902-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2964_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.903-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_1213" --- only superuser can vacuum it
+[2025-10-30T17:37:50.903-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_1213_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.903-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_1260" --- only superuser can vacuum it
+[2025-10-30T17:37:50.904-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_1260_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.904-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2396" --- only superuser can vacuum it
+[2025-10-30T17:37:50.904-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2396_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.904-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3600" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.905-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3600_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.905-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3079" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.905-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3079_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.905-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2328" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.906-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_2328_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.906-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_1417" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.906-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_1417_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.907-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_1418" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.907-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_1418_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.907-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3118" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.907-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3118_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.908-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3256" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.908-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3256_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.908-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_6000" --- only superuser can vacuum it
+[2025-10-30T17:37:50.908-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_6000_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.909-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_826" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.909-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_826_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.909-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3394" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.909-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3394_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.910-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3596" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.910-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3596_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.910-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3592" --- only superuser can vacuum it
+[2025-10-30T17:37:50.910-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3592_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.911-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3456" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.911-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3456_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.911-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3350" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.911-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_3350_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.912-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_6100" --- only superuser can vacuum it
+[2025-10-30T17:37:50.912-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_6100_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.912-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_proc_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.912-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_proc_proname_args_nsp_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.913-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_type_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.913-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_type_typname_nsp_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.913-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_attribute_relid_attnam_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.914-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_attribute_relid_attnum_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.914-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_class_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.914-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_class_relname_nsp_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.914-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_class_tblspc_relfilenode_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.915-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_attrdef_adrelid_adnum_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.915-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_attrdef_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.915-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_constraint_conname_nsp_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.915-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_constraint_conrelid_contypid_conname_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.916-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_constraint_contypid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.916-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_constraint_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.916-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_constraint_conparentid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.916-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_inherits_relid_seqno_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.917-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_inherits_parent_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.917-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_index_indrelid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.917-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_index_indexrelid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.917-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_operator_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.918-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_operator_oprname_l_r_n_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.918-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_opfamily_am_name_nsp_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.918-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_opfamily_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.918-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_opclass_am_name_nsp_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.919-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_opclass_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.919-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_am_name_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.919-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_am_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.919-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_amop_fam_strat_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.920-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_amop_opr_fam_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.920-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_amop_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.920-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_amproc_fam_proc_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.920-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_amproc_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.921-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_language_name_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.921-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_language_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.921-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_largeobject_metadata_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.921-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_largeobject_loid_pn_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.922-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_aggregate_fnoid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.922-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_statistic_relid_att_inh_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.922-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_statistic_ext_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.922-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_statistic_ext_name_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.923-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_statistic_ext_relid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.923-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_statistic_ext_data_stxoid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.923-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_rewrite_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.923-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_rewrite_rel_rulename_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.924-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_trigger_tgconstraint_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.924-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_trigger_tgrelid_tgname_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.924-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_trigger_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.924-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_event_trigger_evtname_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.925-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_event_trigger_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.925-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_description_o_c_o_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.925-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_cast_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.925-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_cast_source_target_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.926-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_enum_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.926-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_enum_typid_label_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.926-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_enum_typid_sortorder_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.926-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_namespace_nspname_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.927-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_namespace_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.927-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_conversion_default_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.927-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_conversion_name_nsp_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.927-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_conversion_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.928-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_depend_depender_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.928-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_depend_reference_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.928-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_database_datname_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.928-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_database_oid_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.929-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_db_role_setting_databaseid_rol_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.929-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_tablespace_oid_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.929-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_tablespace_spcname_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.929-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_authid_rolname_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.930-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_authid_oid_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.930-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_auth_members_role_member_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.930-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_auth_members_member_role_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.930-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_shdepend_depender_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.931-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_shdepend_reference_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.931-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_shdescription_o_c_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.931-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_ts_config_cfgname_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.932-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_ts_config_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.932-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_ts_config_map_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.932-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_ts_dict_dictname_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.932-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_ts_dict_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.933-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_ts_parser_prsname_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.933-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_ts_parser_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.933-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_ts_template_tmplname_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.933-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_ts_template_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.934-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_extension_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.934-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_extension_name_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.934-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_foreign_data_wrapper_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.934-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_foreign_data_wrapper_name_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.935-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_foreign_server_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.935-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_foreign_server_name_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.935-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_user_mapping_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.935-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_user_mapping_user_server_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.936-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_foreign_table_relid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.936-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_policy_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.936-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_policy_polrelid_polname_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.936-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_replication_origin_roiident_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.937-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_replication_origin_roname_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.937-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_default_acl_role_nsp_obj_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.937-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_default_acl_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.937-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_init_privs_o_c_o_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.938-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_seclabel_object_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.938-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_shseclabel_object_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.938-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_collation_name_enc_nsp_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.938-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_collation_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.939-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_partitioned_table_partrelid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.939-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_range_rngtypid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.939-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_range_rngmultitypid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.939-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_transform_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.940-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_transform_type_lang_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.940-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_sequence_seqrelid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.940-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_publication_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.940-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_publication_pubname_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.941-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_publication_rel_oid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.941-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_publication_rel_prrelid_prpubid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.941-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_subscription_oid_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.941-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_subscription_subname_index" --- only superuser can vacuum it
+[2025-10-30T17:37:50.942-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_subscription_rel_srrelid_srsubid_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.942-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_authid" --- only superuser can vacuum it
+[2025-10-30T17:37:50.942-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_shadow" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.942-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_statistic_ext_data" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.943-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_roles" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.943-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_settings" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.943-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_file_settings" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.943-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_hba_file_rules" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.944-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_config" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.944-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_shmem_allocations" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.944-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_backend_memory_contexts" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.944-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_available_extension_versions" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.945-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_user_mapping" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.945-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_xact_user_functions" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.945-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_replication_origin_status" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.945-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_subscription" --- only superuser can vacuum it
+[2025-10-30T17:37:50.946-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_attribute" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.946-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_proc" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.946-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_class" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.946-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_attrdef" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.947-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_constraint" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.947-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_inherits" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.947-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.947-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_operator" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.948-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_opfamily" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.948-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_opclass" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.948-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_am" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.948-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_amop" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.949-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_amproc" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.949-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_language" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.949-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_archiver" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.949-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_bgwriter" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.950-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_wal" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.950-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_progress_analyze" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.950-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_progress_vacuum" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.950-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_progress_cluster" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.951-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_progress_create_index" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.951-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_progress_basebackup" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.951-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_progress_copy" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.951-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_largeobject_metadata" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.952-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_aggregate" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.952-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_statistic_ext" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.952-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_rewrite" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.953-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_trigger" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.953-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_event_trigger" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.953-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_description" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.953-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_cast" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.954-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_enum" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.954-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_namespace" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.954-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_conversion" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.954-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_depend" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.955-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_database" --- only superuser can vacuum it
+[2025-10-30T17:37:50.955-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_db_role_setting" --- only superuser can vacuum it
+[2025-10-30T17:37:50.955-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_tablespace" --- only superuser can vacuum it
+[2025-10-30T17:37:50.955-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_auth_members" --- only superuser can vacuum it
+[2025-10-30T17:37:50.956-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_shdepend" --- only superuser can vacuum it
+[2025-10-30T17:37:50.956-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_shdescription" --- only superuser can vacuum it
+[2025-10-30T17:37:50.956-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_ts_config" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.956-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_ts_config_map" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.957-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_ts_dict" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.957-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_ts_parser" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.957-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_ts_template" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.957-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_extension" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.958-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_foreign_data_wrapper" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.958-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_foreign_server" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.958-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_policy" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.958-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_replication_origin" --- only superuser can vacuum it
+[2025-10-30T17:37:50.959-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_default_acl" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.959-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_init_privs" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.959-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_seclabel" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.959-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_shseclabel" --- only superuser can vacuum it
+[2025-10-30T17:37:50.960-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_collation" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.960-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_partitioned_table" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.960-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_range" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.960-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_transform" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.961-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_sequence" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.961-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_publication" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.961-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_publication_rel" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.961-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_subscription_rel" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.962-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_matviews" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.962-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_group" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.962-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_user" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.962-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_policies" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.963-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_rules" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.963-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_views" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.963-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_tables" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.963-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_indexes" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.964-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_sequences" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.964-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stats" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.964-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stats_ext" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.964-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stats_ext_exprs" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.965-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_publication_tables" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.965-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_locks" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.965-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_cursors" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.965-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_available_extensions" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.966-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_prepared_xacts" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.966-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_prepared_statements" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.966-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_seclabels" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.966-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_xact_user_tables" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.967-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_timezone_abbrevs" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.967-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_timezone_names" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.967-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_statio_all_tables" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.967-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_statio_sys_tables" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.968-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_all_tables" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.968-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_xact_all_tables" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.968-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_sys_tables" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.968-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_xact_sys_tables" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.969-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_user_tables" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.969-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_statio_user_tables" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.969-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_all_indexes" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.969-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_sys_indexes" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.970-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_user_indexes" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.970-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_statio_all_indexes" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.970-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_statio_sys_indexes" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.970-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_statio_user_indexes" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.971-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_statio_all_sequences" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.971-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_statio_sys_sequences" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.971-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_statio_user_sequences" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.971-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_activity" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.972-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_replication" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.972-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_slru" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.972-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_wal_receiver" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.972-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_subscription" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.973-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_ssl" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.973-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_gssapi" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.973-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_replication_slots" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.973-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_replication_slots" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.974-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_database" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.974-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_database_conflicts" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.974-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_stat_user_functions" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.974-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_user_mappings" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.975-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_largeobject" --- only superuser or database owner can vacuum it
+[2025-10-30T17:37:50.975-0700] {subprocess.py:93} INFO - WARNING:  skipping "information_schema_catalog_name" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.975-0700] {subprocess.py:93} INFO - WARNING:  skipping "attributes" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.975-0700] {subprocess.py:93} INFO - WARNING:  skipping "applicable_roles" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.976-0700] {subprocess.py:93} INFO - WARNING:  skipping "administrable_role_authorizations" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.976-0700] {subprocess.py:93} INFO - WARNING:  skipping "check_constraint_routine_usage" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.976-0700] {subprocess.py:93} INFO - WARNING:  skipping "character_sets" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.976-0700] {subprocess.py:93} INFO - WARNING:  skipping "check_constraints" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.977-0700] {subprocess.py:93} INFO - WARNING:  skipping "collations" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.977-0700] {subprocess.py:93} INFO - WARNING:  skipping "collation_character_set_applicability" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.977-0700] {subprocess.py:93} INFO - WARNING:  skipping "column_column_usage" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.977-0700] {subprocess.py:93} INFO - WARNING:  skipping "column_domain_usage" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.978-0700] {subprocess.py:93} INFO - WARNING:  skipping "routines" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.978-0700] {subprocess.py:93} INFO - WARNING:  skipping "column_privileges" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.978-0700] {subprocess.py:93} INFO - WARNING:  skipping "role_column_grants" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.979-0700] {subprocess.py:93} INFO - WARNING:  skipping "column_udt_usage" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.979-0700] {subprocess.py:93} INFO - WARNING:  skipping "columns" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.979-0700] {subprocess.py:93} INFO - WARNING:  skipping "constraint_column_usage" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.979-0700] {subprocess.py:93} INFO - WARNING:  skipping "routine_column_usage" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.980-0700] {subprocess.py:93} INFO - WARNING:  skipping "constraint_table_usage" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.980-0700] {subprocess.py:93} INFO - WARNING:  skipping "domain_constraints" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.980-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_14048" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.980-0700] {subprocess.py:93} INFO - WARNING:  skipping "domain_udt_usage" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.981-0700] {subprocess.py:93} INFO - WARNING:  skipping "routine_privileges" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.981-0700] {subprocess.py:93} INFO - WARNING:  skipping "domains" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.981-0700] {subprocess.py:93} INFO - WARNING:  skipping "enabled_roles" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.981-0700] {subprocess.py:93} INFO - WARNING:  skipping "schemata" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.982-0700] {subprocess.py:93} INFO - WARNING:  skipping "key_column_usage" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.982-0700] {subprocess.py:93} INFO - WARNING:  skipping "role_routine_grants" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.982-0700] {subprocess.py:93} INFO - WARNING:  skipping "parameters" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.982-0700] {subprocess.py:93} INFO - WARNING:  skipping "referential_constraints" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.983-0700] {subprocess.py:93} INFO - WARNING:  skipping "routine_routine_usage" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.983-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_14048_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.983-0700] {subprocess.py:93} INFO - WARNING:  skipping "routine_sequence_usage" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.983-0700] {subprocess.py:93} INFO - WARNING:  skipping "sequences" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.984-0700] {subprocess.py:93} INFO - WARNING:  skipping "routine_table_usage" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.984-0700] {subprocess.py:93} INFO - WARNING:  skipping "sql_parts" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.984-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_14043" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.984-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_14043_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.985-0700] {subprocess.py:93} INFO - WARNING:  skipping "sql_implementation_info" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.985-0700] {subprocess.py:93} INFO - WARNING:  skipping "sql_features" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.985-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_14053" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.985-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_14053_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.986-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_14058" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.986-0700] {subprocess.py:93} INFO - WARNING:  skipping "pg_toast_14058_index" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.986-0700] {subprocess.py:93} INFO - WARNING:  skipping "sql_sizing" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.986-0700] {subprocess.py:93} INFO - WARNING:  skipping "table_constraints" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.987-0700] {subprocess.py:93} INFO - WARNING:  skipping "table_privileges" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.987-0700] {subprocess.py:93} INFO - WARNING:  skipping "view_table_usage" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.987-0700] {subprocess.py:93} INFO - WARNING:  skipping "role_table_grants" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.987-0700] {subprocess.py:93} INFO - WARNING:  skipping "tables" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.988-0700] {subprocess.py:93} INFO - WARNING:  skipping "transforms" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.988-0700] {subprocess.py:93} INFO - WARNING:  skipping "user_mappings" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.988-0700] {subprocess.py:93} INFO - WARNING:  skipping "triggered_update_columns" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.988-0700] {subprocess.py:93} INFO - WARNING:  skipping "views" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.989-0700] {subprocess.py:93} INFO - WARNING:  skipping "triggers" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.989-0700] {subprocess.py:93} INFO - WARNING:  skipping "udt_privileges" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.989-0700] {subprocess.py:93} INFO - WARNING:  skipping "foreign_data_wrappers" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.989-0700] {subprocess.py:93} INFO - WARNING:  skipping "role_udt_grants" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.990-0700] {subprocess.py:93} INFO - WARNING:  skipping "data_type_privileges" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.990-0700] {subprocess.py:93} INFO - WARNING:  skipping "usage_privileges" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.990-0700] {subprocess.py:93} INFO - WARNING:  skipping "role_usage_grants" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.990-0700] {subprocess.py:93} INFO - WARNING:  skipping "user_defined_types" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.991-0700] {subprocess.py:93} INFO - WARNING:  skipping "element_types" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.991-0700] {subprocess.py:93} INFO - WARNING:  skipping "view_column_usage" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.991-0700] {subprocess.py:93} INFO - WARNING:  skipping "view_routine_usage" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.991-0700] {subprocess.py:93} INFO - WARNING:  skipping "_pg_foreign_servers" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.992-0700] {subprocess.py:93} INFO - WARNING:  skipping "_pg_foreign_table_columns" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.992-0700] {subprocess.py:93} INFO - WARNING:  skipping "column_options" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.992-0700] {subprocess.py:93} INFO - WARNING:  skipping "_pg_foreign_data_wrappers" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.992-0700] {subprocess.py:93} INFO - WARNING:  skipping "foreign_table_options" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.993-0700] {subprocess.py:93} INFO - WARNING:  skipping "foreign_data_wrapper_options" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.993-0700] {subprocess.py:93} INFO - WARNING:  skipping "foreign_server_options" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.993-0700] {subprocess.py:93} INFO - WARNING:  skipping "foreign_servers" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.993-0700] {subprocess.py:93} INFO - WARNING:  skipping "_pg_foreign_tables" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.994-0700] {subprocess.py:93} INFO - WARNING:  skipping "user_mapping_options" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.994-0700] {subprocess.py:93} INFO - WARNING:  skipping "foreign_tables" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.994-0700] {subprocess.py:93} INFO - WARNING:  skipping "_pg_user_mappings" --- only table or database owner can vacuum it
+[2025-10-30T17:37:50.994-0700] {subprocess.py:93} INFO - VACUUM
+[2025-10-30T17:37:50.995-0700] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-30T17:37:50.995-0700] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-10-30T17:37:51.004-0700] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=p14_data_backbone_maintenance, task_id=vacuum_postgres, run_id=manual__2025-10-31T00:37:48+00:00, execution_date=20251031T003748, start_date=20251031T003750, end_date=20251031T003751
+[2025-10-30T17:37:51.050-0700] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-10-30T17:37:51.060-0700] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-10-30T17:37:51.061-0700] {local_task_job_runner.py:222} INFO - ::endgroup::
