@@ -7,3 +7,26 @@ reports/
 monitoring/
 grafana/
 .env
+# secrets and certificates
+certs/
+*.key
+*.crt
+*.pem
+*.p12
+*.pfx
+*.der
+
+# backups and databases
+backups/
+data/
+*.sql
+*.sqlite
+*.db
+*.duckdb
+
+# logs and generated
+**/*.log
+phase*/**/*.db
+
+# OS/editor
+.DS_Store

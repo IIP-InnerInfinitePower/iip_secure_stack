@@ -1,0 +1,13 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v6.0.0
+  hooks:
+    - id: check-merge-conflict
+    - id: end-of-file-fixer
+      exclude: ^(backups/|phase\d+_orchestration/.*\.log)$
+    - id: trailing-whitespace
+      exclude: ^(backups/|phase\d+_orchestration/.*\.log)$
+    - id: check-yaml
+      args: ["--allow-multiple-documents"]
+      # TEMP: exclude known-bad YAML; fix later, then remove these lines.
+      exclude: ^(\.github/workflows/cicd\.yml|openapi/openapi\.yaml)$
