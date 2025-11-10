@@ -1,0 +1,104 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: runtime-hardening
+spec:
+  admission: true
+  background: true
+  validationFailureAction: Enforce
+  rules:
+  - name: drop-net-raw
+    match:
+      any:
+      - resources:
+          kinds: ["Pod"]
+          namespaceSelector:
+            matchExpressions:
+            - key: iip.guardrails/enforce
+              operator: In
+              values: ["true"]
+    exclude:
+      any:
+      - resources:
+          namespaces: ["kube-system","kube-public","kube-node-lease","kyverno","monitoring"]
+      - resources:
+          kinds: ["DaemonSet"]
+          namespaces: ["monitoring"]
+          names: ["kube-prometheus-stack-prometheus-node-exporter"]
+    skipBackgroundRequests: true
+    validate:
+      allowExistingViolations: true
+      anyPattern:
+      - spec:
+          containers:
+          - securityContext:
+              capabilities:
+                drop: ["NET_RAW"]
+          =(initContainers):
+          - securityContext:
+              capabilities:
+                drop: ["NET_RAW"]
+      - spec:
+          containers:
+          - securityContext:
+              capabilities:
+                drop: ["ALL"]
+  - name: enforce-seccomp-runtime-default
+    match:
+      any:
+      - resources:
+          kinds: ["Pod"]
+          namespaceSelector:
+            matchExpressions:
+            - key: iip.guardrails/enforce
+              operator: In
+              values: ["true"]
+    exclude:
+      any:
+      - resources:
+          namespaces: ["kube-system","kube-public","kube-node-lease","kyverno","monitoring"]
+      - resources:
+          kinds: ["DaemonSet"]
+          namespaces: ["monitoring"]
+          names: ["kube-prometheus-stack-prometheus-node-exporter"]
+    skipBackgroundRequests: true
+    validate:
+      allowExistingViolations: true
+      anyPattern:
+      - spec:
+          securityContext:
+            seccompProfile:
+              type: RuntimeDefault
+      - spec:
+          securityContext:
+            seccompProfile:
+              type: Localhost
+  - name: require-readonly-rootfs
+    match:
+      any:
+      - resources:
+          kinds: ["Pod"]
+          namespaceSelector:
+            matchExpressions:
+            - key: iip.guardrails/enforce
+              operator: In
+              values: ["true"]
+    exclude:
+      any:
+      - resources:
+          namespaces: ["kube-system","kube-public","kube-node-lease","kyverno","monitoring"]
+      - resources:
+          kinds: ["DaemonSet"]
+          namespaces: ["monitoring"]
+          names: ["kube-prometheus-stack-prometheus-node-exporter"]
+    skipBackgroundRequests: true
+    validate:
+      allowExistingViolations: true
+      pattern:
+        spec:
+          =(initContainers):
+          - securityContext:
+              readOnlyRootFilesystem: true
+          containers:
+          - securityContext:
+              readOnlyRootFilesystem: true
