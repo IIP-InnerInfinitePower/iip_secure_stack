@@ -1,0 +1,14 @@
+NAME                 STATUS   AGE     ENFORCE
+default              Active   6d1h    
+iip-apps             Active   154m    true
+iip-dev              Active   6d      true
+iip-observe          Active   154m    true
+iip-web              Active   154m    true
+kube-node-lease      Active   6d1h    
+kube-public          Active   6d1h    
+kube-system          Active   6d1h    
+kyverno              Active   6d      
+local-path-storage   Active   6d1h    
+monitoring           Active   4d2h    
+telemetry            Active   5h11m   
+test-dns             Active   3h5m    

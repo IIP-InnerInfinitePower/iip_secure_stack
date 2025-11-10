@@ -1,0 +1,2 @@
+NAME   	NAMESPACE	REVISION	UPDATED                             	STATUS  	CHART        	APP VERSION
+kyverno	kyverno  	9       	2025-11-05 00:15:55.854663 -0700 MST	deployed	kyverno-3.5.2	v1.15.2    

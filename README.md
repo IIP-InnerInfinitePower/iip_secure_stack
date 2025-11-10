@@ -627,7 +627,8 @@ Every component is designed to run **locally, verifiably, and privately**—free
 
 🛡️ Compliance and Security Framework
 
-**Inner Infinite Power™ LLC** operates a **HIPAA-aligned, SOC 2-ready DevSecOps ecosystem** known as **IIP_SECURE_STACK** — a private infrastructure designed for continuous integrity, confidentiality, and observability of client and wellness data.
+
+**Inner Infinite Power™ LLC** operates a **HIPAA-aligned, SOC 2–ready DevSecOps ecosystem** known as **IIP_SECURE_STACK** — a private infrastructure designed for continuous integrity, confidentiality, and observability of client and wellness data.
 
 ### Core Safeguards
 - End-to-end encryption (TLS 1.3 / AES-256)
@@ -637,21 +638,22 @@ Every component is designed to run **locally, verifiably, and privately**—free
 - Version-controlled compliance documentation under `docs/compliance/`
 
 ### Compliance Artifacts
-- [`BAA_TEMPLATE.md`](docs/compliance/BAA_TEMPLATE.md) — Business Associate Agreement  
-- [`SOC2_HIPAA_READINESS_BRIEF.md`](docs/compliance/SOC2_HIPAA_READINESS_BRIEF.md) — Executive compliance overview  
-- [`SECURITY_PRIVACY_POLICY.md`](docs/compliance/SECURITY_PRIVACY_POLICY.md) — Technical and administrative safeguard policy  
+- [`BAA_TEMPLATE.md`](docs/compliance/BAA_TEMPLATE.md) — Business Associate Agreement
+- [`SOC2_HIPAA_READINESS_BRIEF.md`](docs/compliance/SOC2_HIPAA_READINESS_BRIEF.md) — Executive compliance overview
+- [`SECURITY_PRIVACY_POLICY.md`](docs/compliance/SECURITY_PRIVACY_POLICY.md) — Technical and administrative safeguard policy
 
-**Status:**  
-IIP_SECURE_STACK is designed for HIPAA §164 Subpart C and SOC 2 Type II alignment and is ready for third-party audit verification.
+**Status:** IIP_SECURE_STACK is designed for HIPAA §164 Subpart C and SOC 2 Type II alignment and is ready for third-party audit verification.
 
+Date: 2025-10-28 — Inner Infinite Power™ LLC — All rights reserved.
 
-Date: 10/28/2025 -  Inner Infinite Power™ LLC — All rights reserved.*
-
----
 *Maintained by:*  
 **Ivan Israel Patiño**  
-Founder & Architect — *Inner Infinite Power™*  
+Founder & Architect — *Inner Infinite Power™*
 
+
+--
+
+---
 
 printf "\n\n" >> README.md
-pbpaste >> README.md
+
