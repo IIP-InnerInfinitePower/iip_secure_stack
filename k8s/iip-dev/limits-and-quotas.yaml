@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: defaults
+  namespace: iip-dev
+spec:
+  limits:
+  - type: Container
+    defaultRequest: { cpu: "50m", memory: "128Mi" }
+    default:        { cpu: "500m", memory: "512Mi" }
+    maxLimitRequestRatio:
+      cpu: "4"
+      memory: "4"
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: rq
+  namespace: iip-dev
+spec:
+  hard:
+    pods: "30"
+    requests.cpu: "2"
+    requests.memory: 4Gi
+    limits.cpu: "4"
+    limits.memory: 6Gi
+    persistentvolumeclaims: "10"
+    requests.storage: "200Gi"

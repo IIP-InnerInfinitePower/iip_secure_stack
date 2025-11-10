@@ -97,3 +97,8 @@ def hook():
 @app.get("/metrics")
 def metrics():
     return generate_latest(), 200, {"Content-Type": CONTENT_TYPE_LATEST}
+from flask import jsonify
+
+@app.route("/health")
+def health():
+    return jsonify({"status": "ok"}), 200

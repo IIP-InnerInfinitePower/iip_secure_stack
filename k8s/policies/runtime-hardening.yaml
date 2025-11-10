@@ -1,0 +1,63 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: runtime-hardening
+spec:
+  validationFailureAction: Enforce
+  background: true
+  rules:
+
+  # --- Require NET_RAW to be dropped (order-insensitive) ---
+  - name: drop-net-raw
+    match:
+      any:
+      - resources:
+          kinds: ["Pod"]
+    validate:
+      message: "Containers must drop CAP_NET_RAW."
+      pattern:
+        spec:
+          containers:
+          - securityContext:
+              capabilities:
+                # Kyverno list matching: requires NET_RAW present anywhere in the list
+                drop: ["NET_RAW"]
+          =(initContainers):
+          - securityContext:
+              capabilities:
+                drop: ["NET_RAW"]
+
+  # --- Enforce seccomp RuntimeDefault or Localhost ---
+  - name: enforce-seccomp-runtime-default
+    match:
+      any:
+      - resources:
+          kinds: ["Pod"]
+    validate:
+      message: "seccompProfile.type must be RuntimeDefault or Localhost."
+      anyPattern:
+      - spec:
+          securityContext:
+            seccompProfile:
+              type: "RuntimeDefault"
+      - spec:
+          securityContext:
+            seccompProfile:
+              type: "Localhost"
+
+  # --- Require readOnlyRootFilesystem ---
+  - name: require-readonly-rootfs
+    match:
+      any:
+      - resources:
+          kinds: ["Pod"]
+    validate:
+      message: "readOnlyRootFilesystem: true is required."
+      pattern:
+        spec:
+          containers:
+          - securityContext:
+              readOnlyRootFilesystem: true
+          =(initContainers):
+          - securityContext:
+              readOnlyRootFilesystem: true

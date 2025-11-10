@@ -1,0 +1,36 @@
+[2025-10-30T17:29:16.724-0700] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-10-30T17:29:16.733-0700] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: p14_data_backbone_maintenance.vacuum_postgres manual__2025-10-31T00:29:14+00:00 [queued]>
+[2025-10-30T17:29:16.736-0700] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: p14_data_backbone_maintenance.vacuum_postgres manual__2025-10-31T00:29:14+00:00 [queued]>
+[2025-10-30T17:29:16.736-0700] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-10-30T17:29:16.741-0700] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): vacuum_postgres> on 2025-10-31 00:29:14+00:00
+[2025-10-30T17:29:16.744-0700] {standard_task_runner.py:64} INFO - Started process 62254 to run task
+[2025-10-30T17:29:16.748-0700] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'p14_data_backbone_maintenance', 'vacuum_postgres', 'manual__2025-10-31T00:29:14+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/p14_dags/p14_data_backbone_maintenance.py', '--cfg-path', '/var/folders/z8/1pxcrjv52wd_wfjg44_llz7m0000gn/T/tmpgifvkazb']
+[2025-10-30T17:29:16.750-0700] {standard_task_runner.py:91} INFO - Job 35: Subtask vacuum_postgres
+[2025-10-30T17:29:16.771-0700] {task_command.py:426} INFO - Running <TaskInstance: p14_data_backbone_maintenance.vacuum_postgres manual__2025-10-31T00:29:14+00:00 [running]> on host ivans-macbook-air.local
+[2025-10-30T17:29:16.800-0700] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='iip_system' AIRFLOW_CTX_DAG_ID='p14_data_backbone_maintenance' AIRFLOW_CTX_TASK_ID='vacuum_postgres' AIRFLOW_CTX_EXECUTION_DATE='2025-10-31T00:29:14+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-31T00:29:14+00:00'
+[2025-10-30T17:29:16.800-0700] {taskinstance.py:430} INFO - ::endgroup::
+[2025-10-30T17:29:16.808-0700] {subprocess.py:63} INFO - Tmp dir root location: /var/folders/z8/1pxcrjv52wd_wfjg44_llz7m0000gn/T
+[2025-10-30T17:29:16.808-0700] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'psql $POSTGRES_CONN -c "VACUUM;"']
+[2025-10-30T17:29:16.813-0700] {subprocess.py:86} INFO - Output:
+[2025-10-30T17:29:16.831-0700] {subprocess.py:93} INFO - psql: error: connection to server on socket "/tmp/.s.PGSQL.5432" failed: FATAL:  database "iipatino8" does not exist
+[2025-10-30T17:29:16.831-0700] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-10-30T17:29:16.832-0700] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-10-30T17:29:16.837-0700] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-10-30T17:29:16.840-0700] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=p14_data_backbone_maintenance, task_id=vacuum_postgres, run_id=manual__2025-10-31T00:29:14+00:00, execution_date=20251031T002914, start_date=20251031T002916, end_date=20251031T002916
+[2025-10-30T17:29:16.845-0700] {standard_task_runner.py:110} ERROR - Failed to execute job 35 for task vacuum_postgres (Bash command failed. The command returned a non-zero exit code 2.; 62254)
+[2025-10-30T17:29:16.883-0700] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-10-30T17:29:16.894-0700] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-10-30T17:29:16.894-0700] {local_task_job_runner.py:222} INFO - ::endgroup::

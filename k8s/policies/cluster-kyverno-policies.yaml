@@ -1,0 +1,231 @@
+# ===========================
+# Kyverno Cluster Policies
+# ===========================
+# - PSA labels on all Namespaces
+# - Disable default SA token mount
+# - Enforce PSS Restricted core (no priv, no hostPath, non-root)
+# - Runtime hardening (drop NET_RAW, seccomp, readOnlyRootFS)
+# - Image rules (require tag, forbid :latest, optional digest)
+# - Auto-generate default-deny NetworkPolicy for NEW namespaces
+# ===========================
+
+# --- PSA labels on every Namespace (defense-in-depth) ---
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: ns-pss-labels
+spec:
+  validationFailureAction: Enforce
+  background: true
+  rules:
+  - name: add-pss-labels
+    match: { any: [{ resources: { kinds: ["Namespace"] } }] }
+    mutate:
+      patchStrategicMerge:
+        metadata:
+          labels:
+            pod-security.kubernetes.io/enforce: "restricted"
+            pod-security.kubernetes.io/warn: "restricted"
+---
+# --- Default SA: do not auto-mount API tokens ---
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: sa-default-token-off
+spec:
+  validationFailureAction: Enforce
+  background: true
+  rules:
+  - name: disable-default-sa-token
+    match: { any: [{ resources: { kinds: ["ServiceAccount"], names: ["default"] } }] }
+    mutate:
+      patchStrategicMerge:
+        automountServiceAccountToken: false
+---
+# --- PSS Restricted: core controls (no priv, no escalate, non-root, no hostPath) ---
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: pss-restricted-core
+spec:
+  validationFailureAction: Enforce
+  background: true
+  rules:
+  - name: forbid-privilege-and-hostpath
+    match: { any: [{ resources: { kinds: ["Pod"] } }] }
+    validate:
+      message: "PSS Restricted: privileged, hostPath, or privilege escalation not allowed."
+      pattern:
+        spec:
+          =(volumes):
+            - X(hostPath): "null"   # if present, must be null → blocks hostPath
+          containers:
+            - securityContext:
+                runAsNonRoot: true
+                allowPrivilegeEscalation: false
+                =(privileged): "false"
+          =(initContainers):
+            - securityContext:
+                runAsNonRoot: true
+                allowPrivilegeEscalation: false
+                =(privileged): "false"
+  - name: disallow-root-user
+    match: { any: [{ resources: { kinds: ["Pod"] } }] }
+    validate:
+      message: "PSS Restricted: runAsUser 0 is not allowed."
+      deny:
+        conditions:
+          any:
+          - key: "{{ request.object.spec.containers[].securityContext.runAsUser || `[]` }}"
+            operator: AnyIn
+            value: [0]
+---
+# --- Defense-in-depth: drop NET_RAW, enforce seccomp, readOnlyRootFS ---
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: runtime-hardening
+spec:
+  validationFailureAction: Enforce
+  background: true
+  rules:
+  - name: drop-net-raw
+    match: { any: [{ resources: { kinds: ["Pod"] } }] }
+    validate:
+      message: "Containers must drop CAP_NET_RAW."
+      pattern:
+        spec:
+          containers:
+            - securityContext:
+                capabilities:
+                  drop: ["NET_RAW", "*"]   # must include NET_RAW
+          =(initContainers):
+            - securityContext:
+                capabilities:
+                  drop: ["NET_RAW", "*"]
+  - name: enforce-seccomp-runtime-default
+    match: { any: [{ resources: { kinds: ["Pod"] } }] }
+    validate:
+      message: "seccompProfile.type must be RuntimeDefault or Localhost."
+      anyPattern:
+      - spec:
+          securityContext:
+            seccompProfile:
+              type: "RuntimeDefault"
+      - spec:
+          securityContext:
+            seccompProfile:
+              type: "Localhost"
+  - name: require-readonly-rootfs
+    match: { any: [{ resources: { kinds: ["Pod"] } }] }
+    validate:
+      message: "readOnlyRootFilesystem: true is required."
+      pattern:
+        spec:
+          containers:
+            - securityContext:
+                readOnlyRootFilesystem: true
+          =(initContainers):
+            - securityContext:
+                readOnlyRootFilesystem: true
+---
+# --- Image rules: require a tag and forbid :latest ---
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: image-tag-pinning
+spec:
+  validationFailureAction: Enforce
+  background: true
+  rules:
+  # all containers must include ":" (a tag OR a digest like @sha256:…)
+  - name: must-have-tag
+    match: { any: [{ resources: { kinds: ["Pod"] } }] }
+    validate:
+      message: "Images must include a tag (no implicit latest)."
+      foreach:
+      - list: "request.object.spec.containers[]"
+        deny:
+          conditions:
+            any:
+            - key: "{{ contains(element.image, ':') }}"
+              operator: Equals
+              value: false
+      - list: "request.object.spec.initContainers[]"
+        deny:
+          conditions:
+            any:
+            - key: "{{ contains(element.image, ':') }}"
+              operator: Equals
+              value: false
+  # explicitly forbid :latest
+  - name: forbid-latest
+    match: { any: [{ resources: { kinds: ["Pod"] } }] }
+    validate:
+      message: "Using the mutable tag `:latest` is forbidden."
+      foreach:
+      - list: "request.object.spec.containers[]"
+        deny:
+          conditions:
+            any:
+            - key: "{{ ends_with(element.image, ':latest') }}"
+              operator: Equals
+              value: true
+      - list: "request.object.spec.initContainers[]"
+        deny:
+          conditions:
+            any:
+            - key: "{{ ends_with(element.image, ':latest') }}"
+              operator: Equals
+              value: true
+---
+# --- Optional: prefer immutable digests (start in Audit; flip to Enforce when ready) ---
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: image-require-digest
+spec:
+  validationFailureAction: Audit
+  background: true
+  rules:
+  - name: image-should-use-digest
+    match: { any: [{ resources: { kinds: ["Pod"] } }] }
+    validate:
+      message: "Images should use immutable digests (name@sha256:...)."
+      foreach:
+      - list: "request.object.spec.containers[]"
+        deny:
+          conditions:
+            any:
+            - key: "{{ contains(element.image, '@sha256:') }}"
+              operator: Equals
+              value: false
+      - list: "request.object.spec.initContainers[]"
+        deny:
+          conditions:
+            any:
+            - key: "{{ contains(element.image, '@sha256:') }}"
+              operator: Equals
+              value: false
+---
+# --- Autogenerate default-deny NetworkPolicy in every NEW namespace ---
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: generate-default-deny
+spec:
+  validationFailureAction: Enforce
+  background: true
+  rules:
+  - name: gen-default-deny
+    match: { any: [{ resources: { kinds: ["Namespace"] } }] }
+    generate:
+      kind: NetworkPolicy
+      apiVersion: networking.k8s.io/v1
+      name: default-deny
+      namespace: "{{ request.object.metadata.name }}"
+      synchronize: true
+      data:
+        spec:
+          podSelector: {}
+          policyTypes: ["Ingress","Egress"]

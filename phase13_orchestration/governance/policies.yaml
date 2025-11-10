@@ -1,0 +1,10 @@
+access:
+  datasets: read
+  models: read
+  secrets: deny
+retention:
+  artifacts_days: 30
+  logs_days: 30
+security:
+  api_keys_required: true
+  tls_required: true

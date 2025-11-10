@@ -1,0 +1,277 @@
+  ____________       _____________
+ ____    |__( )_________  __/__  /________      __
+____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+ _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+2025-10-31T08:47:43.239150Z [info     ] Starting the scheduler         [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:1054
+2025-10-31T08:47:43.241644Z [info     ] Loaded executor: :LocalExecutor: [airflow.executors.executor_loader] loc=executor_loader.py:281
+2025-10-31T08:47:43.257013Z [info     ] Adopting or resetting orphaned tasks for active dag runs [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2276
+2025-10-31T08:47:43.278549Z [info     ] Reset the following 2 orphaned TaskInstances:
+	<TaskInstance: p14_data_backbone_maintenance.vacuum_postgres scheduled__2025-10-31T00:00:00+00:00 [queued]>
+	<TaskInstance: p14_data_backbone_maintenance.vacuum_postgres manual__2025-10-31T08:44:55.823383+00:00 [queued]> [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:2342
+2025-10-31T08:47:43.372801Z [info     ] 2 tasks up for execution:
+	<TaskInstance: p14_data_backbone_maintenance.vacuum_postgres manual__2025-10-31T08:44:55.823383+00:00 [scheduled]>
+	<TaskInstance: p14_data_backbone_maintenance.vacuum_postgres scheduled__2025-10-31T00:00:00+00:00 [scheduled]> [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:444
+2025-10-31T08:47:43.373028Z [info     ] DAG p14_data_backbone_maintenance has 0/16 running and queued tasks [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:516
+2025-10-31T08:47:43.373134Z [info     ] DAG p14_data_backbone_maintenance has 0/16 running and queued tasks [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:516
+2025-10-31T08:47:43.373553Z [info     ] Setting the following tasks to queued state:
+	<TaskInstance: p14_data_backbone_maintenance.vacuum_postgres manual__2025-10-31T08:44:55.823383+00:00 [scheduled]>
+	<TaskInstance: p14_data_backbone_maintenance.vacuum_postgres scheduled__2025-10-31T00:00:00+00:00 [scheduled]> [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:655
+2025-10-31T08:47:43.375409Z [info     ] Trying to enqueue tasks: [<TaskInstance: p14_data_backbone_maintenance.vacuum_postgres manual__2025-10-31T08:44:55.823383+00:00 [scheduled]>, <TaskInstance: p14_data_backbone_maintenance.vacuum_postgres scheduled__2025-10-31T00:00:00+00:00 [scheduled]>] for executor: LocalExecutor(parallelism=32) [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:740
+2025-10-31T08:47:46.714496Z [info     ] Worker starting up pid=87539   [airflow.executors.local_executor.LocalExecutor] loc=local_executor.py:65
+2025-10-31T08:47:46.759560Z [info     ] Worker starting up pid=87538   [airflow.executors.local_executor.LocalExecutor] loc=local_executor.py:65
+2025-10-31T08:47:46.819937Z [info     ] Starting log server on http://[::]:8793 [airflow.utils.serve_logs.core] loc=core.py:50
+WARNING:  ASGI app factory detected. Using it, but please consider setting the --factory flag explicitly.
+INFO:     Started server process [87537]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://:8793 (Press CTRL+C to quit)
+2025-10-31T08:47:46.924584Z [info     ] Worker starting up pid=87540   [airflow.executors.local_executor.LocalExecutor] loc=local_executor.py:65
+2025-10-31T08:47:46.947892Z [info     ] Secrets backends loaded for worker [supervisor] backend_classes=['EnvironmentVariablesBackend', 'MetastoreBackend'] count=2 loc=supervisor.py:1917
+2025-10-31T08:47:46.994566Z [info     ] Secrets backends loaded for worker [supervisor] backend_classes=['EnvironmentVariablesBackend', 'MetastoreBackend'] count=2 loc=supervisor.py:1917
+2025-10-31T08:47:47.010027Z [info     ] Process exited                 [supervisor] exit_code=<Negsignal.SIGKILL: -9> loc=supervisor.py:708 pid=87550 signal_sent=SIGKILL
+2025-10-31T08:47:47.011216Z [error    ] uhoh                           [airflow.executors.local_executor.LocalExecutor] loc=local_executor.py:100
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/executors/local_executor.py", line 96, in _run_worker
+    _execute_work(log, workload)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/executors/local_executor.py", line 124, in _execute_work
+    supervise(
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/sdk/execution_time/supervisor.py", line 1926, in supervise
+    process = ActivitySubprocess.start(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/sdk/execution_time/supervisor.py", line 950, in start
+    proc._on_child_started(ti=what, dag_rel_path=dag_rel_path, bundle_info=bundle_info)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/sdk/execution_time/supervisor.py", line 961, in _on_child_started
+    ti_context = self.client.task_instances.start(ti.id, self.pid, start_date)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/sdk/api/client.py", line 210, in start
+    resp = self.client.patch(f"task-instances/{id}/run", content=body.model_dump_json())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/httpx/_client.py", line 1231, in patch
+    return self.request(
+           ^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/tenacity/__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/tenacity/__init__.py", line 400, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/sdk/api/client.py", line 866, in request
+    return super().request(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/httpx/_client.py", line 837, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/httpx/_client.py", line 926, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/httpx/_client.py", line 954, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/httpx/_client.py", line 1011, in _send_handling_redirects
+    raise exc
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/httpx/_client.py", line 994, in _send_handling_redirects
+    hook(response)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/sdk/api/client.py", line 181, in raise_on_4xx_5xx_with_note
+    return get_json_error(response) or response.raise_for_status()
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/httpx/_models.py", line 763, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Redirect response '307 Temporary Redirect' for url 'http://localhost:8080/execution/task-instances/019a3970-f6a6-7d84-bcc2-e800995832dc/run'
+Redirect location: '/containers/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/307
+Correlation-id=019a3973-9327-7e4e-a8ba-ea4c7ccedd1d
+2025-10-31T08:47:47.063381Z [info     ] Process exited                 [supervisor] exit_code=<Negsignal.SIGKILL: -9> loc=supervisor.py:708 pid=87551 signal_sent=SIGKILL
+2025-10-31T08:47:47.065661Z [error    ] uhoh                           [airflow.executors.local_executor.LocalExecutor] loc=local_executor.py:100
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/executors/local_executor.py", line 96, in _run_worker
+    _execute_work(log, workload)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/executors/local_executor.py", line 124, in _execute_work
+    supervise(
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/sdk/execution_time/supervisor.py", line 1926, in supervise
+    process = ActivitySubprocess.start(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/sdk/execution_time/supervisor.py", line 950, in start
+    proc._on_child_started(ti=what, dag_rel_path=dag_rel_path, bundle_info=bundle_info)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/sdk/execution_time/supervisor.py", line 961, in _on_child_started
+    ti_context = self.client.task_instances.start(ti.id, self.pid, start_date)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/sdk/api/client.py", line 210, in start
+    resp = self.client.patch(f"task-instances/{id}/run", content=body.model_dump_json())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/httpx/_client.py", line 1231, in patch
+    return self.request(
+           ^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/tenacity/__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/tenacity/__init__.py", line 400, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/sdk/api/client.py", line 866, in request
+    return super().request(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/httpx/_client.py", line 837, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/httpx/_client.py", line 926, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/httpx/_client.py", line 954, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/httpx/_client.py", line 1011, in _send_handling_redirects
+    raise exc
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/httpx/_client.py", line 994, in _send_handling_redirects
+    hook(response)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/sdk/api/client.py", line 181, in raise_on_4xx_5xx_with_note
+    return get_json_error(response) or response.raise_for_status()
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/httpx/_models.py", line 763, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Redirect response '307 Temporary Redirect' for url 'http://localhost:8080/execution/task-instances/019a3970-f20a-74b7-94bc-51bee6f35162/run'
+Redirect location: '/containers/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/307
+Correlation-id=019a3973-935c-7aee-a3bc-dcbf92a8c3fd
+2025-10-31T08:47:47.773713Z [info     ] Worker starting up pid=87542   [airflow.executors.local_executor.LocalExecutor] loc=local_executor.py:65
+2025-10-31T08:47:47.885437Z [error    ] Exception when executing SchedulerJob._run_scheduler_loop [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:1082
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/jobs/scheduler_job_runner.py", line 1078, in _execute
+    self._run_scheduler_loop()
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/jobs/scheduler_job_runner.py", line 1376, in _run_scheduler_loop
+    executor.heartbeat()
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/executors/base_executor.py", line 257, in heartbeat
+    self.sync()
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/executors/local_executor.py", line 215, in sync
+    self._read_results()
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/executors/local_executor.py", line 220, in _read_results
+    key, state, exc = self.result_queue.get()
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/queues.py", line 367, in get
+    return _ForkingPickler.loads(res)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: HTTPStatusError.__init__() missing 2 required keyword-only arguments: 'request' and 'response'
+2025-10-31T08:47:47.888872Z [info     ] Shutting down LocalExecutor; waiting for running tasks to finish.  Signal again if you don't want to wait. [airflow.executors.local_executor.LocalExecutor] loc=local_executor.py:226
+2025-10-31T08:47:48.626492Z [info     ] Worker starting up pid=87545   [airflow.executors.local_executor.LocalExecutor] loc=local_executor.py:65
+2025-10-31T08:47:48.883174Z [error    ] Exception when executing Executor.end on LocalExecutor(parallelism=32) [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:1089
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/jobs/scheduler_job_runner.py", line 1078, in _execute
+    self._run_scheduler_loop()
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/jobs/scheduler_job_runner.py", line 1376, in _run_scheduler_loop
+    executor.heartbeat()
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/executors/base_executor.py", line 257, in heartbeat
+    self.sync()
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/executors/local_executor.py", line 215, in sync
+    self._read_results()
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/executors/local_executor.py", line 220, in _read_results
+    key, state, exc = self.result_queue.get()
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/queues.py", line 367, in get
+    return _ForkingPickler.loads(res)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: HTTPStatusError.__init__() missing 2 required keyword-only arguments: 'request' and 'response'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/jobs/scheduler_job_runner.py", line 1087, in _execute
+    executor.end()
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/executors/local_executor.py", line 245, in end
+    self._read_results()
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/executors/local_executor.py", line 220, in _read_results
+    key, state, exc = self.result_queue.get()
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/queues.py", line 367, in get
+    return _ForkingPickler.loads(res)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: HTTPStatusError.__init__() missing 2 required keyword-only arguments: 'request' and 'response'
+2025-10-31T08:47:48.884308Z [info     ] Exited execute loop            [airflow.jobs.scheduler_job_runner.SchedulerJobRunner] loc=scheduler_job_runner.py:1094
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/airflow_env/bin/airflow", line 7, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/__main__.py", line 55, in main
+    args.func(args)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/utils/cli.py", line 114, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/utils/providers_configuration_loader.py", line 54, in wrapped_function
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/cli/commands/scheduler_command.py", line 52, in scheduler
+    run_command_with_daemon_option(
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/cli/commands/daemon_utils.py", line 86, in run_command_with_daemon_option
+    callback()
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/cli/commands/scheduler_command.py", line 55, in <lambda>
+    callback=lambda: _run_scheduler_job(args),
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/cli/commands/scheduler_command.py", line 43, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/utils/session.py", line 100, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/jobs/job.py", line 368, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/jobs/job.py", line 397, in execute_job
+    ret = execute_callable()
+          ^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/jobs/scheduler_job_runner.py", line 1078, in _execute
+    self._run_scheduler_loop()
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/jobs/scheduler_job_runner.py", line 1376, in _run_scheduler_loop
+    executor.heartbeat()
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/executors/base_executor.py", line 257, in heartbeat
+    self.sync()
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/executors/local_executor.py", line 215, in sync
+    self._read_results()
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/executors/local_executor.py", line 220, in _read_results
+    key, state, exc = self.result_queue.get()
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/queues.py", line 367, in get
+    return _ForkingPickler.loads(res)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: HTTPStatusError.__init__() missing 2 required keyword-only arguments: 'request' and 'response'
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [87537]

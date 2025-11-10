@@ -1,0 +1,279 @@
+2025-10-31T08:47:43.188672Z [info     ] Starting the Dag Processor Job [airflow.jobs.dag_processor_job_runner.DagProcessorJobRunner] loc=dag_processor_job_runner.py:59
+2025-10-31T08:47:43.189188Z [info     ] Processing files using up to 2 processes at a time  [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:255
+2025-10-31T08:47:43.189275Z [info     ] Process each file at most once every 30 seconds [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:256
+2025-10-31T08:47:43.191196Z [info     ] DAG bundles loaded: dags-folder [airflow.dag_processing.bundles.manager.DagBundlesManager] loc=manager.py:179
+2025-10-31T08:47:43.195397Z [info     ] DAG bundles loaded: dags-folder [airflow.dag_processing.bundles.manager.DagBundlesManager] loc=manager.py:179
+2025-10-31T08:47:43.195574Z [info     ] Checking for new files in bundle dags-folder every 300 seconds [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:266
+2025-10-31T08:47:43.208736Z [info     ] Refreshing bundle dags-folder  [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:539
+2025-10-31T08:47:43.210495Z [info     ] Searching for files in dags-folder at /Users/iipatino8/IIP_SECURE_STACK/phase14_orchestration/dags [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:590
+2025-10-31T08:47:43.212363Z [info     ] Found 1 files for bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:592
+/opt/miniconda3/envs/airflow_env/lib/python3.11/site-packages/airflow/api_fastapi/execution_api/routes/__init__.py:23 DeprecationWarning: 'HTTP_422_UNPROCESSABLE_ENTITY' is deprecated. Use 'HTTP_422_UNPROCESSABLE_CONTENT' instead.
+2025-10-31T08:47:43.602130Z [info     ]
+================================================================================
+DAG File Processing Stats
+
+Bundle       File Path                           PID  Current Duration      # DAGs    # Errors  Last Duration    Last Run At
+-----------  --------------------------------  -----  ------------------  --------  ----------  ---------------  -------------
+dags-folder  p14_data_backbone_maintenance.py  87541  0.05s                      0           0
+================================================================================ [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:761
+2025-10-31T08:47:43.745938Z [info     ] Sync 1 DAGs                    [airflow.serialization.serialized_objects] loc=serialized_objects.py:2873
+2025-10-31T08:47:43.776839Z [info     ] Setting next_dagrun for p14_data_backbone_maintenance to 2025-11-01 00:00:00+00:00, run_after=2025-11-01 00:00:00+00:00 [airflow.models.dag] loc=dag.py:688
+2025-10-31T08:47:48.822296Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:47:53.930437Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:47:58.965996Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:48:04.001172Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:48:09.034832Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:48:14.063564Z [info     ]
+================================================================================
+DAG File Processing Stats
+
+Bundle       File Path                         PID    Current Duration      # DAGs    # Errors  Last Duration    Last Run At
+-----------  --------------------------------  -----  ------------------  --------  ----------  ---------------  -------------------
+dags-folder  p14_data_backbone_maintenance.py                                    1           0  0.20s            2025-10-31T08:47:43
+================================================================================ [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:761
+2025-10-31T08:48:14.069102Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:48:14.120225Z [info     ] Sync 1 DAGs                    [airflow.serialization.serialized_objects] loc=serialized_objects.py:2873
+2025-10-31T08:48:14.126872Z [info     ] Setting next_dagrun for p14_data_backbone_maintenance to 2025-11-01 00:00:00+00:00, run_after=2025-11-01 00:00:00+00:00 [airflow.models.dag] loc=dag.py:688
+2025-10-31T08:48:19.162315Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:48:24.196838Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:48:29.233895Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:48:34.285432Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:48:39.320149Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:48:44.354276Z [info     ]
+================================================================================
+DAG File Processing Stats
+
+Bundle       File Path                         PID    Current Duration      # DAGs    # Errors  Last Duration    Last Run At
+-----------  --------------------------------  -----  ------------------  --------  ----------  ---------------  -------------------
+dags-folder  p14_data_backbone_maintenance.py                                    1           0  0.05s            2025-10-31T08:48:14
+================================================================================ [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:761
+2025-10-31T08:48:44.359541Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:48:44.414512Z [info     ] Sync 1 DAGs                    [airflow.serialization.serialized_objects] loc=serialized_objects.py:2873
+2025-10-31T08:48:44.422189Z [info     ] Setting next_dagrun for p14_data_backbone_maintenance to 2025-11-01 00:00:00+00:00, run_after=2025-11-01 00:00:00+00:00 [airflow.models.dag] loc=dag.py:688
+2025-10-31T08:48:49.461678Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:48:54.487824Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:48:59.521659Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:49:04.552950Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:49:09.586077Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:49:14.616083Z [info     ]
+================================================================================
+DAG File Processing Stats
+
+Bundle       File Path                         PID    Current Duration      # DAGs    # Errors  Last Duration    Last Run At
+-----------  --------------------------------  -----  ------------------  --------  ----------  ---------------  -------------------
+dags-folder  p14_data_backbone_maintenance.py                                    1           0  0.05s            2025-10-31T08:48:44
+================================================================================ [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:761
+2025-10-31T08:49:14.621946Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:49:14.687236Z [info     ] Sync 1 DAGs                    [airflow.serialization.serialized_objects] loc=serialized_objects.py:2873
+2025-10-31T08:49:14.697442Z [info     ] Setting next_dagrun for p14_data_backbone_maintenance to 2025-11-01 00:00:00+00:00, run_after=2025-11-01 00:00:00+00:00 [airflow.models.dag] loc=dag.py:688
+2025-10-31T08:49:19.726076Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:49:24.759915Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:49:29.794190Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:49:34.825441Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:49:39.858699Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:49:44.891836Z [info     ]
+================================================================================
+DAG File Processing Stats
+
+Bundle       File Path                         PID    Current Duration      # DAGs    # Errors  Last Duration    Last Run At
+-----------  --------------------------------  -----  ------------------  --------  ----------  ---------------  -------------------
+dags-folder  p14_data_backbone_maintenance.py                                    1           0  0.06s            2025-10-31T08:49:14
+================================================================================ [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:761
+2025-10-31T08:49:44.899916Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:49:44.977292Z [info     ] Sync 1 DAGs                    [airflow.serialization.serialized_objects] loc=serialized_objects.py:2873
+2025-10-31T08:49:44.985558Z [info     ] Setting next_dagrun for p14_data_backbone_maintenance to 2025-11-01 00:00:00+00:00, run_after=2025-11-01 00:00:00+00:00 [airflow.models.dag] loc=dag.py:688
+2025-10-31T08:49:50.017458Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:49:55.052353Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:50:00.093293Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:50:05.126174Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:50:10.160364Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:50:15.188862Z [info     ]
+================================================================================
+DAG File Processing Stats
+
+Bundle       File Path                         PID    Current Duration      # DAGs    # Errors  Last Duration    Last Run At
+-----------  --------------------------------  -----  ------------------  --------  ----------  ---------------  -------------------
+dags-folder  p14_data_backbone_maintenance.py                                    1           0  0.07s            2025-10-31T08:49:44
+================================================================================ [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:761
+2025-10-31T08:50:15.195071Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:50:15.247158Z [info     ] Sync 1 DAGs                    [airflow.serialization.serialized_objects] loc=serialized_objects.py:2873
+2025-10-31T08:50:15.256654Z [info     ] Setting next_dagrun for p14_data_backbone_maintenance to 2025-11-01 00:00:00+00:00, run_after=2025-11-01 00:00:00+00:00 [airflow.models.dag] loc=dag.py:688
+2025-10-31T08:50:20.283179Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:50:25.315761Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:50:30.351884Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:50:35.383916Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:50:40.420877Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:50:45.452614Z [info     ]
+================================================================================
+DAG File Processing Stats
+
+Bundle       File Path                         PID    Current Duration      # DAGs    # Errors  Last Duration    Last Run At
+-----------  --------------------------------  -----  ------------------  --------  ----------  ---------------  -------------------
+dags-folder  p14_data_backbone_maintenance.py                                    1           0  0.05s            2025-10-31T08:50:15
+================================================================================ [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:761
+2025-10-31T08:50:45.457784Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:50:45.497615Z [info     ] Sync 1 DAGs                    [airflow.serialization.serialized_objects] loc=serialized_objects.py:2873
+2025-10-31T08:50:45.505221Z [info     ] Setting next_dagrun for p14_data_backbone_maintenance to 2025-11-01 00:00:00+00:00, run_after=2025-11-01 00:00:00+00:00 [airflow.models.dag] loc=dag.py:688
+2025-10-31T08:50:50.538527Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:50:55.569405Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:51:00.598154Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:51:05.625966Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:51:10.655335Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:51:15.680586Z [info     ]
+================================================================================
+DAG File Processing Stats
+
+Bundle       File Path                         PID    Current Duration      # DAGs    # Errors  Last Duration    Last Run At
+-----------  --------------------------------  -----  ------------------  --------  ----------  ---------------  -------------------
+dags-folder  p14_data_backbone_maintenance.py                                    1           0  0.04s            2025-10-31T08:50:45
+================================================================================ [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:761
+2025-10-31T08:51:15.685534Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:51:15.729284Z [info     ] Sync 1 DAGs                    [airflow.serialization.serialized_objects] loc=serialized_objects.py:2873
+2025-10-31T08:51:15.736324Z [info     ] Setting next_dagrun for p14_data_backbone_maintenance to 2025-11-01 00:00:00+00:00, run_after=2025-11-01 00:00:00+00:00 [airflow.models.dag] loc=dag.py:688
+2025-10-31T08:51:20.765285Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:51:25.799039Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:51:30.832338Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:51:35.866167Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:51:40.899562Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:51:45.930533Z [info     ]
+================================================================================
+DAG File Processing Stats
+
+Bundle       File Path                         PID    Current Duration      # DAGs    # Errors  Last Duration    Last Run At
+-----------  --------------------------------  -----  ------------------  --------  ----------  ---------------  -------------------
+dags-folder  p14_data_backbone_maintenance.py                                    1           0  0.04s            2025-10-31T08:51:15
+================================================================================ [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:761
+2025-10-31T08:51:45.935860Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:51:45.983119Z [info     ] Sync 1 DAGs                    [airflow.serialization.serialized_objects] loc=serialized_objects.py:2873
+2025-10-31T08:51:45.991065Z [info     ] Setting next_dagrun for p14_data_backbone_maintenance to 2025-11-01 00:00:00+00:00, run_after=2025-11-01 00:00:00+00:00 [airflow.models.dag] loc=dag.py:688
+2025-10-31T08:51:51.018979Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:51:56.051691Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:52:01.085453Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:52:06.117739Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:52:11.151506Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:52:16.179614Z [info     ]
+================================================================================
+DAG File Processing Stats
+
+Bundle       File Path                         PID    Current Duration      # DAGs    # Errors  Last Duration    Last Run At
+-----------  --------------------------------  -----  ------------------  --------  ----------  ---------------  -------------------
+dags-folder  p14_data_backbone_maintenance.py                                    1           0  0.04s            2025-10-31T08:51:45
+================================================================================ [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:761
+2025-10-31T08:52:16.184580Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:52:16.229385Z [info     ] Sync 1 DAGs                    [airflow.serialization.serialized_objects] loc=serialized_objects.py:2873
+2025-10-31T08:52:16.236460Z [info     ] Setting next_dagrun for p14_data_backbone_maintenance to 2025-11-01 00:00:00+00:00, run_after=2025-11-01 00:00:00+00:00 [airflow.models.dag] loc=dag.py:688
+2025-10-31T08:52:21.264168Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:52:26.297718Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:52:31.331483Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:52:36.363888Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:52:41.397099Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:52:46.428204Z [info     ]
+================================================================================
+DAG File Processing Stats
+
+Bundle       File Path                         PID    Current Duration      # DAGs    # Errors  Last Duration    Last Run At
+-----------  --------------------------------  -----  ------------------  --------  ----------  ---------------  -------------------
+dags-folder  p14_data_backbone_maintenance.py                                    1           0  0.04s            2025-10-31T08:52:16
+================================================================================ [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:761
+2025-10-31T08:52:46.433673Z [info     ] Refreshing bundle dags-folder  [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:539
+2025-10-31T08:52:46.434552Z [info     ] Searching for files in dags-folder at /Users/iipatino8/IIP_SECURE_STACK/phase14_orchestration/dags [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:590
+2025-10-31T08:52:46.436276Z [info     ] Found 1 files for bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:592
+2025-10-31T08:52:46.481611Z [info     ] Sync 1 DAGs                    [airflow.serialization.serialized_objects] loc=serialized_objects.py:2873
+2025-10-31T08:52:46.488234Z [info     ] Setting next_dagrun for p14_data_backbone_maintenance to 2025-11-01 00:00:00+00:00, run_after=2025-11-01 00:00:00+00:00 [airflow.models.dag] loc=dag.py:688
+2025-10-31T08:52:51.521109Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:52:56.554069Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:53:01.591584Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:53:06.626582Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:53:11.666418Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:53:16.695199Z [info     ]
+================================================================================
+DAG File Processing Stats
+
+Bundle       File Path                         PID    Current Duration      # DAGs    # Errors  Last Duration    Last Run At
+-----------  --------------------------------  -----  ------------------  --------  ----------  ---------------  -------------------
+dags-folder  p14_data_backbone_maintenance.py                                    1           0  0.04s            2025-10-31T08:52:46
+================================================================================ [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:761
+2025-10-31T08:53:16.700980Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:53:16.743142Z [info     ] Sync 1 DAGs                    [airflow.serialization.serialized_objects] loc=serialized_objects.py:2873
+2025-10-31T08:53:16.749959Z [info     ] Setting next_dagrun for p14_data_backbone_maintenance to 2025-11-01 00:00:00+00:00, run_after=2025-11-01 00:00:00+00:00 [airflow.models.dag] loc=dag.py:688
+2025-10-31T08:53:21.778509Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:53:26.809865Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:53:31.841729Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:53:36.869789Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:53:41.900183Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:53:46.927025Z [info     ]
+================================================================================
+DAG File Processing Stats
+
+Bundle       File Path                         PID    Current Duration      # DAGs    # Errors  Last Duration    Last Run At
+-----------  --------------------------------  -----  ------------------  --------  ----------  ---------------  -------------------
+dags-folder  p14_data_backbone_maintenance.py                                    1           0  0.04s            2025-10-31T08:53:16
+================================================================================ [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:761
+2025-10-31T08:53:46.932011Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:53:46.987368Z [info     ] DAG bundles loaded: dags-folder [airflow.dag_processing.bundles.manager.DagBundlesManager] loc=manager.py:179
+2025-10-31T08:53:52.023641Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:53:57.058186Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:54:02.090838Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:54:07.123588Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:54:12.155247Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:54:17.184407Z [info     ]
+================================================================================
+DAG File Processing Stats
+
+Bundle       File Path                         PID    Current Duration      # DAGs    # Errors  Last Duration    Last Run At
+-----------  --------------------------------  -----  ------------------  --------  ----------  ---------------  -------------------
+dags-folder  p14_data_backbone_maintenance.py                                    0           1  0.05s            2025-10-31T08:53:46
+================================================================================ [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:761
+2025-10-31T08:54:17.189965Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:54:17.252469Z [info     ] DAG bundles loaded: dags-folder [airflow.dag_processing.bundles.manager.DagBundlesManager] loc=manager.py:179
+2025-10-31T08:54:22.285719Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:54:27.320094Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:54:32.353391Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:54:37.394923Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:54:42.435206Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:54:47.466505Z [info     ] DAG p14_data_backbone_maintenance is missing and will be deactivated. [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:313
+2025-10-31T08:54:47.469709Z [info     ] Deactivated 1 DAGs which are no longer present in file. [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:325
+2025-10-31T08:54:47.472461Z [info     ]
+================================================================================
+DAG File Processing Stats
+
+Bundle       File Path                         PID    Current Duration      # DAGs    # Errors  Last Duration    Last Run At
+-----------  --------------------------------  -----  ------------------  --------  ----------  ---------------  -------------------
+dags-folder  p14_data_backbone_maintenance.py                                    0           1  0.05s            2025-10-31T08:54:17
+================================================================================ [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:761
+2025-10-31T08:54:47.477500Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:54:47.555802Z [info     ] DAG bundles loaded: dags-folder [airflow.dag_processing.bundles.manager.DagBundlesManager] loc=manager.py:179
+2025-10-31T08:54:52.604666Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:54:57.639160Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:55:02.680598Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:55:07.716956Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:55:12.752669Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:55:17.782028Z [info     ]
+================================================================================
+DAG File Processing Stats
+
+Bundle       File Path                         PID    Current Duration      # DAGs    # Errors  Last Duration    Last Run At
+-----------  --------------------------------  -----  ------------------  --------  ----------  ---------------  -------------------
+dags-folder  p14_data_backbone_maintenance.py                                    0           1  0.07s            2025-10-31T08:54:47
+================================================================================ [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:761
+2025-10-31T08:55:17.787281Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:55:17.846052Z [info     ] DAG bundles loaded: dags-folder [airflow.dag_processing.bundles.manager.DagBundlesManager] loc=manager.py:179
+2025-10-31T08:55:22.878732Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:55:27.913382Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:55:32.948171Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:55:37.982827Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:55:43.016543Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:55:48.043401Z [info     ]
+================================================================================
+DAG File Processing Stats
+
+Bundle       File Path                         PID    Current Duration      # DAGs    # Errors  Last Duration    Last Run At
+-----------  --------------------------------  -----  ------------------  --------  ----------  ---------------  -------------------
+dags-folder  p14_data_backbone_maintenance.py                                    0           1  0.05s            2025-10-31T08:55:17
+================================================================================ [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:761
+2025-10-31T08:55:48.048917Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:55:48.104585Z [info     ] DAG bundles loaded: dags-folder [airflow.dag_processing.bundles.manager.DagBundlesManager] loc=manager.py:179
+2025-10-31T08:55:53.137472Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:55:58.170371Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:56:03.202848Z [info     ] Not time to refresh bundle dags-folder [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:536
+2025-10-31T08:56:03.655808Z [info     ] Exiting gracefully upon receiving signal 15 [airflow.dag_processing.manager.DagFileProcessorManager] loc=manager.py:239

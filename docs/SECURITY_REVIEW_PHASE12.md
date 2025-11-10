@@ -1,11 +1,11 @@
 # IIP_SECURE_STACK — Phase 12 Security & Architecture Review
 
 ## Overview
-Comprehensive audit implemented during Phase 12.  
+Comprehensive audit implemented during Phase 12.
 Focus: AI–SQL Bridge, Postgres/DuckDB layers, LLM endpoint, and observability pipeline.
 
 ## System Flow
-Client → Nginx → Flask (Gunicorn) → AI Bridge → Postgres / DuckDB → Grafana → Superset / Streamlit  
+Client → Nginx → Flask (Gunicorn) → AI Bridge → Postgres / DuckDB → Grafana → Superset / Streamlit
 All services bound to 127.0.0.1 for local security.
 
 ## Implemented Security Controls
@@ -27,7 +27,7 @@ All services bound to 127.0.0.1 for local security.
 | Write query attempt | Blocked (400) | ✅ |
 
 ## Next Steps
-1. Structured JSON logging with request IDs  
-2. TLS enforcement for external endpoints  
-3. Grafana latency dashboards  
+1. Structured JSON logging with request IDs
+2. TLS enforcement for external endpoints
+3. Grafana latency dashboards
 4. Backup + recovery documentation

@@ -1,4 +1,4 @@
-FROM python:3.14-slim
+FROM python:3.12-slim
 
 ARG UID=10001 GID=10001
 RUN addgroup --system --gid $GID appgroup \
@@ -10,7 +10,7 @@ COPY app/requirements.txt requirements.txt
 COPY app/requirements-dev.txt requirements-dev.txt
 RUN pip install --no-cache-dir -r requirements.txt -r requirements-dev.txt
 
-COPY app/ ./app
+COPY . ./app
 
 USER appuser
 

@@ -1,0 +1,986 @@
+2025-10-29 20:39:41,960 INFO - Task context logging is enabled
+2025-10-29 20:39:41,962 INFO - Loaded executor: SequentialExecutor
+2025-10-29 20:39:42,008 INFO - Starting the scheduler
+2025-10-29 20:39:42,009 INFO - Processing each file at most -1 times
+2025-10-29 20:39:42,011 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 20:40:36,226 INFO - 1 tasks up for execution:
+	<TaskInstance: governance_check.validate_policies verify_1761795634 [scheduled]>
+2025-10-29 20:40:36,227 INFO - DAG governance_check has 0/16 running and queued tasks
+2025-10-29 20:40:36,227 INFO - Setting the following tasks to queued state:
+	<TaskInstance: governance_check.validate_policies verify_1761795634 [scheduled]>
+2025-10-29 20:40:36,229 INFO - Sending TaskInstanceKey(dag_id='governance_check', task_id='validate_policies', run_id='verify_1761795634', try_number=1, map_index=-1) to executor with priority 1 and queue default
+2025-10-29 20:40:36,230 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'governance_check', 'validate_policies', 'verify_1761795634', '--local', '--subdir', 'DAGS_FOLDER/governance_check.py']
+2025-10-29 20:40:36,231 INFO - Executing command: ['airflow', 'tasks', 'run', 'governance_check', 'validate_policies', 'verify_1761795634', '--local', '--subdir', 'DAGS_FOLDER/governance_check.py']
+2025-10-29 20:40:37,530 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='governance_check', task_id='validate_policies', run_id='verify_1761795634', try_number=1, map_index=-1)
+2025-10-29 20:40:37,537 INFO - TaskInstance Finished: dag_id=governance_check, task_id=validate_policies, run_id=verify_1761795634, map_index=-1, run_start_date=2025-10-30 03:40:37.261893+00:00, run_end_date=2025-10-30 03:40:37.345857+00:00, run_duration=0.083964, state=success, executor_state=success, try_number=1, max_tries=2, job_id=21, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2025-10-30 03:40:36.228592+00:00, queued_by_job_id=20, pid=30720
+2025-10-29 20:40:37,550 INFO - Marking run <DagRun governance_check @ 2025-10-30 03:40:35+00:00: verify_1761795634, state:running, queued_at: 2025-10-30 03:40:35.598809+00:00. externally triggered: True> successful
+2025-10-29 20:40:37,551 INFO - DagRun Finished: dag_id=governance_check, execution_date=2025-10-30 03:40:35+00:00, run_id=verify_1761795634, run_start_date=2025-10-30 03:40:36.210293+00:00, run_end_date=2025-10-30 03:40:37.551221+00:00, run_duration=1.340928, state=success, external_trigger=True, run_type=manual, data_interval_start=2025-10-29 00:00:00+00:00, data_interval_end=2025-10-30 00:00:00+00:00, dag_hash=274692cb1358d8b998e60012a1bf52e5
+2025-10-29 20:40:42,047 INFO - Found (58) stales dags not parsed after 2025-10-30 03:30:42.044820+00:00.
+2025-10-29 20:44:42,039 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 20:49:42,053 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 20:52:50,127 INFO - Exiting gracefully upon receiving signal 15
+2025-10-29 20:52:50,128 INFO - Exited execute loop
+2025-10-29 20:53:03,848 INFO - Task context logging is enabled
+2025-10-29 20:53:03,850 INFO - Loaded executor: SequentialExecutor
+2025-10-29 20:53:03,896 INFO - Starting the scheduler
+2025-10-29 20:53:03,897 INFO - Processing each file at most -1 times
+2025-10-29 20:53:03,899 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 20:58:03,929 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 20:58:54,996 INFO - Exiting gracefully upon receiving signal 15
+2025-10-29 20:58:54,998 INFO - Exited execute loop
+2025-10-29 20:58:58,246 INFO - Task context logging is enabled
+2025-10-29 20:58:58,248 INFO - Loaded executor: SequentialExecutor
+2025-10-29 20:58:58,290 INFO - Starting the scheduler
+2025-10-29 20:58:58,291 INFO - Processing each file at most -1 times
+2025-10-29 20:58:58,293 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 21:02:15,683 INFO - Exiting gracefully upon receiving signal 15
+2025-10-29 21:02:15,685 INFO - Exited execute loop
+2025-10-29 21:02:59,598 INFO - Task context logging is enabled
+2025-10-29 21:02:59,601 INFO - Loaded executor: SequentialExecutor
+2025-10-29 21:02:59,673 INFO - Starting the scheduler
+2025-10-29 21:02:59,674 INFO - Processing each file at most -1 times
+2025-10-29 21:02:59,676 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 21:07:59,714 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 21:12:08,379 INFO - 1 tasks up for execution:
+	<TaskInstance: governance_check.validate_policies verify_1761797525 [scheduled]>
+2025-10-29 21:12:08,381 INFO - DAG governance_check has 0/16 running and queued tasks
+2025-10-29 21:12:08,382 INFO - Setting the following tasks to queued state:
+	<TaskInstance: governance_check.validate_policies verify_1761797525 [scheduled]>
+2025-10-29 21:12:08,384 INFO - Sending TaskInstanceKey(dag_id='governance_check', task_id='validate_policies', run_id='verify_1761797525', try_number=1, map_index=-1) to executor with priority 1 and queue default
+2025-10-29 21:12:08,384 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'governance_check', 'validate_policies', 'verify_1761797525', '--local', '--subdir', 'DAGS_FOLDER/governance_check.py']
+2025-10-29 21:12:08,386 INFO - Executing command: ['airflow', 'tasks', 'run', 'governance_check', 'validate_policies', 'verify_1761797525', '--local', '--subdir', 'DAGS_FOLDER/governance_check.py']
+2025-10-29 21:12:09,615 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='governance_check', task_id='validate_policies', run_id='verify_1761797525', try_number=1, map_index=-1)
+2025-10-29 21:12:09,623 INFO - TaskInstance Finished: dag_id=governance_check, task_id=validate_policies, run_id=verify_1761797525, map_index=-1, run_start_date=2025-10-30 04:12:09.346813+00:00, run_end_date=2025-10-30 04:12:09.433591+00:00, run_duration=0.086778, state=success, executor_state=success, try_number=1, max_tries=2, job_id=25, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2025-10-30 04:12:08.383399+00:00, queued_by_job_id=24, pid=32401
+2025-10-29 21:12:09,631 INFO - Marking run <DagRun governance_check @ 2025-10-30 04:12:07+00:00: verify_1761797525, state:running, queued_at: 2025-10-30 04:12:07.329236+00:00. externally triggered: True> successful
+2025-10-29 21:12:09,632 INFO - DagRun Finished: dag_id=governance_check, execution_date=2025-10-30 04:12:07+00:00, run_id=verify_1761797525, run_start_date=2025-10-30 04:12:08.363121+00:00, run_end_date=2025-10-30 04:12:09.632763+00:00, run_duration=1.269642, state=success, external_trigger=True, run_type=manual, data_interval_start=2025-10-29 00:00:00+00:00, data_interval_end=2025-10-30 00:00:00+00:00, dag_hash=274692cb1358d8b998e60012a1bf52e5
+2025-10-29 21:12:59,730 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 21:12:59,821 INFO - Found (2) stales dags not parsed after 2025-10-30 04:02:59.820295+00:00.
+2025-10-29 21:17:59,743 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 21:22:59,757 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 21:27:59,772 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 21:28:27,129 INFO - Task context logging is enabled
+2025-10-29 21:28:27,131 INFO - Loaded executor: SequentialExecutor
+2025-10-29 21:28:27,173 INFO - Starting the scheduler
+2025-10-29 21:28:27,174 INFO - Processing each file at most -1 times
+2025-10-29 21:28:27,176 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 21:33:27,202 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 21:33:27,209 INFO - Marked 1 SchedulerJob instances as failed
+2025-10-29 21:34:12,431 INFO - Exiting gracefully upon receiving signal 15
+2025-10-29 21:34:12,432 INFO - Exited execute loop
+2025-10-29 21:35:38,378 INFO - Task context logging is enabled
+2025-10-29 21:35:38,380 INFO - Loaded executor: SequentialExecutor
+2025-10-29 21:35:38,426 INFO - Starting the scheduler
+2025-10-29 21:35:38,427 INFO - Processing each file at most -1 times
+2025-10-29 21:35:38,429 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 21:36:21,595 INFO - 1 tasks up for execution:
+	<TaskInstance: governance_check.validate_policies verify_1761798979 [scheduled]>
+2025-10-29 21:36:21,596 INFO - DAG governance_check has 0/16 running and queued tasks
+2025-10-29 21:36:21,597 INFO - Setting the following tasks to queued state:
+	<TaskInstance: governance_check.validate_policies verify_1761798979 [scheduled]>
+2025-10-29 21:36:21,599 INFO - Sending TaskInstanceKey(dag_id='governance_check', task_id='validate_policies', run_id='verify_1761798979', try_number=1, map_index=-1) to executor with priority 1 and queue default
+2025-10-29 21:36:21,599 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'governance_check', 'validate_policies', 'verify_1761798979', '--local', '--subdir', 'DAGS_FOLDER/governance_check.py']
+2025-10-29 21:36:21,600 INFO - Executing command: ['airflow', 'tasks', 'run', 'governance_check', 'validate_policies', 'verify_1761798979', '--local', '--subdir', 'DAGS_FOLDER/governance_check.py']
+2025-10-29 21:36:22,836 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='governance_check', task_id='validate_policies', run_id='verify_1761798979', try_number=1, map_index=-1)
+2025-10-29 21:36:22,844 INFO - TaskInstance Finished: dag_id=governance_check, task_id=validate_policies, run_id=verify_1761798979, map_index=-1, run_start_date=2025-10-30 04:36:22.555265+00:00, run_end_date=2025-10-30 04:36:22.645432+00:00, run_duration=0.090167, state=success, executor_state=success, try_number=1, max_tries=2, job_id=28, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2025-10-30 04:36:21.598280+00:00, queued_by_job_id=27, pid=33605
+2025-10-29 21:36:22,854 INFO - Marking run <DagRun governance_check @ 2025-10-30 04:36:20+00:00: verify_1761798979, state:running, queued_at: 2025-10-30 04:36:20.312975+00:00. externally triggered: True> successful
+2025-10-29 21:36:22,855 INFO - DagRun Finished: dag_id=governance_check, execution_date=2025-10-30 04:36:20+00:00, run_id=verify_1761798979, run_start_date=2025-10-30 04:36:21.580553+00:00, run_end_date=2025-10-30 04:36:22.855673+00:00, run_duration=1.27512, state=success, external_trigger=True, run_type=manual, data_interval_start=2025-10-29 00:00:00+00:00, data_interval_end=2025-10-30 00:00:00+00:00, dag_hash=274692cb1358d8b998e60012a1bf52e5
+2025-10-29 21:39:40,812 INFO - Exiting gracefully upon receiving signal 15
+2025-10-29 21:39:40,814 INFO - Exited execute loop
+2025-10-29 21:39:43,573 INFO - Task context logging is enabled
+2025-10-29 21:39:43,574 INFO - Loaded executor: SequentialExecutor
+2025-10-29 21:39:43,617 INFO - Starting the scheduler
+2025-10-29 21:39:43,618 INFO - Processing each file at most -1 times
+2025-10-29 21:39:43,622 INFO - Launched DagFileProcessorManager with pid: 33759
+2025-10-29 21:39:43,624 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 21:40:57,222 INFO - 1 tasks up for execution:
+	<TaskInstance: governance_check.validate_policies verify_1761799255 [scheduled]>
+2025-10-29 21:40:57,224 INFO - DAG governance_check has 0/16 running and queued tasks
+2025-10-29 21:40:57,225 INFO - Setting the following tasks to queued state:
+	<TaskInstance: governance_check.validate_policies verify_1761799255 [scheduled]>
+2025-10-29 21:40:57,226 INFO - Sending TaskInstanceKey(dag_id='governance_check', task_id='validate_policies', run_id='verify_1761799255', try_number=1, map_index=-1) to executor with priority 1 and queue default
+2025-10-29 21:40:57,227 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'governance_check', 'validate_policies', 'verify_1761799255', '--local', '--subdir', 'DAGS_FOLDER/governance_check.py']
+2025-10-29 21:40:57,228 INFO - Executing command: ['airflow', 'tasks', 'run', 'governance_check', 'validate_policies', 'verify_1761799255', '--local', '--subdir', 'DAGS_FOLDER/governance_check.py']
+2025-10-29 21:40:58,422 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='governance_check', task_id='validate_policies', run_id='verify_1761799255', try_number=1, map_index=-1)
+2025-10-29 21:40:58,429 INFO - TaskInstance Finished: dag_id=governance_check, task_id=validate_policies, run_id=verify_1761799255, map_index=-1, run_start_date=2025-10-30 04:40:58.154071+00:00, run_end_date=2025-10-30 04:40:58.240492+00:00, run_duration=0.086421, state=success, executor_state=success, try_number=1, max_tries=2, job_id=30, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2025-10-30 04:40:57.225756+00:00, queued_by_job_id=29, pid=33846
+2025-10-29 21:40:58,450 INFO - Marking run <DagRun governance_check @ 2025-10-30 04:40:56+00:00: verify_1761799255, state:running, queued_at: 2025-10-30 04:40:57.002288+00:00. externally triggered: True> successful
+2025-10-29 21:40:58,451 INFO - DagRun Finished: dag_id=governance_check, execution_date=2025-10-30 04:40:56+00:00, run_id=verify_1761799255, run_start_date=2025-10-30 04:40:57.206805+00:00, run_end_date=2025-10-30 04:40:58.451472+00:00, run_duration=1.244667, state=success, external_trigger=True, run_type=manual, data_interval_start=2025-10-29 00:00:00+00:00, data_interval_end=2025-10-30 00:00:00+00:00, dag_hash=274692cb1358d8b998e60012a1bf52e5
+2025-10-29 21:44:43,663 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 21:49:43,690 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 21:54:43,717 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 21:59:43,746 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 22:04:43,776 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 22:09:43,803 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 22:14:43,833 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 22:19:43,862 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 22:24:43,890 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 22:29:43,918 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 22:34:43,947 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 22:39:43,981 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 22:44:44,014 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 22:49:45,266 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 22:54:45,298 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 22:59:45,328 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 23:04:45,359 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 23:09:45,390 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 23:14:45,420 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 23:19:45,448 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 23:24:45,478 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 23:29:45,504 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 23:34:45,536 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 23:39:45,574 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 23:44:45,611 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 23:49:45,645 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 23:54:45,673 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-29 23:59:45,704 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 00:04:45,734 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 00:09:45,769 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 00:14:45,798 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 00:19:45,836 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 00:24:45,870 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 00:29:45,902 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 00:34:46,579 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 00:39:46,590 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 00:44:46,623 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 00:49:46,653 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 00:54:46,684 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 00:59:46,714 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 01:04:46,742 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 01:09:48,463 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 01:14:48,493 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 01:19:48,524 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 01:24:48,554 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 01:29:48,584 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 01:34:48,616 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 01:39:48,645 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 01:44:48,671 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 01:49:48,697 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 01:54:48,725 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 04:01:12,775 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 04:06:12,801 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 04:26:11,289 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 04:31:11,317 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 04:36:11,346 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 04:41:11,361 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 04:46:11,388 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 04:51:11,417 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 04:56:11,446 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 05:01:11,474 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 05:06:11,504 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 05:11:11,531 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 05:31:10,255 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 05:36:10,282 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 05:41:10,309 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 05:46:10,370 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 05:51:10,396 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 05:56:10,423 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 06:01:11,256 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 06:06:11,283 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 06:11:11,310 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 06:16:12,063 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 06:21:12,089 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 06:26:12,115 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 06:31:12,142 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 06:36:12,170 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 06:41:12,211 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 06:46:12,245 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 06:51:12,272 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 06:56:12,300 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 07:01:12,327 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 07:06:12,355 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 07:11:13,014 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 07:16:13,040 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 07:21:13,067 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 07:41:13,830 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 08:33:01,008 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 08:38:01,036 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 08:43:01,063 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 08:48:01,090 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 08:53:01,118 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 13:45:32,004 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 16:49:15,990 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 16:54:16,018 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 16:59:16,045 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 17:00:01,065 INFO - Setting next_dagrun for governance_check to 2025-10-31 00:00:00+00:00, run_after=2025-11-01 00:00:00+00:00
+2025-10-30 17:00:01,085 INFO - 1 tasks up for execution:
+	<TaskInstance: governance_check.validate_policies scheduled__2025-10-30T00:00:00+00:00 [scheduled]>
+2025-10-30 17:00:01,086 INFO - DAG governance_check has 0/16 running and queued tasks
+2025-10-30 17:00:01,086 INFO - Setting the following tasks to queued state:
+	<TaskInstance: governance_check.validate_policies scheduled__2025-10-30T00:00:00+00:00 [scheduled]>
+2025-10-30 17:00:01,088 INFO - Sending TaskInstanceKey(dag_id='governance_check', task_id='validate_policies', run_id='scheduled__2025-10-30T00:00:00+00:00', try_number=1, map_index=-1) to executor with priority 1 and queue default
+2025-10-30 17:00:01,089 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'governance_check', 'validate_policies', 'scheduled__2025-10-30T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/governance_check.py']
+2025-10-30 17:00:01,090 INFO - Executing command: ['airflow', 'tasks', 'run', 'governance_check', 'validate_policies', 'scheduled__2025-10-30T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/governance_check.py']
+2025-10-30 17:00:02,761 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='governance_check', task_id='validate_policies', run_id='scheduled__2025-10-30T00:00:00+00:00', try_number=1, map_index=-1)
+2025-10-30 17:00:02,766 INFO - TaskInstance Finished: dag_id=governance_check, task_id=validate_policies, run_id=scheduled__2025-10-30T00:00:00+00:00, map_index=-1, run_start_date=2025-10-31 00:00:02.487074+00:00, run_end_date=2025-10-31 00:00:02.583441+00:00, run_duration=0.096367, state=success, executor_state=success, try_number=1, max_tries=2, job_id=31, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2025-10-31 00:00:01.087577+00:00, queued_by_job_id=29, pid=59673
+2025-10-30 17:00:02,798 INFO - Marking run <DagRun governance_check @ 2025-10-30 00:00:00+00:00: scheduled__2025-10-30T00:00:00+00:00, state:running, queued_at: 2025-10-31 00:00:01.056057+00:00. externally triggered: False> successful
+2025-10-30 17:00:02,798 INFO - DagRun Finished: dag_id=governance_check, execution_date=2025-10-30 00:00:00+00:00, run_id=scheduled__2025-10-30T00:00:00+00:00, run_start_date=2025-10-31 00:00:01.072547+00:00, run_end_date=2025-10-31 00:00:02.798849+00:00, run_duration=1.726302, state=success, external_trigger=False, run_type=scheduled, data_interval_start=2025-10-30 00:00:00+00:00, data_interval_end=2025-10-31 00:00:00+00:00, dag_hash=274692cb1358d8b998e60012a1bf52e5
+2025-10-30 17:00:02,801 INFO - Setting next_dagrun for governance_check to 2025-10-31 00:00:00+00:00, run_after=2025-11-01 00:00:00+00:00
+2025-10-30 17:04:16,072 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 17:09:16,100 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 17:10:25,845 WARNING - DagFileProcessorManager (PID=33759) exited with exit code 1 - re-launching
+2025-10-30 17:10:25,854 INFO - Launched DagFileProcessorManager with pid: 60276
+2025-10-30 17:10:28,112 WARNING - DagFileProcessorManager (PID=60276) exited with exit code 1 - re-launching
+2025-10-30 17:10:28,115 INFO - Launched DagFileProcessorManager with pid: 60279
+2025-10-30 17:10:29,130 WARNING - DagFileProcessorManager (PID=60279) exited with exit code 1 - re-launching
+2025-10-30 17:10:29,133 INFO - Launched DagFileProcessorManager with pid: 60281
+2025-10-30 17:10:31,034 WARNING - DagFileProcessorManager (PID=60281) exited with exit code 1 - re-launching
+2025-10-30 17:10:31,038 INFO - Launched DagFileProcessorManager with pid: 60283
+2025-10-30 17:10:32,054 WARNING - DagFileProcessorManager (PID=60283) exited with exit code 1 - re-launching
+2025-10-30 17:10:32,058 INFO - Launched DagFileProcessorManager with pid: 60286
+2025-10-30 17:10:33,075 WARNING - DagFileProcessorManager (PID=60286) exited with exit code 1 - re-launching
+2025-10-30 17:10:33,079 INFO - Launched DagFileProcessorManager with pid: 60288
+2025-10-30 17:10:34,097 WARNING - DagFileProcessorManager (PID=60288) exited with exit code 1 - re-launching
+2025-10-30 17:10:34,100 INFO - Launched DagFileProcessorManager with pid: 60292
+2025-10-30 17:10:35,035 WARNING - DagFileProcessorManager (PID=60292) exited with exit code 1 - re-launching
+2025-10-30 17:10:35,038 INFO - Launched DagFileProcessorManager with pid: 60294
+2025-10-30 17:10:36,061 WARNING - DagFileProcessorManager (PID=60294) exited with exit code 1 - re-launching
+2025-10-30 17:10:36,064 INFO - Launched DagFileProcessorManager with pid: 60303
+2025-10-30 17:10:37,080 WARNING - DagFileProcessorManager (PID=60303) exited with exit code 1 - re-launching
+2025-10-30 17:10:37,083 INFO - Launched DagFileProcessorManager with pid: 60311
+2025-10-30 17:10:38,102 WARNING - DagFileProcessorManager (PID=60311) exited with exit code 1 - re-launching
+2025-10-30 17:10:38,105 INFO - Launched DagFileProcessorManager with pid: 60314
+2025-10-30 17:10:39,122 WARNING - DagFileProcessorManager (PID=60314) exited with exit code 1 - re-launching
+2025-10-30 17:10:39,125 INFO - Launched DagFileProcessorManager with pid: 60316
+2025-10-30 17:10:40,056 WARNING - DagFileProcessorManager (PID=60316) exited with exit code 1 - re-launching
+2025-10-30 17:10:40,059 INFO - Launched DagFileProcessorManager with pid: 60318
+2025-10-30 17:10:41,081 WARNING - DagFileProcessorManager (PID=60318) exited with exit code 1 - re-launching
+2025-10-30 17:10:41,084 INFO - Launched DagFileProcessorManager with pid: 60320
+2025-10-30 17:10:42,103 WARNING - DagFileProcessorManager (PID=60320) exited with exit code 1 - re-launching
+2025-10-30 17:10:42,106 INFO - Launched DagFileProcessorManager with pid: 60322
+2025-10-30 17:10:43,122 WARNING - DagFileProcessorManager (PID=60322) exited with exit code 1 - re-launching
+2025-10-30 17:10:43,125 INFO - Launched DagFileProcessorManager with pid: 60324
+2025-10-30 17:10:44,139 WARNING - DagFileProcessorManager (PID=60324) exited with exit code 1 - re-launching
+2025-10-30 17:10:44,143 INFO - Launched DagFileProcessorManager with pid: 60326
+2025-10-30 17:10:45,080 WARNING - DagFileProcessorManager (PID=60326) exited with exit code 1 - re-launching
+2025-10-30 17:10:45,083 INFO - Launched DagFileProcessorManager with pid: 60328
+2025-10-30 17:10:46,105 WARNING - DagFileProcessorManager (PID=60328) exited with exit code 1 - re-launching
+2025-10-30 17:10:46,107 INFO - Launched DagFileProcessorManager with pid: 60335
+2025-10-30 17:10:47,122 WARNING - DagFileProcessorManager (PID=60335) exited with exit code 1 - re-launching
+2025-10-30 17:10:47,125 INFO - Launched DagFileProcessorManager with pid: 60337
+2025-10-30 17:10:48,144 WARNING - DagFileProcessorManager (PID=60337) exited with exit code 1 - re-launching
+2025-10-30 17:10:48,147 INFO - Launched DagFileProcessorManager with pid: 60341
+2025-10-30 17:10:49,164 WARNING - DagFileProcessorManager (PID=60341) exited with exit code 1 - re-launching
+2025-10-30 17:10:49,167 INFO - Launched DagFileProcessorManager with pid: 60343
+2025-10-30 17:10:50,100 WARNING - DagFileProcessorManager (PID=60343) exited with exit code 1 - re-launching
+2025-10-30 17:10:50,104 INFO - Launched DagFileProcessorManager with pid: 60345
+2025-10-30 17:10:51,127 WARNING - DagFileProcessorManager (PID=60345) exited with exit code 1 - re-launching
+2025-10-30 17:10:51,130 INFO - Launched DagFileProcessorManager with pid: 60347
+2025-10-30 17:10:52,150 WARNING - DagFileProcessorManager (PID=60347) exited with exit code 1 - re-launching
+2025-10-30 17:10:52,153 INFO - Launched DagFileProcessorManager with pid: 60349
+2025-10-30 17:10:53,167 WARNING - DagFileProcessorManager (PID=60349) exited with exit code 1 - re-launching
+2025-10-30 17:10:53,170 INFO - Launched DagFileProcessorManager with pid: 60351
+2025-10-30 17:10:54,184 WARNING - DagFileProcessorManager (PID=60351) exited with exit code 1 - re-launching
+2025-10-30 17:10:54,187 INFO - Launched DagFileProcessorManager with pid: 60353
+2025-10-30 17:10:55,123 WARNING - DagFileProcessorManager (PID=60353) exited with exit code 1 - re-launching
+2025-10-30 17:10:55,126 INFO - Launched DagFileProcessorManager with pid: 60356
+2025-10-30 17:10:56,146 WARNING - DagFileProcessorManager (PID=60356) exited with exit code 1 - re-launching
+2025-10-30 17:10:56,149 INFO - Launched DagFileProcessorManager with pid: 60360
+2025-10-30 17:10:57,168 WARNING - DagFileProcessorManager (PID=60360) exited with exit code 1 - re-launching
+2025-10-30 17:10:57,171 INFO - Launched DagFileProcessorManager with pid: 60364
+2025-10-30 17:10:58,187 WARNING - DagFileProcessorManager (PID=60364) exited with exit code 1 - re-launching
+2025-10-30 17:10:58,192 INFO - Launched DagFileProcessorManager with pid: 60366
+2025-10-30 17:10:59,206 WARNING - DagFileProcessorManager (PID=60366) exited with exit code 1 - re-launching
+2025-10-30 17:10:59,209 INFO - Launched DagFileProcessorManager with pid: 60369
+2025-10-30 17:11:00,146 WARNING - DagFileProcessorManager (PID=60369) exited with exit code 1 - re-launching
+2025-10-30 17:11:00,149 INFO - Launched DagFileProcessorManager with pid: 60371
+2025-10-30 17:11:01,172 WARNING - DagFileProcessorManager (PID=60371) exited with exit code 1 - re-launching
+2025-10-30 17:11:01,176 INFO - Launched DagFileProcessorManager with pid: 60373
+2025-10-30 17:11:02,192 WARNING - DagFileProcessorManager (PID=60373) exited with exit code 1 - re-launching
+2025-10-30 17:11:02,195 INFO - Launched DagFileProcessorManager with pid: 60376
+2025-10-30 17:11:03,211 WARNING - DagFileProcessorManager (PID=60376) exited with exit code 1 - re-launching
+2025-10-30 17:11:03,214 INFO - Launched DagFileProcessorManager with pid: 60383
+2025-10-30 17:11:04,231 WARNING - DagFileProcessorManager (PID=60383) exited with exit code 1 - re-launching
+2025-10-30 17:11:04,233 INFO - Launched DagFileProcessorManager with pid: 60385
+2025-10-30 17:11:05,171 WARNING - DagFileProcessorManager (PID=60385) exited with exit code 1 - re-launching
+2025-10-30 17:11:05,174 INFO - Launched DagFileProcessorManager with pid: 60388
+2025-10-30 17:11:06,198 WARNING - DagFileProcessorManager (PID=60388) exited with exit code 1 - re-launching
+2025-10-30 17:11:06,202 INFO - Launched DagFileProcessorManager with pid: 60392
+2025-10-30 17:11:07,219 WARNING - DagFileProcessorManager (PID=60392) exited with exit code 1 - re-launching
+2025-10-30 17:11:07,223 INFO - Launched DagFileProcessorManager with pid: 60394
+2025-10-30 17:11:08,241 WARNING - DagFileProcessorManager (PID=60394) exited with exit code 1 - re-launching
+2025-10-30 17:11:08,245 INFO - Launched DagFileProcessorManager with pid: 60398
+2025-10-30 17:11:09,263 WARNING - DagFileProcessorManager (PID=60398) exited with exit code 1 - re-launching
+2025-10-30 17:11:09,266 INFO - Launched DagFileProcessorManager with pid: 60400
+2025-10-30 17:11:10,195 WARNING - DagFileProcessorManager (PID=60400) exited with exit code 1 - re-launching
+2025-10-30 17:11:10,198 INFO - Launched DagFileProcessorManager with pid: 60402
+2025-10-30 17:11:11,217 WARNING - DagFileProcessorManager (PID=60402) exited with exit code 1 - re-launching
+2025-10-30 17:11:11,220 INFO - Launched DagFileProcessorManager with pid: 60404
+2025-10-30 17:11:12,238 WARNING - DagFileProcessorManager (PID=60404) exited with exit code 1 - re-launching
+2025-10-30 17:11:12,241 INFO - Launched DagFileProcessorManager with pid: 60406
+2025-10-30 17:11:13,257 WARNING - DagFileProcessorManager (PID=60406) exited with exit code 1 - re-launching
+2025-10-30 17:11:13,260 INFO - Launched DagFileProcessorManager with pid: 60408
+2025-10-30 17:11:14,275 WARNING - DagFileProcessorManager (PID=60408) exited with exit code 1 - re-launching
+2025-10-30 17:11:14,278 INFO - Launched DagFileProcessorManager with pid: 60410
+2025-10-30 17:11:15,223 WARNING - DagFileProcessorManager (PID=60410) exited with exit code 1 - re-launching
+2025-10-30 17:11:15,226 INFO - Launched DagFileProcessorManager with pid: 60413
+2025-10-30 17:11:16,249 WARNING - DagFileProcessorManager (PID=60413) exited with exit code 1 - re-launching
+2025-10-30 17:11:16,252 INFO - Launched DagFileProcessorManager with pid: 60417
+2025-10-30 17:11:17,267 WARNING - DagFileProcessorManager (PID=60417) exited with exit code 1 - re-launching
+2025-10-30 17:11:17,270 INFO - Launched DagFileProcessorManager with pid: 60419
+2025-10-30 17:11:18,288 WARNING - DagFileProcessorManager (PID=60419) exited with exit code 1 - re-launching
+2025-10-30 17:11:18,291 INFO - Launched DagFileProcessorManager with pid: 60421
+2025-10-30 17:11:19,307 WARNING - DagFileProcessorManager (PID=60421) exited with exit code 1 - re-launching
+2025-10-30 17:11:19,310 INFO - Launched DagFileProcessorManager with pid: 60425
+2025-10-30 17:11:20,245 WARNING - DagFileProcessorManager (PID=60425) exited with exit code 1 - re-launching
+2025-10-30 17:11:20,247 INFO - Launched DagFileProcessorManager with pid: 60427
+2025-10-30 17:11:21,267 WARNING - DagFileProcessorManager (PID=60427) exited with exit code 1 - re-launching
+2025-10-30 17:11:21,270 INFO - Launched DagFileProcessorManager with pid: 60429
+2025-10-30 17:11:22,285 WARNING - DagFileProcessorManager (PID=60429) exited with exit code 1 - re-launching
+2025-10-30 17:11:22,288 INFO - Launched DagFileProcessorManager with pid: 60431
+2025-10-30 17:11:24,164 WARNING - DagFileProcessorManager (PID=60431) exited with exit code 1 - re-launching
+2025-10-30 17:11:24,167 INFO - Launched DagFileProcessorManager with pid: 60433
+2025-10-30 17:11:25,161 WARNING - DagFileProcessorManager (PID=60433) exited with exit code 1 - re-launching
+2025-10-30 17:11:25,164 INFO - Launched DagFileProcessorManager with pid: 60436
+2025-10-30 17:11:27,071 WARNING - DagFileProcessorManager (PID=60436) exited with exit code 1 - re-launching
+2025-10-30 17:11:27,075 INFO - Launched DagFileProcessorManager with pid: 60441
+2025-10-30 17:11:28,090 WARNING - DagFileProcessorManager (PID=60441) exited with exit code 1 - re-launching
+2025-10-30 17:11:28,093 INFO - Launched DagFileProcessorManager with pid: 60443
+2025-10-30 17:11:29,108 WARNING - DagFileProcessorManager (PID=60443) exited with exit code 1 - re-launching
+2025-10-30 17:11:29,111 INFO - Launched DagFileProcessorManager with pid: 60446
+2025-10-30 17:11:30,126 WARNING - DagFileProcessorManager (PID=60446) exited with exit code 1 - re-launching
+2025-10-30 17:11:30,129 INFO - Launched DagFileProcessorManager with pid: 60450
+2025-10-30 17:11:31,071 WARNING - DagFileProcessorManager (PID=60450) exited with exit code 1 - re-launching
+2025-10-30 17:11:31,074 INFO - Launched DagFileProcessorManager with pid: 60452
+2025-10-30 17:11:32,093 WARNING - DagFileProcessorManager (PID=60452) exited with exit code 1 - re-launching
+2025-10-30 17:11:32,096 INFO - Launched DagFileProcessorManager with pid: 60455
+2025-10-30 17:11:33,112 WARNING - DagFileProcessorManager (PID=60455) exited with exit code 1 - re-launching
+2025-10-30 17:11:33,114 INFO - Launched DagFileProcessorManager with pid: 60457
+2025-10-30 17:11:34,129 WARNING - DagFileProcessorManager (PID=60457) exited with exit code 1 - re-launching
+2025-10-30 17:11:34,132 INFO - Launched DagFileProcessorManager with pid: 60459
+2025-10-30 17:11:35,147 WARNING - DagFileProcessorManager (PID=60459) exited with exit code 1 - re-launching
+2025-10-30 17:11:35,150 INFO - Launched DagFileProcessorManager with pid: 60462
+2025-10-30 17:11:36,093 WARNING - DagFileProcessorManager (PID=60462) exited with exit code 1 - re-launching
+2025-10-30 17:11:36,097 INFO - Launched DagFileProcessorManager with pid: 60466
+2025-10-30 17:11:37,119 WARNING - DagFileProcessorManager (PID=60466) exited with exit code 1 - re-launching
+2025-10-30 17:11:37,121 INFO - Launched DagFileProcessorManager with pid: 60468
+2025-10-30 17:11:38,137 WARNING - DagFileProcessorManager (PID=60468) exited with exit code 1 - re-launching
+2025-10-30 17:11:38,140 INFO - Launched DagFileProcessorManager with pid: 60470
+2025-10-30 17:11:39,155 WARNING - DagFileProcessorManager (PID=60470) exited with exit code 1 - re-launching
+2025-10-30 17:11:39,158 INFO - Launched DagFileProcessorManager with pid: 60472
+2025-10-30 17:11:41,038 WARNING - DagFileProcessorManager (PID=60472) exited with exit code 1 - re-launching
+2025-10-30 17:11:41,041 INFO - Launched DagFileProcessorManager with pid: 60476
+2025-10-30 17:11:42,932 WARNING - DagFileProcessorManager (PID=60476) exited with exit code 1 - re-launching
+2025-10-30 17:11:42,937 INFO - Launched DagFileProcessorManager with pid: 60479
+2025-10-30 17:11:43,952 WARNING - DagFileProcessorManager (PID=60479) exited with exit code 1 - re-launching
+2025-10-30 17:11:43,955 INFO - Launched DagFileProcessorManager with pid: 60481
+2025-10-30 17:11:44,970 WARNING - DagFileProcessorManager (PID=60481) exited with exit code 1 - re-launching
+2025-10-30 17:11:44,973 INFO - Launched DagFileProcessorManager with pid: 60483
+2025-10-30 17:11:45,988 WARNING - DagFileProcessorManager (PID=60483) exited with exit code 1 - re-launching
+2025-10-30 17:11:45,990 INFO - Launched DagFileProcessorManager with pid: 60488
+2025-10-30 17:11:46,930 WARNING - DagFileProcessorManager (PID=60488) exited with exit code 1 - re-launching
+2025-10-30 17:11:46,935 INFO - Launched DagFileProcessorManager with pid: 60490
+2025-10-30 17:11:47,961 WARNING - DagFileProcessorManager (PID=60490) exited with exit code 1 - re-launching
+2025-10-30 17:11:47,964 INFO - Launched DagFileProcessorManager with pid: 60492
+2025-10-30 17:11:48,980 WARNING - DagFileProcessorManager (PID=60492) exited with exit code 1 - re-launching
+2025-10-30 17:11:48,983 INFO - Launched DagFileProcessorManager with pid: 60497
+2025-10-30 17:11:51,052 WARNING - DagFileProcessorManager (PID=60497) exited with exit code 1 - re-launching
+2025-10-30 17:11:51,055 INFO - Launched DagFileProcessorManager with pid: 60500
+2025-10-30 17:11:52,973 WARNING - DagFileProcessorManager (PID=60500) exited with exit code 1 - re-launching
+2025-10-30 17:11:52,976 INFO - Launched DagFileProcessorManager with pid: 60504
+2025-10-30 17:11:53,994 WARNING - DagFileProcessorManager (PID=60504) exited with exit code 1 - re-launching
+2025-10-30 17:11:53,998 INFO - Launched DagFileProcessorManager with pid: 60507
+2025-10-30 17:11:55,013 WARNING - DagFileProcessorManager (PID=60507) exited with exit code 1 - re-launching
+2025-10-30 17:11:55,015 INFO - Launched DagFileProcessorManager with pid: 60509
+2025-10-30 17:11:56,035 WARNING - DagFileProcessorManager (PID=60509) exited with exit code 1 - re-launching
+2025-10-30 17:11:56,039 INFO - Launched DagFileProcessorManager with pid: 60514
+2025-10-30 17:11:57,989 WARNING - DagFileProcessorManager (PID=60514) exited with exit code 1 - re-launching
+2025-10-30 17:11:57,992 INFO - Launched DagFileProcessorManager with pid: 60516
+2025-10-30 17:12:00,263 WARNING - DagFileProcessorManager (PID=60516) exited with exit code 1 - re-launching
+2025-10-30 17:12:00,270 INFO - Launched DagFileProcessorManager with pid: 60526
+2025-10-30 17:12:01,989 WARNING - DagFileProcessorManager (PID=60526) exited with exit code 1 - re-launching
+2025-10-30 17:12:01,992 INFO - Launched DagFileProcessorManager with pid: 60529
+2025-10-30 17:12:03,015 WARNING - DagFileProcessorManager (PID=60529) exited with exit code 1 - re-launching
+2025-10-30 17:12:03,018 INFO - Launched DagFileProcessorManager with pid: 60531
+2025-10-30 17:12:04,041 WARNING - DagFileProcessorManager (PID=60531) exited with exit code 1 - re-launching
+2025-10-30 17:12:04,044 INFO - Launched DagFileProcessorManager with pid: 60536
+2025-10-30 17:12:05,059 WARNING - DagFileProcessorManager (PID=60536) exited with exit code 1 - re-launching
+2025-10-30 17:12:05,063 INFO - Launched DagFileProcessorManager with pid: 60538
+2025-10-30 17:12:06,073 WARNING - DagFileProcessorManager (PID=60538) exited with exit code 1 - re-launching
+2025-10-30 17:12:06,076 INFO - Launched DagFileProcessorManager with pid: 60544
+2025-10-30 17:12:08,044 WARNING - DagFileProcessorManager (PID=60544) exited with exit code 1 - re-launching
+2025-10-30 17:12:08,048 INFO - Launched DagFileProcessorManager with pid: 60548
+2025-10-30 17:12:09,071 WARNING - DagFileProcessorManager (PID=60548) exited with exit code 1 - re-launching
+2025-10-30 17:12:09,074 INFO - Launched DagFileProcessorManager with pid: 60551
+2025-10-30 17:12:10,091 WARNING - DagFileProcessorManager (PID=60551) exited with exit code 1 - re-launching
+2025-10-30 17:12:10,094 INFO - Launched DagFileProcessorManager with pid: 60553
+2025-10-30 17:12:11,109 WARNING - DagFileProcessorManager (PID=60553) exited with exit code 1 - re-launching
+2025-10-30 17:12:11,112 INFO - Launched DagFileProcessorManager with pid: 60555
+2025-10-30 17:12:12,041 WARNING - DagFileProcessorManager (PID=60555) exited with exit code 1 - re-launching
+2025-10-30 17:12:12,044 INFO - Launched DagFileProcessorManager with pid: 60557
+2025-10-30 17:12:13,069 WARNING - DagFileProcessorManager (PID=60557) exited with exit code 1 - re-launching
+2025-10-30 17:12:13,072 INFO - Launched DagFileProcessorManager with pid: 60559
+2025-10-30 17:12:14,090 WARNING - DagFileProcessorManager (PID=60559) exited with exit code 1 - re-launching
+2025-10-30 17:12:14,093 INFO - Launched DagFileProcessorManager with pid: 60561
+2025-10-30 17:12:15,110 WARNING - DagFileProcessorManager (PID=60561) exited with exit code 1 - re-launching
+2025-10-30 17:12:15,114 INFO - Launched DagFileProcessorManager with pid: 60565
+2025-10-30 17:12:16,131 WARNING - DagFileProcessorManager (PID=60565) exited with exit code 1 - re-launching
+2025-10-30 17:12:16,134 INFO - Launched DagFileProcessorManager with pid: 60570
+2025-10-30 17:12:17,041 WARNING - DagFileProcessorManager (PID=60570) exited with exit code 1 - re-launching
+2025-10-30 17:12:17,043 INFO - Launched DagFileProcessorManager with pid: 60572
+2025-10-30 17:12:18,939 WARNING - DagFileProcessorManager (PID=60572) exited with exit code 1 - re-launching
+2025-10-30 17:12:18,942 INFO - Launched DagFileProcessorManager with pid: 60574
+2025-10-30 17:12:19,961 WARNING - DagFileProcessorManager (PID=60574) exited with exit code 1 - re-launching
+2025-10-30 17:12:19,964 INFO - Launched DagFileProcessorManager with pid: 60576
+2025-10-30 17:12:20,979 WARNING - DagFileProcessorManager (PID=60576) exited with exit code 1 - re-launching
+2025-10-30 17:12:20,981 INFO - Launched DagFileProcessorManager with pid: 60578
+2025-10-30 17:12:22,864 WARNING - DagFileProcessorManager (PID=60578) exited with exit code 1 - re-launching
+2025-10-30 17:12:22,868 INFO - Launched DagFileProcessorManager with pid: 60581
+2025-10-30 17:12:24,767 WARNING - DagFileProcessorManager (PID=60581) exited with exit code 1 - re-launching
+2025-10-30 17:12:24,771 INFO - Launched DagFileProcessorManager with pid: 60583
+2025-10-30 17:12:25,789 WARNING - DagFileProcessorManager (PID=60583) exited with exit code 1 - re-launching
+2025-10-30 17:12:25,792 INFO - Launched DagFileProcessorManager with pid: 60590
+2025-10-30 17:12:26,807 WARNING - DagFileProcessorManager (PID=60590) exited with exit code 1 - re-launching
+2025-10-30 17:12:26,809 INFO - Launched DagFileProcessorManager with pid: 60593
+2025-10-30 17:12:28,697 WARNING - DagFileProcessorManager (PID=60593) exited with exit code 1 - re-launching
+2025-10-30 17:12:28,700 INFO - Launched DagFileProcessorManager with pid: 60595
+2025-10-30 17:12:30,599 WARNING - DagFileProcessorManager (PID=60595) exited with exit code 1 - re-launching
+2025-10-30 17:12:30,602 INFO - Launched DagFileProcessorManager with pid: 60598
+2025-10-30 17:12:31,622 WARNING - DagFileProcessorManager (PID=60598) exited with exit code 1 - re-launching
+2025-10-30 17:12:31,626 INFO - Launched DagFileProcessorManager with pid: 60601
+2025-10-30 17:12:32,641 WARNING - DagFileProcessorManager (PID=60601) exited with exit code 1 - re-launching
+2025-10-30 17:12:32,644 INFO - Launched DagFileProcessorManager with pid: 60603
+2025-10-30 17:12:33,658 WARNING - DagFileProcessorManager (PID=60603) exited with exit code 1 - re-launching
+2025-10-30 17:12:33,661 INFO - Launched DagFileProcessorManager with pid: 60605
+2025-10-30 17:12:34,601 WARNING - DagFileProcessorManager (PID=60605) exited with exit code 1 - re-launching
+2025-10-30 17:12:34,604 INFO - Launched DagFileProcessorManager with pid: 60607
+2025-10-30 17:12:35,626 WARNING - DagFileProcessorManager (PID=60607) exited with exit code 1 - re-launching
+2025-10-30 17:12:35,629 INFO - Launched DagFileProcessorManager with pid: 60612
+2025-10-30 17:12:36,647 WARNING - DagFileProcessorManager (PID=60612) exited with exit code 1 - re-launching
+2025-10-30 17:12:36,651 INFO - Launched DagFileProcessorManager with pid: 60614
+2025-10-30 17:12:37,694 WARNING - DagFileProcessorManager (PID=60614) exited with exit code 1 - re-launching
+2025-10-30 17:12:37,697 INFO - Launched DagFileProcessorManager with pid: 60618
+2025-10-30 17:12:38,713 WARNING - DagFileProcessorManager (PID=60618) exited with exit code 1 - re-launching
+2025-10-30 17:12:38,716 INFO - Launched DagFileProcessorManager with pid: 60620
+2025-10-30 17:12:40,040 WARNING - DagFileProcessorManager (PID=60620) exited with exit code 1 - re-launching
+2025-10-30 17:12:40,044 INFO - Launched DagFileProcessorManager with pid: 60630
+2025-10-30 17:12:41,066 WARNING - DagFileProcessorManager (PID=60630) exited with exit code 1 - re-launching
+2025-10-30 17:12:41,070 INFO - Launched DagFileProcessorManager with pid: 60632
+2025-10-30 17:12:42,085 WARNING - DagFileProcessorManager (PID=60632) exited with exit code 1 - re-launching
+2025-10-30 17:12:42,088 INFO - Launched DagFileProcessorManager with pid: 60634
+2025-10-30 17:12:43,106 WARNING - DagFileProcessorManager (PID=60634) exited with exit code 1 - re-launching
+2025-10-30 17:12:43,109 INFO - Launched DagFileProcessorManager with pid: 60636
+2025-10-30 17:12:44,125 WARNING - DagFileProcessorManager (PID=60636) exited with exit code 1 - re-launching
+2025-10-30 17:12:44,128 INFO - Launched DagFileProcessorManager with pid: 60639
+2025-10-30 17:12:46,042 WARNING - DagFileProcessorManager (PID=60639) exited with exit code 1 - re-launching
+2025-10-30 17:12:46,046 INFO - Launched DagFileProcessorManager with pid: 60644
+2025-10-30 17:12:47,060 WARNING - DagFileProcessorManager (PID=60644) exited with exit code 1 - re-launching
+2025-10-30 17:12:47,063 INFO - Launched DagFileProcessorManager with pid: 60646
+2025-10-30 17:12:48,992 WARNING - DagFileProcessorManager (PID=60646) exited with exit code 1 - re-launching
+2025-10-30 17:12:48,995 INFO - Launched DagFileProcessorManager with pid: 60652
+2025-10-30 17:12:51,142 WARNING - DagFileProcessorManager (PID=60652) exited with exit code 1 - re-launching
+2025-10-30 17:12:51,146 INFO - Launched DagFileProcessorManager with pid: 60659
+2025-10-30 17:12:52,162 WARNING - DagFileProcessorManager (PID=60659) exited with exit code 1 - re-launching
+2025-10-30 17:12:52,166 INFO - Launched DagFileProcessorManager with pid: 60662
+2025-10-30 17:12:54,148 WARNING - DagFileProcessorManager (PID=60662) exited with exit code 1 - re-launching
+2025-10-30 17:12:54,151 INFO - Launched DagFileProcessorManager with pid: 60667
+2025-10-30 17:12:55,142 WARNING - DagFileProcessorManager (PID=60667) exited with exit code 1 - re-launching
+2025-10-30 17:12:55,146 INFO - Launched DagFileProcessorManager with pid: 60669
+2025-10-30 17:12:56,171 WARNING - DagFileProcessorManager (PID=60669) exited with exit code 1 - re-launching
+2025-10-30 17:12:56,174 INFO - Launched DagFileProcessorManager with pid: 60674
+2025-10-30 17:12:57,188 WARNING - DagFileProcessorManager (PID=60674) exited with exit code 1 - re-launching
+2025-10-30 17:12:57,191 INFO - Launched DagFileProcessorManager with pid: 60676
+2025-10-30 17:12:59,225 WARNING - DagFileProcessorManager (PID=60676) exited with exit code 1 - re-launching
+2025-10-30 17:12:59,246 INFO - Launched DagFileProcessorManager with pid: 60682
+2025-10-30 17:13:01,318 WARNING - DagFileProcessorManager (PID=60682) exited with exit code 1 - re-launching
+2025-10-30 17:13:01,322 INFO - Launched DagFileProcessorManager with pid: 60685
+2025-10-30 17:13:02,345 WARNING - DagFileProcessorManager (PID=60685) exited with exit code 1 - re-launching
+2025-10-30 17:13:02,349 INFO - Launched DagFileProcessorManager with pid: 60689
+2025-10-30 17:13:03,364 WARNING - DagFileProcessorManager (PID=60689) exited with exit code 1 - re-launching
+2025-10-30 17:13:03,367 INFO - Launched DagFileProcessorManager with pid: 60696
+2025-10-30 17:13:04,384 WARNING - DagFileProcessorManager (PID=60696) exited with exit code 1 - re-launching
+2025-10-30 17:13:04,387 INFO - Launched DagFileProcessorManager with pid: 60698
+2025-10-30 17:13:06,383 WARNING - DagFileProcessorManager (PID=60698) exited with exit code 1 - re-launching
+2025-10-30 17:13:06,387 INFO - Launched DagFileProcessorManager with pid: 60703
+2025-10-30 17:13:07,403 WARNING - DagFileProcessorManager (PID=60703) exited with exit code 1 - re-launching
+2025-10-30 17:13:07,407 INFO - Launched DagFileProcessorManager with pid: 60705
+2025-10-30 17:13:09,488 WARNING - DagFileProcessorManager (PID=60705) exited with exit code 1 - re-launching
+2025-10-30 17:13:09,493 INFO - Launched DagFileProcessorManager with pid: 60707
+2025-10-30 17:13:11,520 WARNING - DagFileProcessorManager (PID=60707) exited with exit code 1 - re-launching
+2025-10-30 17:13:11,524 INFO - Launched DagFileProcessorManager with pid: 60711
+2025-10-30 17:13:12,539 WARNING - DagFileProcessorManager (PID=60711) exited with exit code 1 - re-launching
+2025-10-30 17:13:12,542 INFO - Launched DagFileProcessorManager with pid: 60717
+2025-10-30 17:13:13,557 WARNING - DagFileProcessorManager (PID=60717) exited with exit code 1 - re-launching
+2025-10-30 17:13:13,560 INFO - Launched DagFileProcessorManager with pid: 60719
+2025-10-30 17:13:14,578 WARNING - DagFileProcessorManager (PID=60719) exited with exit code 1 - re-launching
+2025-10-30 17:13:14,581 INFO - Launched DagFileProcessorManager with pid: 60721
+2025-10-30 17:13:15,520 WARNING - DagFileProcessorManager (PID=60721) exited with exit code 1 - re-launching
+2025-10-30 17:13:15,523 INFO - Launched DagFileProcessorManager with pid: 60725
+2025-10-30 17:13:17,567 WARNING - DagFileProcessorManager (PID=60725) exited with exit code 1 - re-launching
+2025-10-30 17:13:17,571 INFO - Launched DagFileProcessorManager with pid: 60731
+2025-10-30 17:13:19,586 WARNING - DagFileProcessorManager (PID=60731) exited with exit code 1 - re-launching
+2025-10-30 17:13:19,590 INFO - Launched DagFileProcessorManager with pid: 60733
+2025-10-30 17:13:20,548 WARNING - DagFileProcessorManager (PID=60733) exited with exit code 1 - re-launching
+2025-10-30 17:13:20,551 INFO - Launched DagFileProcessorManager with pid: 60735
+2025-10-30 17:13:21,572 WARNING - DagFileProcessorManager (PID=60735) exited with exit code 1 - re-launching
+2025-10-30 17:13:21,575 INFO - Launched DagFileProcessorManager with pid: 60741
+2025-10-30 17:13:22,589 WARNING - DagFileProcessorManager (PID=60741) exited with exit code 1 - re-launching
+2025-10-30 17:13:22,592 INFO - Launched DagFileProcessorManager with pid: 60743
+2025-10-30 17:13:24,511 WARNING - DagFileProcessorManager (PID=60743) exited with exit code 1 - re-launching
+2025-10-30 17:13:24,514 INFO - Launched DagFileProcessorManager with pid: 60745
+2025-10-30 17:13:25,531 WARNING - DagFileProcessorManager (PID=60745) exited with exit code 1 - re-launching
+2025-10-30 17:13:25,534 INFO - Launched DagFileProcessorManager with pid: 60748
+2025-10-30 17:13:27,468 WARNING - DagFileProcessorManager (PID=60748) exited with exit code 1 - re-launching
+2025-10-30 17:13:27,472 INFO - Launched DagFileProcessorManager with pid: 60752
+2025-10-30 17:13:28,487 WARNING - DagFileProcessorManager (PID=60752) exited with exit code 1 - re-launching
+2025-10-30 17:13:28,491 INFO - Launched DagFileProcessorManager with pid: 60754
+2025-10-30 17:13:30,381 WARNING - DagFileProcessorManager (PID=60754) exited with exit code 1 - re-launching
+2025-10-30 17:13:30,383 INFO - Launched DagFileProcessorManager with pid: 60757
+2025-10-30 17:13:31,399 WARNING - DagFileProcessorManager (PID=60757) exited with exit code 1 - re-launching
+2025-10-30 17:13:31,402 INFO - Launched DagFileProcessorManager with pid: 60760
+2025-10-30 17:13:33,298 WARNING - DagFileProcessorManager (PID=60760) exited with exit code 1 - re-launching
+2025-10-30 17:13:33,303 INFO - Launched DagFileProcessorManager with pid: 60764
+2025-10-30 17:13:34,320 WARNING - DagFileProcessorManager (PID=60764) exited with exit code 1 - re-launching
+2025-10-30 17:13:34,323 INFO - Launched DagFileProcessorManager with pid: 60766
+2025-10-30 17:13:35,339 WARNING - DagFileProcessorManager (PID=60766) exited with exit code 1 - re-launching
+2025-10-30 17:13:35,343 INFO - Launched DagFileProcessorManager with pid: 60769
+2025-10-30 17:13:37,302 WARNING - DagFileProcessorManager (PID=60769) exited with exit code 1 - re-launching
+2025-10-30 17:13:37,307 INFO - Launched DagFileProcessorManager with pid: 60773
+2025-10-30 17:13:38,333 WARNING - DagFileProcessorManager (PID=60773) exited with exit code 1 - re-launching
+2025-10-30 17:13:38,336 INFO - Launched DagFileProcessorManager with pid: 60775
+2025-10-30 17:13:39,379 WARNING - DagFileProcessorManager (PID=60775) exited with exit code 1 - re-launching
+2025-10-30 17:13:39,383 INFO - Launched DagFileProcessorManager with pid: 60777
+2025-10-30 17:13:41,406 WARNING - DagFileProcessorManager (PID=60777) exited with exit code 1 - re-launching
+2025-10-30 17:13:41,409 INFO - Launched DagFileProcessorManager with pid: 60784
+2025-10-30 17:13:43,406 WARNING - DagFileProcessorManager (PID=60784) exited with exit code 1 - re-launching
+2025-10-30 17:13:43,410 INFO - Launched DagFileProcessorManager with pid: 60786
+2025-10-30 17:13:44,429 WARNING - DagFileProcessorManager (PID=60786) exited with exit code 1 - re-launching
+2025-10-30 17:13:44,432 INFO - Launched DagFileProcessorManager with pid: 60790
+2025-10-30 17:13:46,463 WARNING - DagFileProcessorManager (PID=60790) exited with exit code 1 - re-launching
+2025-10-30 17:13:46,467 INFO - Launched DagFileProcessorManager with pid: 60795
+2025-10-30 17:13:47,408 WARNING - DagFileProcessorManager (PID=60795) exited with exit code 1 - re-launching
+2025-10-30 17:13:47,414 INFO - Launched DagFileProcessorManager with pid: 60797
+2025-10-30 17:13:48,436 WARNING - DagFileProcessorManager (PID=60797) exited with exit code 1 - re-launching
+2025-10-30 17:13:48,439 INFO - Launched DagFileProcessorManager with pid: 60801
+2025-10-30 17:13:49,401 WARNING - DagFileProcessorManager (PID=60801) exited with exit code 1 - re-launching
+2025-10-30 17:13:49,404 INFO - Launched DagFileProcessorManager with pid: 60803
+2025-10-30 17:13:50,425 WARNING - DagFileProcessorManager (PID=60803) exited with exit code 1 - re-launching
+2025-10-30 17:13:50,428 INFO - Launched DagFileProcessorManager with pid: 60805
+2025-10-30 17:13:51,442 WARNING - DagFileProcessorManager (PID=60805) exited with exit code 1 - re-launching
+2025-10-30 17:13:51,445 INFO - Launched DagFileProcessorManager with pid: 60807
+2025-10-30 17:13:52,437 WARNING - DagFileProcessorManager (PID=60807) exited with exit code 1 - re-launching
+2025-10-30 17:13:52,440 INFO - Launched DagFileProcessorManager with pid: 60809
+2025-10-30 17:13:53,460 WARNING - DagFileProcessorManager (PID=60809) exited with exit code 1 - re-launching
+2025-10-30 17:13:53,463 INFO - Launched DagFileProcessorManager with pid: 60811
+2025-10-30 17:13:55,350 WARNING - DagFileProcessorManager (PID=60811) exited with exit code 1 - re-launching
+2025-10-30 17:13:55,353 INFO - Launched DagFileProcessorManager with pid: 60816
+2025-10-30 17:13:56,372 WARNING - DagFileProcessorManager (PID=60816) exited with exit code 1 - re-launching
+2025-10-30 17:13:56,375 INFO - Launched DagFileProcessorManager with pid: 60821
+2025-10-30 17:13:57,389 WARNING - DagFileProcessorManager (PID=60821) exited with exit code 1 - re-launching
+2025-10-30 17:13:57,392 INFO - Launched DagFileProcessorManager with pid: 60823
+2025-10-30 17:13:59,333 WARNING - DagFileProcessorManager (PID=60823) exited with exit code 1 - re-launching
+2025-10-30 17:13:59,337 INFO - Launched DagFileProcessorManager with pid: 60834
+2025-10-30 17:14:01,260 WARNING - DagFileProcessorManager (PID=60834) exited with exit code 1 - re-launching
+2025-10-30 17:14:01,263 INFO - Launched DagFileProcessorManager with pid: 60837
+2025-10-30 17:14:02,282 WARNING - DagFileProcessorManager (PID=60837) exited with exit code 1 - re-launching
+2025-10-30 17:14:02,285 INFO - Launched DagFileProcessorManager with pid: 60840
+2025-10-30 17:14:03,301 WARNING - DagFileProcessorManager (PID=60840) exited with exit code 1 - re-launching
+2025-10-30 17:14:03,304 INFO - Launched DagFileProcessorManager with pid: 60842
+2025-10-30 17:14:05,242 WARNING - DagFileProcessorManager (PID=60842) exited with exit code 1 - re-launching
+2025-10-30 17:14:05,245 INFO - Launched DagFileProcessorManager with pid: 60845
+2025-10-30 17:14:06,260 WARNING - DagFileProcessorManager (PID=60845) exited with exit code 1 - re-launching
+2025-10-30 17:14:06,263 INFO - Launched DagFileProcessorManager with pid: 60849
+2025-10-30 17:14:07,278 WARNING - DagFileProcessorManager (PID=60849) exited with exit code 1 - re-launching
+2025-10-30 17:14:07,281 INFO - Launched DagFileProcessorManager with pid: 60853
+2025-10-30 17:14:08,299 WARNING - DagFileProcessorManager (PID=60853) exited with exit code 1 - re-launching
+2025-10-30 17:14:08,302 INFO - Launched DagFileProcessorManager with pid: 60855
+2025-10-30 17:14:09,243 WARNING - DagFileProcessorManager (PID=60855) exited with exit code 1 - re-launching
+2025-10-30 17:14:09,246 INFO - Launched DagFileProcessorManager with pid: 60857
+2025-10-30 17:14:10,259 WARNING - DagFileProcessorManager (PID=60857) exited with exit code 1 - re-launching
+2025-10-30 17:14:10,262 INFO - Launched DagFileProcessorManager with pid: 60859
+2025-10-30 17:14:11,281 WARNING - DagFileProcessorManager (PID=60859) exited with exit code 1 - re-launching
+2025-10-30 17:14:11,285 INFO - Launched DagFileProcessorManager with pid: 60861
+2025-10-30 17:14:12,300 WARNING - DagFileProcessorManager (PID=60861) exited with exit code 1 - re-launching
+2025-10-30 17:14:12,303 INFO - Launched DagFileProcessorManager with pid: 60863
+2025-10-30 17:14:13,318 WARNING - DagFileProcessorManager (PID=60863) exited with exit code 1 - re-launching
+2025-10-30 17:14:13,321 INFO - Launched DagFileProcessorManager with pid: 60865
+2025-10-30 17:14:14,269 WARNING - DagFileProcessorManager (PID=60865) exited with exit code 1 - re-launching
+2025-10-30 17:14:14,272 INFO - Launched DagFileProcessorManager with pid: 60867
+2025-10-30 17:14:15,291 WARNING - DagFileProcessorManager (PID=60867) exited with exit code 1 - re-launching
+2025-10-30 17:14:15,294 INFO - Launched DagFileProcessorManager with pid: 60870
+2025-10-30 17:14:16,253 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 17:14:17,270 WARNING - DagFileProcessorManager (PID=60870) exited with exit code 1 - re-launching
+2025-10-30 17:14:17,275 INFO - Launched DagFileProcessorManager with pid: 60874
+2025-10-30 17:14:18,291 WARNING - DagFileProcessorManager (PID=60874) exited with exit code 1 - re-launching
+2025-10-30 17:14:18,294 INFO - Launched DagFileProcessorManager with pid: 60878
+2025-10-30 17:14:19,293 WARNING - DagFileProcessorManager (PID=60878) exited with exit code 1 - re-launching
+2025-10-30 17:14:19,295 INFO - Launched DagFileProcessorManager with pid: 60880
+2025-10-30 17:14:20,281 WARNING - DagFileProcessorManager (PID=60880) exited with exit code 1 - re-launching
+2025-10-30 17:14:20,284 INFO - Launched DagFileProcessorManager with pid: 60882
+2025-10-30 17:14:21,300 WARNING - DagFileProcessorManager (PID=60882) exited with exit code 1 - re-launching
+2025-10-30 17:14:21,303 INFO - Launched DagFileProcessorManager with pid: 60884
+2025-10-30 17:14:22,318 WARNING - DagFileProcessorManager (PID=60884) exited with exit code 1 - re-launching
+2025-10-30 17:14:22,321 INFO - Launched DagFileProcessorManager with pid: 60886
+2025-10-30 17:14:23,336 WARNING - DagFileProcessorManager (PID=60886) exited with exit code 1 - re-launching
+2025-10-30 17:14:23,340 INFO - Launched DagFileProcessorManager with pid: 60888
+2025-10-30 17:14:24,316 WARNING - DagFileProcessorManager (PID=60888) exited with exit code 1 - re-launching
+2025-10-30 17:14:24,319 INFO - Launched DagFileProcessorManager with pid: 60890
+2025-10-30 17:14:26,214 WARNING - DagFileProcessorManager (PID=60890) exited with exit code 1 - re-launching
+2025-10-30 17:14:26,217 INFO - Launched DagFileProcessorManager with pid: 60895
+2025-10-30 17:14:27,232 WARNING - DagFileProcessorManager (PID=60895) exited with exit code 1 - re-launching
+2025-10-30 17:14:27,235 INFO - Launched DagFileProcessorManager with pid: 60897
+2025-10-30 17:14:28,251 WARNING - DagFileProcessorManager (PID=60897) exited with exit code 1 - re-launching
+2025-10-30 17:14:28,254 INFO - Launched DagFileProcessorManager with pid: 60899
+2025-10-30 17:14:29,271 WARNING - DagFileProcessorManager (PID=60899) exited with exit code 1 - re-launching
+2025-10-30 17:14:29,273 INFO - Launched DagFileProcessorManager with pid: 60903
+2025-10-30 17:14:30,300 WARNING - DagFileProcessorManager (PID=60903) exited with exit code 1 - re-launching
+2025-10-30 17:14:30,304 INFO - Launched DagFileProcessorManager with pid: 60906
+2025-10-30 17:14:31,320 WARNING - DagFileProcessorManager (PID=60906) exited with exit code 1 - re-launching
+2025-10-30 17:14:31,323 INFO - Launched DagFileProcessorManager with pid: 60908
+2025-10-30 17:14:32,341 WARNING - DagFileProcessorManager (PID=60908) exited with exit code 1 - re-launching
+2025-10-30 17:14:32,344 INFO - Launched DagFileProcessorManager with pid: 60911
+2025-10-30 17:14:33,358 WARNING - DagFileProcessorManager (PID=60911) exited with exit code 1 - re-launching
+2025-10-30 17:14:33,361 INFO - Launched DagFileProcessorManager with pid: 60913
+2025-10-30 17:14:34,377 WARNING - DagFileProcessorManager (PID=60913) exited with exit code 1 - re-launching
+2025-10-30 17:14:34,379 INFO - Launched DagFileProcessorManager with pid: 60915
+2025-10-30 17:14:36,282 WARNING - DagFileProcessorManager (PID=60915) exited with exit code 1 - re-launching
+2025-10-30 17:14:36,285 INFO - Launched DagFileProcessorManager with pid: 60920
+2025-10-30 17:14:37,301 WARNING - DagFileProcessorManager (PID=60920) exited with exit code 1 - re-launching
+2025-10-30 17:14:37,305 INFO - Launched DagFileProcessorManager with pid: 60922
+2025-10-30 17:14:38,320 WARNING - DagFileProcessorManager (PID=60922) exited with exit code 1 - re-launching
+2025-10-30 17:14:38,323 INFO - Launched DagFileProcessorManager with pid: 60924
+2025-10-30 17:14:39,340 WARNING - DagFileProcessorManager (PID=60924) exited with exit code 1 - re-launching
+2025-10-30 17:14:39,343 INFO - Launched DagFileProcessorManager with pid: 60926
+2025-10-30 17:14:40,279 WARNING - DagFileProcessorManager (PID=60926) exited with exit code 1 - re-launching
+2025-10-30 17:14:40,282 INFO - Launched DagFileProcessorManager with pid: 60930
+2025-10-30 17:14:42,183 WARNING - DagFileProcessorManager (PID=60930) exited with exit code 1 - re-launching
+2025-10-30 17:14:42,186 INFO - Launched DagFileProcessorManager with pid: 60932
+2025-10-30 17:14:43,202 WARNING - DagFileProcessorManager (PID=60932) exited with exit code 1 - re-launching
+2025-10-30 17:14:43,206 INFO - Launched DagFileProcessorManager with pid: 60934
+2025-10-30 17:14:44,222 WARNING - DagFileProcessorManager (PID=60934) exited with exit code 1 - re-launching
+2025-10-30 17:14:44,224 INFO - Launched DagFileProcessorManager with pid: 60936
+2025-10-30 17:14:45,242 WARNING - DagFileProcessorManager (PID=60936) exited with exit code 1 - re-launching
+2025-10-30 17:14:45,245 INFO - Launched DagFileProcessorManager with pid: 60939
+2025-10-30 17:14:47,152 WARNING - DagFileProcessorManager (PID=60939) exited with exit code 1 - re-launching
+2025-10-30 17:14:47,155 INFO - Launched DagFileProcessorManager with pid: 60943
+2025-10-30 17:14:48,171 WARNING - DagFileProcessorManager (PID=60943) exited with exit code 1 - re-launching
+2025-10-30 17:14:48,173 INFO - Launched DagFileProcessorManager with pid: 60945
+2025-10-30 17:14:49,189 WARNING - DagFileProcessorManager (PID=60945) exited with exit code 1 - re-launching
+2025-10-30 17:14:49,191 INFO - Launched DagFileProcessorManager with pid: 60949
+2025-10-30 17:14:50,207 WARNING - DagFileProcessorManager (PID=60949) exited with exit code 1 - re-launching
+2025-10-30 17:14:50,211 INFO - Launched DagFileProcessorManager with pid: 60951
+2025-10-30 17:14:51,157 WARNING - DagFileProcessorManager (PID=60951) exited with exit code 1 - re-launching
+2025-10-30 17:14:51,160 INFO - Launched DagFileProcessorManager with pid: 60955
+2025-10-30 17:14:52,180 WARNING - DagFileProcessorManager (PID=60955) exited with exit code 1 - re-launching
+2025-10-30 17:14:52,183 INFO - Launched DagFileProcessorManager with pid: 60957
+2025-10-30 17:14:53,198 WARNING - DagFileProcessorManager (PID=60957) exited with exit code 1 - re-launching
+2025-10-30 17:14:53,201 INFO - Launched DagFileProcessorManager with pid: 60959
+2025-10-30 17:14:54,217 WARNING - DagFileProcessorManager (PID=60959) exited with exit code 1 - re-launching
+2025-10-30 17:14:54,219 INFO - Launched DagFileProcessorManager with pid: 60961
+2025-10-30 17:14:55,235 WARNING - DagFileProcessorManager (PID=60961) exited with exit code 1 - re-launching
+2025-10-30 17:14:55,239 INFO - Launched DagFileProcessorManager with pid: 60964
+2025-10-30 17:14:56,179 WARNING - DagFileProcessorManager (PID=60964) exited with exit code 1 - re-launching
+2025-10-30 17:14:56,183 INFO - Launched DagFileProcessorManager with pid: 60968
+2025-10-30 17:14:57,206 WARNING - DagFileProcessorManager (PID=60968) exited with exit code 1 - re-launching
+2025-10-30 17:14:57,209 INFO - Launched DagFileProcessorManager with pid: 60970
+2025-10-30 17:14:58,225 WARNING - DagFileProcessorManager (PID=60970) exited with exit code 1 - re-launching
+2025-10-30 17:14:58,228 INFO - Launched DagFileProcessorManager with pid: 60972
+2025-10-30 17:14:59,244 WARNING - DagFileProcessorManager (PID=60972) exited with exit code 1 - re-launching
+2025-10-30 17:14:59,247 INFO - Launched DagFileProcessorManager with pid: 60974
+2025-10-30 17:15:00,264 WARNING - DagFileProcessorManager (PID=60974) exited with exit code 1 - re-launching
+2025-10-30 17:15:00,267 INFO - Launched DagFileProcessorManager with pid: 60976
+2025-10-30 17:15:01,182 WARNING - DagFileProcessorManager (PID=60976) exited with exit code 1 - re-launching
+2025-10-30 17:15:01,185 INFO - Launched DagFileProcessorManager with pid: 60979
+2025-10-30 17:15:03,097 WARNING - DagFileProcessorManager (PID=60979) exited with exit code 1 - re-launching
+2025-10-30 17:15:03,101 INFO - Launched DagFileProcessorManager with pid: 60989
+2025-10-30 17:15:04,116 WARNING - DagFileProcessorManager (PID=60989) exited with exit code 1 - re-launching
+2025-10-30 17:15:04,119 INFO - Launched DagFileProcessorManager with pid: 60991
+2025-10-30 17:15:05,134 WARNING - DagFileProcessorManager (PID=60991) exited with exit code 1 - re-launching
+2025-10-30 17:15:05,137 INFO - Launched DagFileProcessorManager with pid: 60993
+2025-10-30 17:15:06,151 WARNING - DagFileProcessorManager (PID=60993) exited with exit code 1 - re-launching
+2025-10-30 17:15:06,154 INFO - Launched DagFileProcessorManager with pid: 60998
+2025-10-30 17:15:07,099 WARNING - DagFileProcessorManager (PID=60998) exited with exit code 1 - re-launching
+2025-10-30 17:15:07,101 INFO - Launched DagFileProcessorManager with pid: 61000
+2025-10-30 17:15:08,124 WARNING - DagFileProcessorManager (PID=61000) exited with exit code 1 - re-launching
+2025-10-30 17:15:08,127 INFO - Launched DagFileProcessorManager with pid: 61002
+2025-10-30 17:15:09,142 WARNING - DagFileProcessorManager (PID=61002) exited with exit code 1 - re-launching
+2025-10-30 17:15:09,146 INFO - Launched DagFileProcessorManager with pid: 61004
+2025-10-30 17:15:10,161 WARNING - DagFileProcessorManager (PID=61004) exited with exit code 1 - re-launching
+2025-10-30 17:15:10,164 INFO - Launched DagFileProcessorManager with pid: 61006
+2025-10-30 17:15:11,201 WARNING - DagFileProcessorManager (PID=61006) exited with exit code 1 - re-launching
+2025-10-30 17:15:11,204 INFO - Launched DagFileProcessorManager with pid: 61008
+2025-10-30 17:15:12,122 WARNING - DagFileProcessorManager (PID=61008) exited with exit code 1 - re-launching
+2025-10-30 17:15:12,125 INFO - Launched DagFileProcessorManager with pid: 61010
+2025-10-30 17:15:13,146 WARNING - DagFileProcessorManager (PID=61010) exited with exit code 1 - re-launching
+2025-10-30 17:15:13,150 INFO - Launched DagFileProcessorManager with pid: 61012
+2025-10-30 17:15:14,169 WARNING - DagFileProcessorManager (PID=61012) exited with exit code 1 - re-launching
+2025-10-30 17:15:14,172 INFO - Launched DagFileProcessorManager with pid: 61016
+2025-10-30 17:15:15,187 WARNING - DagFileProcessorManager (PID=61016) exited with exit code 1 - re-launching
+2025-10-30 17:15:15,191 INFO - Launched DagFileProcessorManager with pid: 61018
+2025-10-30 17:15:16,206 WARNING - DagFileProcessorManager (PID=61018) exited with exit code 1 - re-launching
+2025-10-30 17:15:16,209 INFO - Launched DagFileProcessorManager with pid: 61023
+2025-10-30 17:15:17,145 WARNING - DagFileProcessorManager (PID=61023) exited with exit code 1 - re-launching
+2025-10-30 17:15:17,148 INFO - Launched DagFileProcessorManager with pid: 61025
+2025-10-30 17:15:18,168 WARNING - DagFileProcessorManager (PID=61025) exited with exit code 1 - re-launching
+2025-10-30 17:15:18,171 INFO - Launched DagFileProcessorManager with pid: 61027
+2025-10-30 17:15:19,186 WARNING - DagFileProcessorManager (PID=61027) exited with exit code 1 - re-launching
+2025-10-30 17:15:19,189 INFO - Launched DagFileProcessorManager with pid: 61029
+2025-10-30 17:15:20,207 WARNING - DagFileProcessorManager (PID=61029) exited with exit code 1 - re-launching
+2025-10-30 17:15:20,210 INFO - Launched DagFileProcessorManager with pid: 61031
+2025-10-30 17:15:21,222 WARNING - DagFileProcessorManager (PID=61031) exited with exit code 1 - re-launching
+2025-10-30 17:15:21,226 INFO - Launched DagFileProcessorManager with pid: 61033
+2025-10-30 17:15:22,166 WARNING - DagFileProcessorManager (PID=61033) exited with exit code 1 - re-launching
+2025-10-30 17:15:22,169 INFO - Launched DagFileProcessorManager with pid: 61035
+2025-10-30 17:15:23,192 WARNING - DagFileProcessorManager (PID=61035) exited with exit code 1 - re-launching
+2025-10-30 17:15:23,195 INFO - Launched DagFileProcessorManager with pid: 61037
+2025-10-30 17:15:25,108 WARNING - DagFileProcessorManager (PID=61037) exited with exit code 1 - re-launching
+2025-10-30 17:15:25,110 INFO - Launched DagFileProcessorManager with pid: 61041
+2025-10-30 17:15:26,044 WARNING - DagFileProcessorManager (PID=61041) exited with exit code 1 - re-launching
+2025-10-30 17:15:26,047 INFO - Launched DagFileProcessorManager with pid: 61046
+2025-10-30 17:15:27,065 WARNING - DagFileProcessorManager (PID=61046) exited with exit code 1 - re-launching
+2025-10-30 17:15:27,068 INFO - Launched DagFileProcessorManager with pid: 61048
+2025-10-30 17:15:28,998 WARNING - DagFileProcessorManager (PID=61048) exited with exit code 1 - re-launching
+2025-10-30 17:15:29,002 INFO - Launched DagFileProcessorManager with pid: 61050
+2025-10-30 17:15:30,017 WARNING - DagFileProcessorManager (PID=61050) exited with exit code 1 - re-launching
+2025-10-30 17:15:30,020 INFO - Launched DagFileProcessorManager with pid: 61052
+2025-10-30 17:15:31,040 WARNING - DagFileProcessorManager (PID=61052) exited with exit code 1 - re-launching
+2025-10-30 17:15:31,044 INFO - Launched DagFileProcessorManager with pid: 61055
+2025-10-30 17:15:33,000 WARNING - DagFileProcessorManager (PID=61055) exited with exit code 1 - re-launching
+2025-10-30 17:15:33,003 INFO - Launched DagFileProcessorManager with pid: 61060
+2025-10-30 17:15:34,024 WARNING - DagFileProcessorManager (PID=61060) exited with exit code 1 - re-launching
+2025-10-30 17:15:34,027 INFO - Launched DagFileProcessorManager with pid: 61062
+2025-10-30 17:15:35,041 WARNING - DagFileProcessorManager (PID=61062) exited with exit code 1 - re-launching
+2025-10-30 17:15:35,045 INFO - Launched DagFileProcessorManager with pid: 61064
+2025-10-30 17:15:36,061 WARNING - DagFileProcessorManager (PID=61064) exited with exit code 1 - re-launching
+2025-10-30 17:15:36,064 INFO - Launched DagFileProcessorManager with pid: 61071
+2025-10-30 17:15:37,078 WARNING - DagFileProcessorManager (PID=61071) exited with exit code 1 - re-launching
+2025-10-30 17:15:37,081 INFO - Launched DagFileProcessorManager with pid: 61073
+2025-10-30 17:15:38,028 WARNING - DagFileProcessorManager (PID=61073) exited with exit code 1 - re-launching
+2025-10-30 17:15:38,031 INFO - Launched DagFileProcessorManager with pid: 61075
+2025-10-30 17:15:39,052 WARNING - DagFileProcessorManager (PID=61075) exited with exit code 1 - re-launching
+2025-10-30 17:15:39,055 INFO - Launched DagFileProcessorManager with pid: 61077
+2025-10-30 17:15:40,069 WARNING - DagFileProcessorManager (PID=61077) exited with exit code 1 - re-launching
+2025-10-30 17:15:40,072 INFO - Launched DagFileProcessorManager with pid: 61079
+2025-10-30 17:15:41,065 WARNING - DagFileProcessorManager (PID=61079) exited with exit code 1 - re-launching
+2025-10-30 17:15:41,069 INFO - Launched DagFileProcessorManager with pid: 61081
+2025-10-30 17:15:42,035 WARNING - DagFileProcessorManager (PID=61081) exited with exit code 1 - re-launching
+2025-10-30 17:15:42,038 INFO - Launched DagFileProcessorManager with pid: 61083
+2025-10-30 17:15:43,053 WARNING - DagFileProcessorManager (PID=61083) exited with exit code 1 - re-launching
+2025-10-30 17:15:43,056 INFO - Launched DagFileProcessorManager with pid: 61085
+2025-10-30 17:15:44,079 WARNING - DagFileProcessorManager (PID=61085) exited with exit code 1 - re-launching
+2025-10-30 17:15:44,082 INFO - Launched DagFileProcessorManager with pid: 61096
+2025-10-30 17:15:45,097 WARNING - DagFileProcessorManager (PID=61096) exited with exit code 1 - re-launching
+2025-10-30 17:15:45,100 INFO - Launched DagFileProcessorManager with pid: 61098
+2025-10-30 17:15:46,116 WARNING - DagFileProcessorManager (PID=61098) exited with exit code 1 - re-launching
+2025-10-30 17:15:46,119 INFO - Launched DagFileProcessorManager with pid: 61103
+2025-10-30 17:15:47,134 WARNING - DagFileProcessorManager (PID=61103) exited with exit code 1 - re-launching
+2025-10-30 17:15:47,139 INFO - Launched DagFileProcessorManager with pid: 61107
+2025-10-30 17:15:48,077 WARNING - DagFileProcessorManager (PID=61107) exited with exit code 1 - re-launching
+2025-10-30 17:15:48,080 INFO - Launched DagFileProcessorManager with pid: 61109
+2025-10-30 17:15:49,100 WARNING - DagFileProcessorManager (PID=61109) exited with exit code 1 - re-launching
+2025-10-30 17:15:49,103 INFO - Launched DagFileProcessorManager with pid: 61113
+2025-10-30 17:15:50,121 WARNING - DagFileProcessorManager (PID=61113) exited with exit code 1 - re-launching
+2025-10-30 17:15:50,124 INFO - Launched DagFileProcessorManager with pid: 61115
+2025-10-30 17:15:51,139 WARNING - DagFileProcessorManager (PID=61115) exited with exit code 1 - re-launching
+2025-10-30 17:15:51,142 INFO - Launched DagFileProcessorManager with pid: 61117
+2025-10-30 17:15:53,090 WARNING - DagFileProcessorManager (PID=61117) exited with exit code 1 - re-launching
+2025-10-30 17:15:53,095 INFO - Launched DagFileProcessorManager with pid: 61119
+2025-10-30 17:15:54,116 WARNING - DagFileProcessorManager (PID=61119) exited with exit code 1 - re-launching
+2025-10-30 17:15:54,120 INFO - Launched DagFileProcessorManager with pid: 61121
+2025-10-30 17:15:55,134 WARNING - DagFileProcessorManager (PID=61121) exited with exit code 1 - re-launching
+2025-10-30 17:15:55,137 INFO - Launched DagFileProcessorManager with pid: 61123
+2025-10-30 17:15:56,092 WARNING - DagFileProcessorManager (PID=61123) exited with exit code 1 - re-launching
+2025-10-30 17:15:56,095 INFO - Launched DagFileProcessorManager with pid: 61128
+2025-10-30 17:15:57,112 WARNING - DagFileProcessorManager (PID=61128) exited with exit code 1 - re-launching
+2025-10-30 17:15:57,115 INFO - Launched DagFileProcessorManager with pid: 61130
+2025-10-30 17:15:58,119 WARNING - DagFileProcessorManager (PID=61130) exited with exit code 1 - re-launching
+2025-10-30 17:15:58,122 INFO - Launched DagFileProcessorManager with pid: 61134
+2025-10-30 17:15:59,153 WARNING - DagFileProcessorManager (PID=61134) exited with exit code 1 - re-launching
+2025-10-30 17:15:59,157 INFO - Launched DagFileProcessorManager with pid: 61136
+2025-10-30 17:16:00,177 WARNING - DagFileProcessorManager (PID=61136) exited with exit code 1 - re-launching
+2025-10-30 17:16:00,180 INFO - Launched DagFileProcessorManager with pid: 61138
+2025-10-30 17:16:01,197 WARNING - DagFileProcessorManager (PID=61138) exited with exit code 1 - re-launching
+2025-10-30 17:16:01,200 INFO - Launched DagFileProcessorManager with pid: 61141
+2025-10-30 17:16:02,095 WARNING - DagFileProcessorManager (PID=61141) exited with exit code 1 - re-launching
+2025-10-30 17:16:02,098 INFO - Launched DagFileProcessorManager with pid: 61144
+2025-10-30 17:16:03,114 WARNING - DagFileProcessorManager (PID=61144) exited with exit code 1 - re-launching
+2025-10-30 17:16:03,118 INFO - Launched DagFileProcessorManager with pid: 61146
+2025-10-30 17:16:05,021 WARNING - DagFileProcessorManager (PID=61146) exited with exit code 1 - re-launching
+2025-10-30 17:16:05,024 INFO - Launched DagFileProcessorManager with pid: 61148
+2025-10-30 17:16:06,042 WARNING - DagFileProcessorManager (PID=61148) exited with exit code 1 - re-launching
+2025-10-30 17:16:06,047 INFO - Launched DagFileProcessorManager with pid: 61153
+2025-10-30 17:16:07,061 WARNING - DagFileProcessorManager (PID=61153) exited with exit code 1 - re-launching
+2025-10-30 17:16:07,064 INFO - Launched DagFileProcessorManager with pid: 61155
+2025-10-30 17:16:08,081 WARNING - DagFileProcessorManager (PID=61155) exited with exit code 1 - re-launching
+2025-10-30 17:16:08,084 INFO - Launched DagFileProcessorManager with pid: 61157
+2025-10-30 17:16:09,027 WARNING - DagFileProcessorManager (PID=61157) exited with exit code 1 - re-launching
+2025-10-30 17:16:09,031 INFO - Launched DagFileProcessorManager with pid: 61159
+2025-10-30 17:16:10,052 WARNING - DagFileProcessorManager (PID=61159) exited with exit code 1 - re-launching
+2025-10-30 17:16:10,056 INFO - Launched DagFileProcessorManager with pid: 61167
+2025-10-30 17:16:11,074 WARNING - DagFileProcessorManager (PID=61167) exited with exit code 1 - re-launching
+2025-10-30 17:16:11,077 INFO - Launched DagFileProcessorManager with pid: 61169
+2025-10-30 17:16:12,113 WARNING - DagFileProcessorManager (PID=61169) exited with exit code 1 - re-launching
+2025-10-30 17:16:12,116 INFO - Launched DagFileProcessorManager with pid: 61171
+2025-10-30 17:16:13,132 WARNING - DagFileProcessorManager (PID=61171) exited with exit code 1 - re-launching
+2025-10-30 17:16:13,135 INFO - Launched DagFileProcessorManager with pid: 61173
+2025-10-30 17:16:14,054 WARNING - DagFileProcessorManager (PID=61173) exited with exit code 1 - re-launching
+2025-10-30 17:16:14,057 INFO - Launched DagFileProcessorManager with pid: 61175
+2025-10-30 17:16:15,076 WARNING - DagFileProcessorManager (PID=61175) exited with exit code 1 - re-launching
+2025-10-30 17:16:15,079 INFO - Launched DagFileProcessorManager with pid: 61177
+2025-10-30 17:16:16,093 WARNING - DagFileProcessorManager (PID=61177) exited with exit code 1 - re-launching
+2025-10-30 17:16:16,096 INFO - Launched DagFileProcessorManager with pid: 61182
+2025-10-30 17:16:17,112 WARNING - DagFileProcessorManager (PID=61182) exited with exit code 1 - re-launching
+2025-10-30 17:16:17,115 INFO - Launched DagFileProcessorManager with pid: 61184
+2025-10-30 17:16:18,129 WARNING - DagFileProcessorManager (PID=61184) exited with exit code 1 - re-launching
+2025-10-30 17:16:18,133 INFO - Launched DagFileProcessorManager with pid: 61186
+2025-10-30 17:16:19,077 WARNING - DagFileProcessorManager (PID=61186) exited with exit code 1 - re-launching
+2025-10-30 17:16:19,080 INFO - Launched DagFileProcessorManager with pid: 61188
+2025-10-30 17:16:20,102 WARNING - DagFileProcessorManager (PID=61188) exited with exit code 1 - re-launching
+2025-10-30 17:16:20,105 INFO - Launched DagFileProcessorManager with pid: 61190
+2025-10-30 17:16:21,121 WARNING - DagFileProcessorManager (PID=61190) exited with exit code 1 - re-launching
+2025-10-30 17:16:21,123 INFO - Launched DagFileProcessorManager with pid: 61194
+2025-10-30 17:16:22,136 WARNING - DagFileProcessorManager (PID=61194) exited with exit code 1 - re-launching
+2025-10-30 17:16:22,139 INFO - Launched DagFileProcessorManager with pid: 61196
+2025-10-30 17:16:23,160 WARNING - DagFileProcessorManager (PID=61196) exited with exit code 1 - re-launching
+2025-10-30 17:16:23,164 INFO - Launched DagFileProcessorManager with pid: 61198
+2025-10-30 17:16:25,399 WARNING - DagFileProcessorManager (PID=61198) exited with exit code 1 - re-launching
+2025-10-30 17:16:25,405 INFO - Launched DagFileProcessorManager with pid: 61201
+2025-10-30 17:16:26,420 WARNING - DagFileProcessorManager (PID=61201) exited with exit code 1 - re-launching
+2025-10-30 17:16:26,423 INFO - Launched DagFileProcessorManager with pid: 61205
+2025-10-30 17:16:28,322 WARNING - DagFileProcessorManager (PID=61205) exited with exit code 1 - re-launching
+2025-10-30 17:16:28,325 INFO - Launched DagFileProcessorManager with pid: 61207
+2025-10-30 17:16:29,343 WARNING - DagFileProcessorManager (PID=61207) exited with exit code 1 - re-launching
+2025-10-30 17:16:29,346 INFO - Launched DagFileProcessorManager with pid: 61209
+2025-10-30 17:16:31,235 WARNING - DagFileProcessorManager (PID=61209) exited with exit code 1 - re-launching
+2025-10-30 17:16:31,238 INFO - Launched DagFileProcessorManager with pid: 61214
+2025-10-30 17:16:32,160 WARNING - DagFileProcessorManager (PID=61214) exited with exit code 1 - re-launching
+2025-10-30 17:16:32,163 INFO - Launched DagFileProcessorManager with pid: 61219
+2025-10-30 17:16:33,180 WARNING - DagFileProcessorManager (PID=61219) exited with exit code 1 - re-launching
+2025-10-30 17:16:33,183 INFO - Launched DagFileProcessorManager with pid: 61221
+2025-10-30 17:16:34,198 WARNING - DagFileProcessorManager (PID=61221) exited with exit code 1 - re-launching
+2025-10-30 17:16:34,202 INFO - Launched DagFileProcessorManager with pid: 61223
+2025-10-30 17:16:35,217 WARNING - DagFileProcessorManager (PID=61223) exited with exit code 1 - re-launching
+2025-10-30 17:16:35,220 INFO - Launched DagFileProcessorManager with pid: 61226
+2025-10-30 17:16:36,242 WARNING - DagFileProcessorManager (PID=61226) exited with exit code 1 - re-launching
+2025-10-30 17:16:36,245 INFO - Launched DagFileProcessorManager with pid: 61231
+2025-10-30 17:16:37,264 WARNING - DagFileProcessorManager (PID=61231) exited with exit code 1 - re-launching
+2025-10-30 17:16:37,268 INFO - Launched DagFileProcessorManager with pid: 61233
+2025-10-30 17:16:38,286 WARNING - DagFileProcessorManager (PID=61233) exited with exit code 1 - re-launching
+2025-10-30 17:16:38,289 INFO - Launched DagFileProcessorManager with pid: 61235
+2025-10-30 17:16:39,304 WARNING - DagFileProcessorManager (PID=61235) exited with exit code 1 - re-launching
+2025-10-30 17:16:39,307 INFO - Launched DagFileProcessorManager with pid: 61237
+2025-10-30 17:16:40,244 WARNING - DagFileProcessorManager (PID=61237) exited with exit code 1 - re-launching
+2025-10-30 17:16:40,247 INFO - Launched DagFileProcessorManager with pid: 61239
+2025-10-30 17:16:41,277 WARNING - DagFileProcessorManager (PID=61239) exited with exit code 1 - re-launching
+2025-10-30 17:16:41,281 INFO - Launched DagFileProcessorManager with pid: 61242
+2025-10-30 17:16:42,321 WARNING - DagFileProcessorManager (PID=61242) exited with exit code 1 - re-launching
+2025-10-30 17:16:42,323 INFO - Launched DagFileProcessorManager with pid: 61244
+2025-10-30 17:16:43,340 WARNING - DagFileProcessorManager (PID=61244) exited with exit code 1 - re-launching
+2025-10-30 17:16:43,343 INFO - Launched DagFileProcessorManager with pid: 61248
+2025-10-30 17:16:44,363 WARNING - DagFileProcessorManager (PID=61248) exited with exit code 1 - re-launching
+2025-10-30 17:16:44,366 INFO - Launched DagFileProcessorManager with pid: 61250
+2025-10-30 17:16:46,291 WARNING - DagFileProcessorManager (PID=61250) exited with exit code 1 - re-launching
+2025-10-30 17:16:46,294 INFO - Launched DagFileProcessorManager with pid: 61255
+2025-10-30 17:16:47,311 WARNING - DagFileProcessorManager (PID=61255) exited with exit code 1 - re-launching
+2025-10-30 17:16:47,315 INFO - Launched DagFileProcessorManager with pid: 61257
+2025-10-30 17:16:48,331 WARNING - DagFileProcessorManager (PID=61257) exited with exit code 1 - re-launching
+2025-10-30 17:16:48,334 INFO - Launched DagFileProcessorManager with pid: 61259
+2025-10-30 17:16:49,350 WARNING - DagFileProcessorManager (PID=61259) exited with exit code 1 - re-launching
+2025-10-30 17:16:49,353 INFO - Launched DagFileProcessorManager with pid: 61263
+2025-10-30 17:16:50,298 WARNING - DagFileProcessorManager (PID=61263) exited with exit code 1 - re-launching
+2025-10-30 17:16:50,302 INFO - Launched DagFileProcessorManager with pid: 61265
+2025-10-30 17:16:51,322 WARNING - DagFileProcessorManager (PID=61265) exited with exit code 1 - re-launching
+2025-10-30 17:16:51,325 INFO - Launched DagFileProcessorManager with pid: 61267
+2025-10-30 17:16:52,237 WARNING - DagFileProcessorManager (PID=61267) exited with exit code 1 - re-launching
+2025-10-30 17:16:52,240 INFO - Launched DagFileProcessorManager with pid: 61269
+2025-10-30 17:16:53,256 WARNING - DagFileProcessorManager (PID=61269) exited with exit code 1 - re-launching
+2025-10-30 17:16:53,259 INFO - Launched DagFileProcessorManager with pid: 61271
+2025-10-30 17:16:54,274 WARNING - DagFileProcessorManager (PID=61271) exited with exit code 1 - re-launching
+2025-10-30 17:16:54,276 INFO - Launched DagFileProcessorManager with pid: 61275
+2025-10-30 17:16:55,293 WARNING - DagFileProcessorManager (PID=61275) exited with exit code 1 - re-launching
+2025-10-30 17:16:55,297 INFO - Launched DagFileProcessorManager with pid: 61278
+2025-10-30 17:16:57,340 WARNING - DagFileProcessorManager (PID=61278) exited with exit code 1 - re-launching
+2025-10-30 17:16:57,345 INFO - Launched DagFileProcessorManager with pid: 61282
+2025-10-30 17:16:58,362 WARNING - DagFileProcessorManager (PID=61282) exited with exit code 1 - re-launching
+2025-10-30 17:16:58,365 INFO - Launched DagFileProcessorManager with pid: 61291
+2025-10-30 17:16:59,380 WARNING - DagFileProcessorManager (PID=61291) exited with exit code 1 - re-launching
+2025-10-30 17:16:59,383 INFO - Launched DagFileProcessorManager with pid: 61302
+2025-10-30 17:17:00,400 WARNING - DagFileProcessorManager (PID=61302) exited with exit code 1 - re-launching
+2025-10-30 17:17:00,403 INFO - Launched DagFileProcessorManager with pid: 61304
+2025-10-30 17:17:01,340 WARNING - DagFileProcessorManager (PID=61304) exited with exit code 1 - re-launching
+2025-10-30 17:17:01,343 INFO - Launched DagFileProcessorManager with pid: 61306
+2025-10-30 17:17:03,271 WARNING - DagFileProcessorManager (PID=61306) exited with exit code 1 - re-launching
+2025-10-30 17:17:03,274 INFO - Launched DagFileProcessorManager with pid: 61315
+2025-10-30 17:17:04,289 WARNING - DagFileProcessorManager (PID=61315) exited with exit code 1 - re-launching
+2025-10-30 17:17:04,293 INFO - Launched DagFileProcessorManager with pid: 61317
+2025-10-30 17:17:05,307 WARNING - DagFileProcessorManager (PID=61317) exited with exit code 1 - re-launching
+2025-10-30 17:17:05,310 INFO - Launched DagFileProcessorManager with pid: 61322
+2025-10-30 17:17:06,326 WARNING - DagFileProcessorManager (PID=61322) exited with exit code 1 - re-launching
+2025-10-30 17:17:06,329 INFO - Launched DagFileProcessorManager with pid: 61326
+2025-10-30 17:17:08,216 WARNING - DagFileProcessorManager (PID=61326) exited with exit code 1 - re-launching
+2025-10-30 17:17:08,220 INFO - Launched DagFileProcessorManager with pid: 61328
+2025-10-30 17:17:09,238 WARNING - DagFileProcessorManager (PID=61328) exited with exit code 1 - re-launching
+2025-10-30 17:17:09,241 INFO - Launched DagFileProcessorManager with pid: 61330
+2025-10-30 17:17:10,257 WARNING - DagFileProcessorManager (PID=61330) exited with exit code 1 - re-launching
+2025-10-30 17:17:10,260 INFO - Launched DagFileProcessorManager with pid: 61332
+2025-10-30 17:17:11,275 WARNING - DagFileProcessorManager (PID=61332) exited with exit code 1 - re-launching
+2025-10-30 17:17:11,278 INFO - Launched DagFileProcessorManager with pid: 61334
+2025-10-30 17:17:12,217 WARNING - DagFileProcessorManager (PID=61334) exited with exit code 1 - re-launching
+2025-10-30 17:17:12,220 INFO - Launched DagFileProcessorManager with pid: 61336
+2025-10-30 17:17:14,128 WARNING - DagFileProcessorManager (PID=61336) exited with exit code 1 - re-launching
+2025-10-30 17:17:14,131 INFO - Launched DagFileProcessorManager with pid: 61338
+2025-10-30 17:17:15,146 WARNING - DagFileProcessorManager (PID=61338) exited with exit code 1 - re-launching
+2025-10-30 17:17:15,149 INFO - Launched DagFileProcessorManager with pid: 61340
+2025-10-30 17:17:16,167 WARNING - DagFileProcessorManager (PID=61340) exited with exit code 1 - re-launching
+2025-10-30 17:17:16,170 INFO - Launched DagFileProcessorManager with pid: 61347
+2025-10-30 17:17:17,186 WARNING - DagFileProcessorManager (PID=61347) exited with exit code 1 - re-launching
+2025-10-30 17:17:17,190 INFO - Launched DagFileProcessorManager with pid: 61349
+2025-10-30 17:17:19,090 WARNING - DagFileProcessorManager (PID=61349) exited with exit code 1 - re-launching
+2025-10-30 17:17:19,093 INFO - Launched DagFileProcessorManager with pid: 61351
+2025-10-30 17:17:20,107 WARNING - DagFileProcessorManager (PID=61351) exited with exit code 1 - re-launching
+2025-10-30 17:17:20,110 INFO - Launched DagFileProcessorManager with pid: 61353
+2025-10-30 17:17:21,126 WARNING - DagFileProcessorManager (PID=61353) exited with exit code 1 - re-launching
+2025-10-30 17:17:21,129 INFO - Launched DagFileProcessorManager with pid: 61355
+2025-10-30 17:17:22,146 WARNING - DagFileProcessorManager (PID=61355) exited with exit code 1 - re-launching
+2025-10-30 17:17:22,149 INFO - Launched DagFileProcessorManager with pid: 61357
+2025-10-30 17:17:23,092 WARNING - DagFileProcessorManager (PID=61357) exited with exit code 1 - re-launching
+2025-10-30 17:17:23,095 INFO - Launched DagFileProcessorManager with pid: 61359
+2025-10-30 17:17:24,107 WARNING - DagFileProcessorManager (PID=61359) exited with exit code 1 - re-launching
+2025-10-30 17:17:24,110 INFO - Launched DagFileProcessorManager with pid: 61361
+2025-10-30 17:17:25,127 WARNING - DagFileProcessorManager (PID=61361) exited with exit code 1 - re-launching
+2025-10-30 17:17:25,129 INFO - Launched DagFileProcessorManager with pid: 61363
+2025-10-30 17:17:26,144 WARNING - DagFileProcessorManager (PID=61363) exited with exit code 1 - re-launching
+2025-10-30 17:17:26,148 INFO - Launched DagFileProcessorManager with pid: 61368
+2025-10-30 17:17:27,163 WARNING - DagFileProcessorManager (PID=61368) exited with exit code 1 - re-launching
+2025-10-30 17:17:27,166 INFO - Launched DagFileProcessorManager with pid: 61370
+2025-10-30 17:17:29,134 WARNING - DagFileProcessorManager (PID=61370) exited with exit code 1 - re-launching
+2025-10-30 17:17:29,137 INFO - Launched DagFileProcessorManager with pid: 61374
+2025-10-30 17:17:30,154 WARNING - DagFileProcessorManager (PID=61374) exited with exit code 1 - re-launching
+2025-10-30 17:17:30,158 INFO - Launched DagFileProcessorManager with pid: 61376
+2025-10-30 17:17:31,172 WARNING - DagFileProcessorManager (PID=61376) exited with exit code 1 - re-launching
+2025-10-30 17:17:31,175 INFO - Launched DagFileProcessorManager with pid: 61378
+2025-10-30 17:17:32,191 WARNING - DagFileProcessorManager (PID=61378) exited with exit code 1 - re-launching
+2025-10-30 17:17:32,193 INFO - Launched DagFileProcessorManager with pid: 61382
+2025-10-30 17:17:33,134 WARNING - DagFileProcessorManager (PID=61382) exited with exit code 1 - re-launching
+2025-10-30 17:17:33,137 INFO - Launched DagFileProcessorManager with pid: 61384
+2025-10-30 17:17:35,041 WARNING - DagFileProcessorManager (PID=61384) exited with exit code 1 - re-launching
+2025-10-30 17:17:35,044 INFO - Launched DagFileProcessorManager with pid: 61386
+2025-10-30 17:17:36,061 WARNING - DagFileProcessorManager (PID=61386) exited with exit code 1 - re-launching
+2025-10-30 17:17:36,064 INFO - Launched DagFileProcessorManager with pid: 61391
+2025-10-30 17:17:37,081 WARNING - DagFileProcessorManager (PID=61391) exited with exit code 1 - re-launching
+2025-10-30 17:17:37,084 INFO - Launched DagFileProcessorManager with pid: 61393
+2025-10-30 17:17:38,101 WARNING - DagFileProcessorManager (PID=61393) exited with exit code 1 - re-launching
+2025-10-30 17:17:38,104 INFO - Launched DagFileProcessorManager with pid: 61395
+2025-10-30 17:17:39,984 WARNING - DagFileProcessorManager (PID=61395) exited with exit code 1 - re-launching
+2025-10-30 17:17:39,987 INFO - Launched DagFileProcessorManager with pid: 61402
+2025-10-30 17:17:41,004 WARNING - DagFileProcessorManager (PID=61402) exited with exit code 1 - re-launching
+2025-10-30 17:17:41,007 INFO - Launched DagFileProcessorManager with pid: 61406
+2025-10-30 17:17:42,021 WARNING - DagFileProcessorManager (PID=61406) exited with exit code 1 - re-launching
+2025-10-30 17:17:42,024 INFO - Launched DagFileProcessorManager with pid: 61408
+2025-10-30 17:17:43,136 WARNING - DagFileProcessorManager (PID=61408) exited with exit code 1 - re-launching
+2025-10-30 17:17:43,139 INFO - Launched DagFileProcessorManager with pid: 61410
+2025-10-30 17:17:45,048 WARNING - DagFileProcessorManager (PID=61410) exited with exit code 1 - re-launching
+2025-10-30 17:17:45,051 INFO - Launched DagFileProcessorManager with pid: 61412
+2025-10-30 17:17:46,070 WARNING - DagFileProcessorManager (PID=61412) exited with exit code 1 - re-launching
+2025-10-30 17:17:46,073 INFO - Launched DagFileProcessorManager with pid: 61417
+2025-10-30 17:17:47,088 WARNING - DagFileProcessorManager (PID=61417) exited with exit code 1 - re-launching
+2025-10-30 17:17:47,091 INFO - Launched DagFileProcessorManager with pid: 61419
+2025-10-30 17:17:48,105 WARNING - DagFileProcessorManager (PID=61419) exited with exit code 1 - re-launching
+2025-10-30 17:17:48,108 INFO - Launched DagFileProcessorManager with pid: 61421
+2025-10-30 17:19:16,279 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-10-30 17:20:41,303 INFO - Exiting gracefully upon receiving signal 15
+2025-10-30 17:20:41,747 INFO - Sending 15 to group 61421. PIDs of all processes in the group: []
+2025-10-30 17:20:41,748 INFO - Sending the signal 15 to group 61421
+2025-10-30 17:20:41,750 INFO - Sending the signal 15 to process 61421 as process group is missing.
+2025-10-30 17:20:41,752 INFO - Sending 15 to group 61421. PIDs of all processes in the group: []
+2025-10-30 17:20:41,753 INFO - Sending the signal 15 to group 61421
+2025-10-30 17:20:41,754 INFO - Sending the signal 15 to process 61421 as process group is missing.
+2025-10-30 17:20:41,755 INFO - Exited execute loop

@@ -1,0 +1,24 @@
+networks:
+  iip_net:
+    external: true
+    name: iip_secure_stack_iip_net
+  stacknet:
+    external: true
+    name: iip_secure_stack_stacknet
+
+services:
+  api-gateway:
+    networks:
+      iip_net:
+        aliases: [api-gateway]
+      stacknet: {}
+
+  bff:
+    networks:
+      iip_net:
+        aliases: [bff]
+
+  webhook:
+    networks:
+      iip_net:
+        aliases: [webhook]

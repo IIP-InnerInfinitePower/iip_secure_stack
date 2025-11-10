@@ -1,0 +1,6 @@
+[core]
+executor = LocalExecutor
+
+[api]
+auth_manager = airflow.api_fastapi.auth.managers.simple.simple_auth_manager.SimpleAuthManager
+simple_auth_manager_users = admin:Admin#2025!

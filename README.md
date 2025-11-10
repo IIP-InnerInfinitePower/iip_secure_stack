@@ -1,13 +1,13 @@
 🧱 IIP_SECURE_STACK
 
-**Inner Infinite Power™ Secure Stack**  
+**Inner Infinite Power™ Secure Stack**
 A private, full-stack DevSecOps architecture for secure AI, data, and automation systems.
 
 ---
 
 ## 🚀 Introduction
 
-IIP_SECURE_STACK is a modular, containerized framework designed for creators, researchers, and enterprises prioritizing **security, automation, and AI integration**.  
+IIP_SECURE_STACK is a modular, containerized framework designed for creators, researchers, and enterprises prioritizing **security, automation, and AI integration**.
 It provides a **self-owned infrastructure** for running large language models (LLMs), analytics pipelines, and data services—without dependency on third-party SaaS platforms.
 
 **Use cases:**
@@ -18,7 +18,7 @@ It provides a **self-owned infrastructure** for running large language models (L
 
 ---
 
-## ⚙️ System Overview   ( v2.011 ) 
+## ⚙️ System Overview   ( v2.011 )
 
 | Layer | Description | Key Components |
 |:------|:-------------|:----------------|
@@ -49,8 +49,8 @@ It provides a **self-owned infrastructure** for running large language models (L
 
 ## 🧩 Phase 12 — AI ↔ SQL Bridge Integration
 
-**Status:** Completed • **Mode:** Private, air-gapped • **Date:** November 2025  
-**Endpoints:** `POST /query`, `POST /explain`, `GET /healthz`, `GET /readyz`  
+**Status:** Completed • **Mode:** Private, air-gapped • **Date:** November 2025
+**Endpoints:** `POST /query`, `POST /explain`, `GET /healthz`, `GET /readyz`
 **Ports:** Gateway `5001`, LLM `8000`, Postgres `5432` (optional), DuckDB file (optional)
 
 ### Objectives
@@ -64,7 +64,7 @@ Change Log
 
 ## 🧩 Phase 12 — AI ↔ SQL Bridge Integration
 
-This phase creates a **live, secure bridge** between your local AI model and SQL data engine.  
+This phase creates a **live, secure bridge** between your local AI model and SQL data engine.
 It enables contextual query translation, automated data analysis, and GPT-compatible endpoints.
 
 **Pipeline:**
@@ -73,14 +73,14 @@ It enables contextual query translation, automated data analysis, and GPT-compat
 3. Secure bridge handles `POST /query` → SQL engine
 4. Result formatted and returned through JSON
 
-**Result:**  
+**Result:**
 A functional private AI gateway—no external API calls, fully containerized, auditable, and scalable.
 
 ------------------------------------
 
 ## Phase 12 — Kubernetes Orchestration (≈15 Dockerized Services)
 
-**Status:** Completed • **Cluster:** K3s • **Date:** November 2025  
+**Status:** Completed • **Cluster:** K3s • **Date:** November 2025
 **Namespaces:** `iip-dev`, `monitoring`, `kyverno`, `kube-system`
 
 ### Objectives
@@ -117,12 +117,12 @@ Operations Checklist
 
 Change Log
 	•	Phase 12: K3s online; ~15 services migrated; Kyverno baseline active; full metrics/logs/traces live.
-	
+
 -------------------------------
 
 ## 🧭 Phase 13 — Governance & Orchestration (Airflow)
 
-This phase establishes **Apache Airflow** as the centralized governance and orchestration layer for `IIP_SECURE_STACK`.  
+This phase establishes **Apache Airflow** as the centralized governance and orchestration layer for `IIP_SECURE_STACK`.
 It ensures that all system workflows, validations, and policy checks run under a unified scheduling and compliance engine.
 
 **Pipeline:**
@@ -132,11 +132,11 @@ It ensures that all system workflows, validations, and policy checks run under a
 4. Logs and metadata stored in `phase13_orchestration/airflow.db`
 
 **Result:**
-✅ Governance engine operational  
-✅ Scheduler / Webserver / Metadatabase healthy  
+✅ Governance engine operational
+✅ Scheduler / Webserver / Metadatabase healthy
 ✅ Policy validation automated through Airflow
 --
-### System Flow (v2.011) 
+### System Flow (v2.011)
 
 ![Client](https://img.shields.io/badge/Client-Browser-555) ➜
 ![Nginx](https://img.shields.io/badge/Nginx-009639?logo=nginx&logoColor=white) ➜
@@ -185,8 +185,8 @@ It ensures that all system workflows, validations, and policy checks run under a
 
 ## 🧭 Phase 13 — Governance & Orchestration (Airflow)
 
-**Status:** Completed • **Mode:** Private, cluster-aware • **Date:** November 2025  
-**Endpoints:** Webserver `:8080`, Flower `:5555` (opt) • **Executor:** Celery or Local  
+**Status:** Completed • **Mode:** Private, cluster-aware • **Date:** November 2025
+**Endpoints:** Webserver `:8080`, Flower `:5555` (opt) • **Executor:** Celery or Local
 **Stores:** Metadata DB (Postgres), Remote logs (MinIO S3) • **DAGs:** `phase13_orchestration/dags/*`
 
 ### Objectives
@@ -316,17 +316,17 @@ CONTRIBUTING.md
 
 # 🤝 Contributing to IIP_SECURE_STACK
 
-Thank you for your interest in improving **IIP_SECURE_STACK**.  
+Thank you for your interest in improving **IIP_SECURE_STACK**.
 This guide explains the standards for submitting issues, pull requests, and enhancements.
 
 ---
 
 ## 🧩 Branch & Commit Rules
 
-- `main` — production-ready branch (protected).  
-- `dev` — active development branch.  
-- Feature branches follow the pattern:  
-  `feature/<short-description>`  
+- `main` — production-ready branch (protected).
+- `dev` — active development branch.
+- Feature branches follow the pattern:
+  `feature/<short-description>`
 
 Commit messages use the format:
 
@@ -341,7 +341,7 @@ fix(ci): correct Docker healthcheck path
 
 ## ⚙️ Development Setup
 
-1. Fork the repository.  
+1. Fork the repository.
 2. Clone your fork:
    ```bash
    git clone https://github.com/<your-username>/IIP_SECURE_STACK.git
@@ -479,7 +479,7 @@ Would you like me to generate a PDF version of this (with your gold + white bran
 
 ## Supported Versions
 
-Only the latest stable release of **IIP_SECURE_STACK** receives active security updates.  
+Only the latest stable release of **IIP_SECURE_STACK** receives active security updates.
 Older versions may continue to function but are not guaranteed to receive patches.
 
 | Version | Supported |
@@ -492,15 +492,15 @@ Older versions may continue to function but are not guaranteed to receive patche
 
 ## 📢 Reporting a Vulnerability
 
-Security is taken seriously.  
+Security is taken seriously.
 If you discover a vulnerability, **do not open a public issue**.
 
 Instead, please report it privately via one of the following methods:
 
-1. Use **GitHub Security Advisories**  
+1. Use **GitHub Security Advisories**
    - Navigate to: `Security` → `Advisories` → `Report a vulnerability`
-2. Or contact the maintainer securely:  
-   - **Encrypted email (preferred):** request via GitHub private message  
+2. Or contact the maintainer securely:
+   - **Encrypted email (preferred):** request via GitHub private message
    - **Do not** send sensitive details in plaintext
 
 All reports will receive acknowledgment within **48 hours**.
@@ -509,10 +509,10 @@ All reports will receive acknowledgment within **48 hours**.
 
 ## 🧩 Disclosure Process
 
-1. Vulnerability report received.  
-2. Maintainer validates issue and assigns severity (Low/Medium/High/Critical).  
-3. Fix developed and verified in a private branch.  
-4. Patch released and changelog updated.  
+1. Vulnerability report received.
+2. Maintainer validates issue and assigns severity (Low/Medium/High/Critical).
+3. Fix developed and verified in a private branch.
+4. Patch released and changelog updated.
 5. Reporter credited (if desired).
 
 ---
@@ -521,26 +521,26 @@ All reports will receive acknowledgment within **48 hours**.
 
 IIP_SECURE_STACK enforces multiple layers of defense:
 
-- **Container Security:** Minimal base images, no root processes.  
-- **Network Isolation:** Internal bridge networks and restricted ports.  
-- **Secrets Management:** `.env` variables encrypted and mounted securely.  
-- **TLS Enforcement:** All communications use HTTPS with verified certificates.  
-- **Audit Logging:** Continuous monitoring through Grafana + Loki.  
+- **Container Security:** Minimal base images, no root processes.
+- **Network Isolation:** Internal bridge networks and restricted ports.
+- **Secrets Management:** `.env` variables encrypted and mounted securely.
+- **TLS Enforcement:** All communications use HTTPS with verified certificates.
+- **Audit Logging:** Continuous monitoring through Grafana + Loki.
 - **Dependency Scans:** Automated weekly via GitHub Actions.
 
 ---
 
 ## 🧠 Responsible Disclosure Guidelines
 
-- Provide a clear description of the issue and how to reproduce it.  
-- Avoid publishing exploit details until a patch is released.  
+- Provide a clear description of the issue and how to reproduce it.
+- Avoid publishing exploit details until a patch is released.
 - Coordinate responsibly to protect users and data integrity.
 
 ---
 
 ⛓️🛡️ Security Philosophy
 
-IIP_SECURE_STACK is built around **data sovereignty, audit transparency, and minimal attack surface**.  
+IIP_SECURE_STACK is built around **data sovereignty, audit transparency, and minimal attack surface**.
 Every component is designed to run **locally, verifiably, and privately**—free from vendor lock-in or opaque dependencies.
 
 ---
@@ -558,20 +558,20 @@ Every component is designed to run **locally, verifiably, and privately**—free
 - Version-controlled compliance documentation under `docs/compliance/`
 
 ### Compliance Artifacts
-- [`BAA_TEMPLATE.md`](docs/compliance/BAA_TEMPLATE.md) — Business Associate Agreement  
-- [`SOC2_HIPAA_READINESS_BRIEF.md`](docs/compliance/SOC2_HIPAA_READINESS_BRIEF.md) — Executive compliance overview  
-- [`SECURITY_PRIVACY_POLICY.md`](docs/compliance/SECURITY_PRIVACY_POLICY.md) — Technical and administrative safeguard policy  
+- [`BAA_TEMPLATE.md`](docs/compliance/BAA_TEMPLATE.md) — Business Associate Agreement
+- [`SOC2_HIPAA_READINESS_BRIEF.md`](docs/compliance/SOC2_HIPAA_READINESS_BRIEF.md) — Executive compliance overview
+- [`SECURITY_PRIVACY_POLICY.md`](docs/compliance/SECURITY_PRIVACY_POLICY.md) — Technical and administrative safeguard policy
 
-**Status:**  
+**Status:**
 IIP_SECURE_STACK is designed for HIPAA §164 Subpart C and SOC 2 Type II alignment and is ready for third-party audit verification.
 
 
 Date: 10/28/2025 -  Inner Infinite Power™ LLC — All rights reserved.*
 
 ---
-*Maintained by:*  
-**Ivan Israel Patiño**  
-Founder & Architect — *Inner Infinite Power™*  
+*Maintained by:*
+**Ivan Israel Patiño**
+Founder & Architect — *Inner Infinite Power™*
 
 
 printf "\n\n" >> README.md

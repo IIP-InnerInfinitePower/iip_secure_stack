@@ -1,0 +1,19 @@
+[2025-10-29T19:10:59.245-0700] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-10-29T19:10:59.253-0700] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: governance_check.validate_policies scheduled__2025-10-29T00:00:00+00:00 [queued]>
+[2025-10-29T19:10:59.256-0700] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: governance_check.validate_policies scheduled__2025-10-29T00:00:00+00:00 [queued]>
+[2025-10-29T19:10:59.256-0700] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-10-29T19:10:59.261-0700] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): validate_policies> on 2025-10-29 00:00:00+00:00
+[2025-10-29T19:10:59.265-0700] {standard_task_runner.py:64} INFO - Started process 12024 to run task
+[2025-10-29T19:10:59.268-0700] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'governance_check', 'validate_policies', 'scheduled__2025-10-29T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/governance_check.py', '--cfg-path', '/var/folders/z8/1pxcrjv52wd_wfjg44_llz7m0000gn/T/tmp8lpsrxt0']
+[2025-10-29T19:10:59.270-0700] {standard_task_runner.py:91} INFO - Job 4: Subtask validate_policies
+[2025-10-29T19:10:59.293-0700] {task_command.py:426} INFO - Running <TaskInstance: governance_check.validate_policies scheduled__2025-10-29T00:00:00+00:00 [running]> on host ivans-macbook-air.local
+[2025-10-29T19:10:59.321-0700] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='governance_check' AIRFLOW_CTX_TASK_ID='validate_policies' AIRFLOW_CTX_EXECUTION_DATE='2025-10-29T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-29T00:00:00+00:00'
+[2025-10-29T19:10:59.322-0700] {taskinstance.py:430} INFO - ::endgroup::
+[2025-10-29T19:10:59.326-0700] {logging_mixin.py:188} INFO - [Governance] Using: /Users/iipatino8/IIP_SECURE_STACK/phase13_orchestration/governance/policies.yaml
+[2025-10-29T19:10:59.326-0700] {logging_mixin.py:188} INFO - [Governance] Policy: {'access': {'datasets': 'read', 'models': 'read', 'secrets': 'deny'}, 'retention': {'logs_days': 30, 'artifacts_days': 30}, 'security': {'tls_required': True, 'api_keys_required': True}}
+[2025-10-29T19:10:59.327-0700] {python.py:237} INFO - Done. Returned value was: None
+[2025-10-29T19:10:59.327-0700] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-10-29T19:10:59.330-0700] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=governance_check, task_id=validate_policies, run_id=scheduled__2025-10-29T00:00:00+00:00, execution_date=20251029T000000, start_date=20251030T021059, end_date=20251030T021059
+[2025-10-29T19:10:59.363-0700] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-10-29T19:10:59.371-0700] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-10-29T19:10:59.372-0700] {local_task_job_runner.py:222} INFO - ::endgroup::

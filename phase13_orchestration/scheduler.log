@@ -1,0 +1,1354 @@
+  ____________       _____________
+ ____    |__( )_________  __/__  /________      __
+____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+ _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+[[34m2025-10-30T17:35:19.255-0700[0m] {[34mtask_context_logger.py:[0m63} INFO[0m - Task context logging is enabled[0m
+[[34m2025-10-30T17:35:19.258-0700[0m] {[34mexecutor_loader.py:[0m235} INFO[0m - Loaded executor: SequentialExecutor[0m
+[[34m2025-10-30T17:35:19.320-0700[0m] {[34mscheduler_job_runner.py:[0m799} INFO[0m - Starting the scheduler[0m
+[[34m2025-10-30T17:35:19.320-0700[0m] {[34mscheduler_job_runner.py:[0m806} INFO[0m - Processing each file at most -1 times[0m
+[[34m2025-10-30T17:35:19.326-0700[0m] {[34mmanager.py:[0m170} INFO[0m - Launched DagFileProcessorManager with pid: 62766[0m
+[[34m2025-10-30T17:35:19.329-0700[0m] {[34mscheduler_job_runner.py:[0m1598} INFO[0m - Adopting or resetting orphaned tasks for active dag runs[0m
+[2025-10-30 17:35:20 -0700] [62765] [INFO] Starting gunicorn 23.0.0
+[2025-10-30 17:35:20 -0700] [62765] [INFO] Listening at: http://[::]:8793 (62765)
+[2025-10-30 17:35:20 -0700] [62765] [INFO] Using worker: sync
+[2025-10-30 17:35:20 -0700] [62771] [INFO] Booting worker with pid: 62771
+[[34m2025-10-30T17:35:20.393-0700[0m] {[34msettings.py:[0m60} INFO[0m - Configured default timezone UTC[0m
+[2025-10-30 17:35:20 -0700] [62772] [INFO] Booting worker with pid: 62772
+[[34m2025-10-30T17:37:49.638-0700[0m] {[34mscheduler_job_runner.py:[0m417} INFO[0m - 1 tasks up for execution:
+	<TaskInstance: p14_data_backbone_maintenance.vacuum_postgres manual__2025-10-31T00:37:48+00:00 [scheduled]>[0m
+[[34m2025-10-30T17:37:49.638-0700[0m] {[34mscheduler_job_runner.py:[0m480} INFO[0m - DAG p14_data_backbone_maintenance has 0/16 running and queued tasks[0m
+[[34m2025-10-30T17:37:49.639-0700[0m] {[34mscheduler_job_runner.py:[0m596} INFO[0m - Setting the following tasks to queued state:
+	<TaskInstance: p14_data_backbone_maintenance.vacuum_postgres manual__2025-10-31T00:37:48+00:00 [scheduled]>[0m
+[[34m2025-10-30T17:37:49.640-0700[0m] {[34mscheduler_job_runner.py:[0m639} INFO[0m - Sending TaskInstanceKey(dag_id='p14_data_backbone_maintenance', task_id='vacuum_postgres', run_id='manual__2025-10-31T00:37:48+00:00', try_number=1, map_index=-1) to executor with priority 3 and queue default[0m
+[[34m2025-10-30T17:37:49.640-0700[0m] {[34mbase_executor.py:[0m149} INFO[0m - Adding to queue: ['airflow', 'tasks', 'run', 'p14_data_backbone_maintenance', 'vacuum_postgres', 'manual__2025-10-31T00:37:48+00:00', '--local', '--subdir', 'DAGS_FOLDER/p14_dags/p14_data_backbone_maintenance.py'][0m
+[[34m2025-10-30T17:37:49.641-0700[0m] {[34msequential_executor.py:[0m74} INFO[0m - Executing command: ['airflow', 'tasks', 'run', 'p14_data_backbone_maintenance', 'vacuum_postgres', 'manual__2025-10-31T00:37:48+00:00', '--local', '--subdir', 'DAGS_FOLDER/p14_dags/p14_data_backbone_maintenance.py'][0m
+[[34m2025-10-30T17:37:50.457-0700[0m] {[34mdagbag.py:[0m545} INFO[0m - Filling up the DagBag from /Users/iipatino8/IIP_SECURE_STACK/phase13_orchestration/dags/p14_dags/p14_data_backbone_maintenance.py[0m
+[[34m2025-10-30T17:37:50.566-0700[0m] {[34mtask_command.py:[0m426} INFO[0m - Running <TaskInstance: p14_data_backbone_maintenance.vacuum_postgres manual__2025-10-31T00:37:48+00:00 [queued]> on host ivans-macbook-air.local[0m
+[[34m2025-10-30T17:37:51.213-0700[0m] {[34mscheduler_job_runner.py:[0m689} INFO[0m - Received executor event with state success for task instance TaskInstanceKey(dag_id='p14_data_backbone_maintenance', task_id='vacuum_postgres', run_id='manual__2025-10-31T00:37:48+00:00', try_number=1, map_index=-1)[0m
+[[34m2025-10-30T17:37:51.219-0700[0m] {[34mscheduler_job_runner.py:[0m721} INFO[0m - TaskInstance Finished: dag_id=p14_data_backbone_maintenance, task_id=vacuum_postgres, run_id=manual__2025-10-31T00:37:48+00:00, map_index=-1, run_start_date=2025-10-31 00:37:50.610481+00:00, run_end_date=2025-10-31 00:37:51.004217+00:00, run_duration=0.393736, state=success, executor_state=success, try_number=1, max_tries=1, job_id=40, pool=default_pool, queue=default, priority_weight=3, operator=BashOperator, queued_dttm=2025-10-31 00:37:49.639378+00:00, queued_by_job_id=39, pid=62933[0m
+[[34m2025-10-30T17:37:51.249-0700[0m] {[34mscheduler_job_runner.py:[0m417} INFO[0m - 1 tasks up for execution:
+	<TaskInstance: p14_data_backbone_maintenance.backup_postgres manual__2025-10-31T00:37:48+00:00 [scheduled]>[0m
+[[34m2025-10-30T17:37:51.249-0700[0m] {[34mscheduler_job_runner.py:[0m480} INFO[0m - DAG p14_data_backbone_maintenance has 0/16 running and queued tasks[0m
+[[34m2025-10-30T17:37:51.249-0700[0m] {[34mscheduler_job_runner.py:[0m596} INFO[0m - Setting the following tasks to queued state:
+	<TaskInstance: p14_data_backbone_maintenance.backup_postgres manual__2025-10-31T00:37:48+00:00 [scheduled]>[0m
+[[34m2025-10-30T17:37:51.250-0700[0m] {[34mscheduler_job_runner.py:[0m639} INFO[0m - Sending TaskInstanceKey(dag_id='p14_data_backbone_maintenance', task_id='backup_postgres', run_id='manual__2025-10-31T00:37:48+00:00', try_number=1, map_index=-1) to executor with priority 2 and queue default[0m
+[[34m2025-10-30T17:37:51.250-0700[0m] {[34mbase_executor.py:[0m149} INFO[0m - Adding to queue: ['airflow', 'tasks', 'run', 'p14_data_backbone_maintenance', 'backup_postgres', 'manual__2025-10-31T00:37:48+00:00', '--local', '--subdir', 'DAGS_FOLDER/p14_dags/p14_data_backbone_maintenance.py'][0m
+[[34m2025-10-30T17:37:51.250-0700[0m] {[34msequential_executor.py:[0m74} INFO[0m - Executing command: ['airflow', 'tasks', 'run', 'p14_data_backbone_maintenance', 'backup_postgres', 'manual__2025-10-31T00:37:48+00:00', '--local', '--subdir', 'DAGS_FOLDER/p14_dags/p14_data_backbone_maintenance.py'][0m
+[[34m2025-10-30T17:37:52.062-0700[0m] {[34mdagbag.py:[0m545} INFO[0m - Filling up the DagBag from /Users/iipatino8/IIP_SECURE_STACK/phase13_orchestration/dags/p14_dags/p14_data_backbone_maintenance.py[0m
+[[34m2025-10-30T17:37:52.167-0700[0m] {[34mtask_command.py:[0m426} INFO[0m - Running <TaskInstance: p14_data_backbone_maintenance.backup_postgres manual__2025-10-31T00:37:48+00:00 [queued]> on host ivans-macbook-air.local[0m
+[[34m2025-10-30T17:37:53.091-0700[0m] {[34mscheduler_job_runner.py:[0m689} INFO[0m - Received executor event with state success for task instance TaskInstanceKey(dag_id='p14_data_backbone_maintenance', task_id='backup_postgres', run_id='manual__2025-10-31T00:37:48+00:00', try_number=1, map_index=-1)[0m
+[[34m2025-10-30T17:37:53.095-0700[0m] {[34mscheduler_job_runner.py:[0m721} INFO[0m - TaskInstance Finished: dag_id=p14_data_backbone_maintenance, task_id=backup_postgres, run_id=manual__2025-10-31T00:37:48+00:00, map_index=-1, run_start_date=2025-10-31 00:37:52.206872+00:00, run_end_date=2025-10-31 00:37:52.913601+00:00, run_duration=0.706729, state=success, executor_state=success, try_number=1, max_tries=1, job_id=41, pool=default_pool, queue=default, priority_weight=2, operator=BashOperator, queued_dttm=2025-10-31 00:37:51.249522+00:00, queued_by_job_id=39, pid=62938[0m
+[[34m2025-10-30T17:37:53.120-0700[0m] {[34mscheduler_job_runner.py:[0m417} INFO[0m - 1 tasks up for execution:
+	<TaskInstance: p14_data_backbone_maintenance.integrity_check manual__2025-10-31T00:37:48+00:00 [scheduled]>[0m
+[[34m2025-10-30T17:37:53.120-0700[0m] {[34mscheduler_job_runner.py:[0m480} INFO[0m - DAG p14_data_backbone_maintenance has 0/16 running and queued tasks[0m
+[[34m2025-10-30T17:37:53.120-0700[0m] {[34mscheduler_job_runner.py:[0m596} INFO[0m - Setting the following tasks to queued state:
+	<TaskInstance: p14_data_backbone_maintenance.integrity_check manual__2025-10-31T00:37:48+00:00 [scheduled]>[0m
+[[34m2025-10-30T17:37:53.121-0700[0m] {[34mscheduler_job_runner.py:[0m639} INFO[0m - Sending TaskInstanceKey(dag_id='p14_data_backbone_maintenance', task_id='integrity_check', run_id='manual__2025-10-31T00:37:48+00:00', try_number=1, map_index=-1) to executor with priority 1 and queue default[0m
+[[34m2025-10-30T17:37:53.121-0700[0m] {[34mbase_executor.py:[0m149} INFO[0m - Adding to queue: ['airflow', 'tasks', 'run', 'p14_data_backbone_maintenance', 'integrity_check', 'manual__2025-10-31T00:37:48+00:00', '--local', '--subdir', 'DAGS_FOLDER/p14_dags/p14_data_backbone_maintenance.py'][0m
+[[34m2025-10-30T17:37:53.122-0700[0m] {[34msequential_executor.py:[0m74} INFO[0m - Executing command: ['airflow', 'tasks', 'run', 'p14_data_backbone_maintenance', 'integrity_check', 'manual__2025-10-31T00:37:48+00:00', '--local', '--subdir', 'DAGS_FOLDER/p14_dags/p14_data_backbone_maintenance.py'][0m
+[[34m2025-10-30T17:37:53.940-0700[0m] {[34mdagbag.py:[0m545} INFO[0m - Filling up the DagBag from /Users/iipatino8/IIP_SECURE_STACK/phase13_orchestration/dags/p14_dags/p14_data_backbone_maintenance.py[0m
+[[34m2025-10-30T17:37:54.047-0700[0m] {[34mtask_command.py:[0m426} INFO[0m - Running <TaskInstance: p14_data_backbone_maintenance.integrity_check manual__2025-10-31T00:37:48+00:00 [queued]> on host ivans-macbook-air.local[0m
+[[34m2025-10-30T17:37:54.391-0700[0m] {[34mscheduler_job_runner.py:[0m689} INFO[0m - Received executor event with state success for task instance TaskInstanceKey(dag_id='p14_data_backbone_maintenance', task_id='integrity_check', run_id='manual__2025-10-31T00:37:48+00:00', try_number=1, map_index=-1)[0m
+[[34m2025-10-30T17:37:54.395-0700[0m] {[34mscheduler_job_runner.py:[0m721} INFO[0m - TaskInstance Finished: dag_id=p14_data_backbone_maintenance, task_id=integrity_check, run_id=manual__2025-10-31T00:37:48+00:00, map_index=-1, run_start_date=2025-10-31 00:37:54.085475+00:00, run_end_date=2025-10-31 00:37:54.212230+00:00, run_duration=0.126755, state=success, executor_state=success, try_number=1, max_tries=1, job_id=42, pool=default_pool, queue=default, priority_weight=1, operator=BashOperator, queued_dttm=2025-10-31 00:37:53.121166+00:00, queued_by_job_id=39, pid=62946[0m
+[[34m2025-10-30T17:37:54.420-0700[0m] {[34mdagrun.py:[0m850} INFO[0m - Marking run <DagRun p14_data_backbone_maintenance @ 2025-10-31 00:37:48+00:00: manual__2025-10-31T00:37:48+00:00, state:running, queued_at: 2025-10-31 00:37:48.665109+00:00. externally triggered: True> successful[0m
+[[34m2025-10-30T17:37:54.420-0700[0m] {[34mdagrun.py:[0m901} INFO[0m - DagRun Finished: dag_id=p14_data_backbone_maintenance, execution_date=2025-10-31 00:37:48+00:00, run_id=manual__2025-10-31T00:37:48+00:00, run_start_date=2025-10-31 00:37:49.573633+00:00, run_end_date=2025-10-31 00:37:54.420566+00:00, run_duration=4.846933, state=success, external_trigger=True, run_type=manual, data_interval_start=2025-10-30 00:00:00+00:00, data_interval_end=2025-10-31 00:00:00+00:00, dag_hash=bb28a8349572f7dc2407196cd2ab1fdb[0m
+[[34m2025-10-30T17:40:19.371-0700[0m] {[34mscheduler_job_runner.py:[0m1598} INFO[0m - Adopting or resetting orphaned tasks for active dag runs[0m
+[[34m2025-10-30T17:45:19.743-0700[0m] {[34mscheduler_job_runner.py:[0m1598} INFO[0m - Adopting or resetting orphaned tasks for active dag runs[0m
+[[34m2025-10-30T17:50:19.771-0700[0m] {[34mscheduler_job_runner.py:[0m1598} INFO[0m - Adopting or resetting orphaned tasks for active dag runs[0m
+[[34m2025-10-30T17:55:20.853-0700[0m] {[34mscheduler_job_runner.py:[0m1598} INFO[0m - Adopting or resetting orphaned tasks for active dag runs[0m
+[[34m2025-10-30T18:00:20.878-0700[0m] {[34mscheduler_job_runner.py:[0m1598} INFO[0m - Adopting or resetting orphaned tasks for active dag runs[0m
+[[34m2025-10-30T18:05:20.907-0700[0m] {[34mscheduler_job_runner.py:[0m1598} INFO[0m - Adopting or resetting orphaned tasks for active dag runs[0m
+[[34m2025-10-30T18:10:20.935-0700[0m] {[34mscheduler_job_runner.py:[0m1598} INFO[0m - Adopting or resetting orphaned tasks for active dag runs[0m
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+[2025-10-30T18:14:45.884-0700] {manager.py:524} INFO - DAG hello_iip is missing and will be deactivated.
+[2025-10-30T18:14:45.885-0700] {manager.py:524} INFO - DAG governance_check is missing and will be deactivated.
+[2025-10-30T18:14:45.885-0700] {manager.py:524} INFO - DAG p14_data_backbone_maintenance is missing and will be deactivated.
+[2025-10-30T18:14:45.888-0700] {manager.py:536} INFO - Deactivated 3 DAGs which are no longer present in file.
+[2025-10-30T18:14:45.891-0700] {manager.py:540} INFO - Deleted DAG p14_data_backbone_maintenance in serialized_dag table
+[2025-10-30T18:14:45.893-0700] {manager.py:540} INFO - Deleted DAG hello_iip in serialized_dag table
+[2025-10-30T18:14:45.895-0700] {manager.py:540} INFO - Deleted DAG governance_check in serialized_dag table
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+[[34m2025-10-30T18:15:20.960-0700[0m] {[34mscheduler_job_runner.py:[0m1598} INFO[0m - Adopting or resetting orphaned tasks for active dag runs[0m
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+[[34m2025-10-30T18:20:20.977-0700[0m] {[34mscheduler_job_runner.py:[0m1598} INFO[0m - Adopting or resetting orphaned tasks for active dag runs[0m
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+[[34m2025-10-30T18:25:21.002-0700[0m] {[34mscheduler_job_runner.py:[0m1598} INFO[0m - Adopting or resetting orphaned tasks for active dag runs[0m
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+[[34m2025-10-30T18:30:21.028-0700[0m] {[34mscheduler_job_runner.py:[0m1598} INFO[0m - Adopting or resetting orphaned tasks for active dag runs[0m
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'airflow.dag_processing.processor'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/opt/miniconda3/envs/airflow_env/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 290, in run_path
+  File "<frozen runpy>", line 254, in _get_code_from_file
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/miniconda3/envs/airflow_env/bin/airflow'
+[[34m2025-10-30T18:32:02.312-0700[0m] {[34mscheduler_job_runner.py:[0m256} INFO[0m - Exiting gracefully upon receiving signal 15[0m
+[[34m2025-10-30T18:32:02.718-0700[0m] {[34mprocess_utils.py:[0m132} INFO[0m - Sending 15 to group 62766. PIDs of all processes in the group: [][0m
+[[34m2025-10-30T18:32:02.718-0700[0m] {[34mprocess_utils.py:[0m87} INFO[0m - Sending the signal 15 to group 62766[0m
+[[34m2025-10-30T18:32:02.718-0700[0m] {[34mprocess_utils.py:[0m101} INFO[0m - Sending the signal 15 to process 62766 as process group is missing.[0m
+[[34m2025-10-30T18:32:02.719-0700[0m] {[34mprocess_utils.py:[0m132} INFO[0m - Sending 15 to group 62766. PIDs of all processes in the group: [][0m
+[[34m2025-10-30T18:32:02.719-0700[0m] {[34mprocess_utils.py:[0m87} INFO[0m - Sending the signal 15 to group 62766[0m
+[[34m2025-10-30T18:32:02.719-0700[0m] {[34mprocess_utils.py:[0m101} INFO[0m - Sending the signal 15 to process 62766 as process group is missing.[0m
+[[34m2025-10-30T18:32:02.719-0700[0m] {[34mscheduler_job_runner.py:[0m875} INFO[0m - Exited execute loop[0m
+[2025-10-30 18:32:02 -0700] [62765] [INFO] Handling signal: term
+[2025-10-30 18:32:02 -0700] [62772] [INFO] Worker exiting (pid: 62772)
+[2025-10-30 18:32:02 -0700] [62771] [INFO] Worker exiting (pid: 62771)
+[2025-10-30 18:32:03 -0700] [62765] [INFO] Shutting down: Master
