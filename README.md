@@ -39,7 +39,7 @@ It provides a **self-owned infrastructure** for running large language models (L
 | **2. Data & Storage Layer** | Centralized data, caches, and object storage. | PostgreSQL, DuckDB, MinIO (S3), Backups (CronJobs/Velero) |
 | **3. API & Logic Layer** | AI services and business logic. | Flask, Gunicorn, llama-cpp-python, Celery (opt) |
 | **4. Frontend & Visualization Layer** | Real-time apps and analytics. | Streamlit, Apache Superset |
-| **5. Observability & Policy Layer | Metrics, logs, traces, runtime policy. | Prometheus, Alertmanager, Grafana, Loki, Promtail, Tempo, OpenTelemetry Collector, Kyverno, NetworkPolicies, PodSecurity/Seccomp |
+| **5** . Observability & Policy Layer | Metrics, logs, traces, runtime policy. | Prometheus, Alertmanager, Grafana, Loki, Promtail, Tempo, OpenTelemetry Collector, Kyverno, NetworkPolicies, PodSecurity/Seccomp |
 | **6. CI/CD & Automation Layer** | Builds, scans, image delivery, deploys. | GitHub Actions, Dockerfiles, GHCR, Helm, Kustomize, Docker Compose, pre-commit, gitleaks |
 | **7. AI ↔ SQL Bridge Layer** | Private LLM → SQL gateway with guardrails. | `llama_cpp.server`, Phi-2 GGUF, Flask gateway, `sqlparse`, Postgres/DuckDB (read-only), OTel |
 | **8. Kubernetes Orchestration (Phase 12)** | Cluster runtime, ingress, scheduling, quotas. | K3s, Traefik/Nginx Ingress, PV/PVC, RBAC, HPA, ResourceQuotas/LimitRanges, GPU node pools (if present) |
@@ -138,17 +138,27 @@ It ensures that all system workflows, validations, and policy checks run under a
 --
 ### System Flow (v2.011)
 
+#### Request/Data Path
 ![Client](https://img.shields.io/badge/Client-Browser-555) ➜
 ![Nginx](https://img.shields.io/badge/Nginx-009639?logo=nginx&logoColor=white) ➜
-![Flask%20API](https://img.shields.io/badge/Flask_API-000000?logo=flask&logoColor=white) ➜
-![AI%20Bridge](https://img.shields.io/badge/AI_Bridge-LLM_Integration-111111) ➜
+![Flask](https://img.shields.io/badge/API-Flask%2FGunicorn-000?logo=flask&logoColor=white) ➜
+![AI%20Bridge](https://img.shields.io/badge/AI_Bridge-llama.cpp_server-111111) ➜
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white) +
 ![DuckDB](https://img.shields.io/badge/DuckDB-FFE800) ➜
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white) /
-![Apache%20Superset](https://img.shields.io/badge/Apache_Superset-1A73E8?logo=apache&logoColor=white) ➜
+![Apache%20Superset](https://img.shields.io/badge/Apache_Superset-1A73E8) ➜
 ![Grafana](https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=white)
 
-*Client → Nginx → Flask API → AI Bridge → Postgres/DuckDB → Streamlit/Superset → Grafana*
+#### Control/Observability Path
+![GitHub%20Actions](https://img.shields.io/badge/CI-GitHub_Actions-2f80ed?logo=githubactions&logoColor=white) ➜
+![GHCR](https://img.shields.io/badge/Registry-GHCR-24292e?logo=github&logoColor=white) ➜
+![Docker](https://img.shields.io/badge/Runtime-Docker_Engine-2496ED?logo=docker&logoColor=white) •
+![Docker%20Compose](https://img.shields.io/badge/Deploy-Docker_Compose-2496ED) ➜
+![Promtail](https://img.shields.io/badge/Logs_Shipper-Promtail-00a37a) ➜
+![Loki](https://img.shields.io/badge/Logs-Loki-00a37a) ➜
+![Grafana](https://img.shields.io/badge/Views-Grafana-F46800?logo=grafana&logoColor=white)
+
+> Pre-Kubernetes, single-host stack. No Airflow, Kyverno, OTel, Prometheus, or Tempo in this version.
 -------------------------------------------------------------
 
 ### System Flow (v3.011) 11/03/2025 - 5:57 PM
@@ -177,9 +187,9 @@ It ensures that all system workflows, validations, and policy checks run under a
 ![Tempo](https://img.shields.io/badge/Traces-Tempo-3b82f6) ➜
 ![Grafana](https://img.shields.io/badge/Views-Grafana-F46800?logo=grafana&logoColor=white)
 
+Kubernetes-first, multi-namespace stack (K3s + Helm/Kustomize). Governance via Airflow, policy via Kyverno. Observability through OTel → Prometheus/Loki/Tempo in Grafana. Images from GHCR, object storage via MinIO, and a private AI↔SQL bridge (llama.cpp + Postgres/DuckDB).
+
 ---
-
-
 
 ------------------------
 
@@ -202,19 +212,88 @@ Change Log
 
 
 ---
+## 🧠 Tech Stack (v2.011)
 
-## 🧠 Tech Stack
-
+**Core runtime**
 ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![Docker_Compose](https://img.shields.io/badge/Docker_Compose-2496ED)
+![Nginx](https://img.shields.io/badge/Nginx-009639?logo=nginx&logoColor=white)
+![Gunicorn](https://img.shields.io/badge/Gunicorn-2A7F62)
+
+**Data & storage**
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
+![DuckDB](https://img.shields.io/badge/DuckDB-FFE800)
+![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)
+
+**API & AI**
 ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
-![Postgres](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
-![Grafana](https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white)
+![llama.cpp_server](https://img.shields.io/badge/llama.cpp_server-111111)
+![llama--cpp--python](https://img.shields.io/badge/llama--cpp--python-111111)
+
+**Frontend & viz**
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)
-![LlamaCPP](https://img.shields.io/badge/Llama_CPP-000000?logo=llama&logoColor=white)
-![Superset](https://img.shields.io/badge/Apache_Superset-1A73E8?logo=apache&logoColor=white)
+![Apache_Superset](https://img.shields.io/badge/Apache_Superset-1A73E8)
+
+**Observability**
+![Grafana](https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=white)
+![Loki](https://img.shields.io/badge/Loki-00A37A)
+![Promtail](https://img.shields.io/badge/Promtail-00A37A)
+
+**CI/CD**
+![GitHub_Actions](https://img.shields.io/badge/GitHub_Actions-2F80ED?logo=githubactions&logoColor=white)
+
+> Pre-Kubernetes baseline on a single host with Docker Compose.
+
 
 ---
+## 🧠 Tech Stack (v3.011)
 
+**Core runtime**
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=white)
+![K3s](https://img.shields.io/badge/K3s-FFC107)
+![Helm](https://img.shields.io/badge/Helm-0F1689?logo=helm&logoColor=white)
+![Kustomize](https://img.shields.io/badge/Kustomize-0B3D91)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![Traefik/Nginx Ingress](https://img.shields.io/badge/Ingress-Traefik%2FNginx-0aa?logo=traefikproxy&logoColor=white)
+![Gunicorn](https://img.shields.io/badge/Gunicorn-2A7F62)
+![Celery](https://img.shields.io/badge/Celery-37814A)
+
+**Data & storage**
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
+![DuckDB](https://img.shields.io/badge/DuckDB-FFE800)
+![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)
+![MinIO](https://img.shields.io/badge/MinIO_S3-DD1177)
+
+**API & AI**
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white)
+![llama.cpp_server](https://img.shields.io/badge/llama.cpp_server-111111)
+![llama-cpp-python](https://img.shields.io/badge/llama--cpp--python-111111)
+![Phi-2_GGUF](https://img.shields.io/badge/Phi--2-GGUF-555)
+
+**Frontend & viz**
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)
+![Apache Superset](https://img.shields.io/badge/Apache_Superset-1A73E8)
+
+**Observability & policy**
+![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?logo=prometheus&logoColor=white)
+![Alertmanager](https://img.shields.io/badge/Alertmanager-E6522C)
+![Grafana](https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=white)
+![Loki](https://img.shields.io/badge/Loki-00A37A)
+![Promtail](https://img.shields.io/badge/Promtail-00A37A)
+![Tempo](https://img.shields.io/badge/Tempo-3B82F6)
+![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-6C43F3?logo=opentelemetry&logoColor=white)
+![Kyverno](https://img.shields.io/badge/Kyverno-1C7ED6)
+
+**CI/CD**
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2F80ED?logo=githubactions&logoColor=white)
+![GHCR](https://img.shields.io/badge/Registry-GHCR-24292e?logo=github&logoColor=white)
+
+> Upgraded from **v2.011** → **v3.011** with Kubernetes (K3s), Helm/Kustomize, Kyverno policies, and full OTel-based observability.
+
+
+----------------------------
 ## 🧰 Installation
 
 ```bash
@@ -548,7 +627,8 @@ Every component is designed to run **locally, verifiably, and privately**—free
 
 🛡️ Compliance and Security Framework
 
-**Inner Infinite Power™ LLC** operates a **HIPAA-aligned, SOC 2-ready DevSecOps ecosystem** known as **IIP_SECURE_STACK** — a private infrastructure designed for continuous integrity, confidentiality, and observability of client and wellness data.
+
+**Inner Infinite Power™ LLC** operates a **HIPAA-aligned, SOC 2–ready DevSecOps ecosystem** known as **IIP_SECURE_STACK** — a private infrastructure designed for continuous integrity, confidentiality, and observability of client and wellness data.
 
 ### Core Safeguards
 - End-to-end encryption (TLS 1.3 / AES-256)
@@ -562,17 +642,17 @@ Every component is designed to run **locally, verifiably, and privately**—free
 - [`SOC2_HIPAA_READINESS_BRIEF.md`](docs/compliance/SOC2_HIPAA_READINESS_BRIEF.md) — Executive compliance overview
 - [`SECURITY_PRIVACY_POLICY.md`](docs/compliance/SECURITY_PRIVACY_POLICY.md) — Technical and administrative safeguard policy
 
-**Status:**
-IIP_SECURE_STACK is designed for HIPAA §164 Subpart C and SOC 2 Type II alignment and is ready for third-party audit verification.
+**Status:** IIP_SECURE_STACK is designed for HIPAA §164 Subpart C and SOC 2 Type II alignment and is ready for third-party audit verification.
 
+Date: 2025-10-28 — Inner Infinite Power™ LLC — All rights reserved.
 
-Date: 10/28/2025 -  Inner Infinite Power™ LLC — All rights reserved.*
-
----
 *Maintained by:*
 **Ivan Israel Patiño**
 Founder & Architect — *Inner Infinite Power™*
 
 
+--
+
+---
+
 printf "\n\n" >> README.md
-pbpaste >> README.md
