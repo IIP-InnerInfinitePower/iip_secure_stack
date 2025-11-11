@@ -37,3 +37,5 @@ tls/
 *.key
 phase14_orchestration/airflow.cfg
 phase14_orchestration/airflow.cfg.bak
+.env
+.env.local
