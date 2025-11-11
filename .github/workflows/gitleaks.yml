@@ -1,0 +1,22 @@
+name: gitleaks
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Scan secrets in PR commits only
+        uses: addnab/docker-run-action@v3
+        with:
+          image: zricethezav/gitleaks:latest
+          options: -v ${{ github.workspace }}:/repo
+          run: >
+            sh -c '
+            cd /repo &&
+            base="${{ github.event.pull_request.base.sha }}" &&
+            head="${{ github.sha }}" &&
+            gitleaks detect --source=. --no-banner --redact --log-opts "$base..$head"
+            '
