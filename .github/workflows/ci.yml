@@ -15,3 +15,25 @@
           API_KEY: ${{ secrets.API_KEY }}
         run: |
           pytest -q
+- name: Install dependencies
+  run: |
+    python -m pip install --upgrade pip
+    if [ -f requirements-dev.txt ]; then
+      pip install -r requirements.txt -r requirements-dev.txt
+    else
+      pip install -r requirements.txt || true
+    fi
+    # ensure pytest is present even if requirements-dev.txt is missing
+    python -m pip install pytest
+
+- name: Lint
+  run: |
+    black --check .
+    isort --check-only .
+    ruff check .
+
+- name: Run tests
+  env:
+    API_KEY: ${{ secrets.API_KEY }}
+  run: |
+    pytest -q 
