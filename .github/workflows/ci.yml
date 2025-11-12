@@ -1,23 +1,17 @@
-name: CI
-on:
-  push:
-  pull_request:
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
       - name: Install deps
         run: |
           python -m pip install -U pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          pip install black
+          if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
+          # fallback in case pytest not in requirements-dev.txt
+          python -m pip install pytest
+          python -m pip install black
+
       - name: Lint
         run: black --check .
+
       - name: Run tests
         env:
           API_KEY: ${{ secrets.API_KEY }}
-        run: pytest -q
+        run: |
+          pytest -q
