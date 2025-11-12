@@ -18,8 +18,8 @@ permissions:
 
 env:
   REGISTRY: docker.io
-  IMAGE_APP: ${{ env.REGISTRY }}/${{ secrets.REGISTRY_USER }}/iip-app
-  IMAGE_NGX: ${{ env.REGISTRY }}/${{ secrets.REGISTRY_USER }}/iip-nginx
+  IMAGE_APP: ${{ format('{0}/{1}/iip-app', 'docker.io', secrets.REGISTRY_USER) }}
+  IMAGE_NGX: ${{ format('{0}/{1}/iip-nginx', 'docker.io', secrets.REGISTRY_USER) }}
   SHA: ${{ github.sha }}
 
 jobs:
