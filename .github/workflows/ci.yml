@@ -1,8 +1,8 @@
 name: CI
-
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 jobs:
   test:
@@ -15,52 +15,25 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12" 
+          python-version: "3.12"
 
-
-      - name: Install deps
+      - name: Install dependencies
         run: |
-          python -m pip install -U pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; 
-          # fallback in case pytest not in requirements
-          python -m pip install pytest || true
-          python -m pip install black || true
-
-          # fallback in case pytest not in requirements-dev.txt
-          python -m pip install pytest
-          python -m pip install black
-      
+          python -m pip install --upgrade pip
+          if [ -f requirements-dev.txt ]; then
+            pip install -r requirements.txt -r requirements-dev.txt
+          else
+            pip install -r requirements.txt || true
+          fi
+          python -m pip install pytest black isort ruff
 
       - name: Lint
-        run: black --check .
+        run: |
+          black --check .
+          isort --check-only .
+          ruff check .
 
       - name: Run tests
         env:
           API_KEY: ${{ secrets.API_KEY }}
-        run: |
-          pytest -q
-
-
-- name: Install dependencies
-  run: |
-    python -m pip install --upgrade pip
-    if [ -f requirements-dev.txt ]; then
-      pip install -r requirements.txt -r requirements-dev.txt
-    else
-      pip install -r requirements.txt || true
-    fi
-    # ensure pytest is present even if requirements-dev.txt is missing
-    python -m pip install pytest
-
-- name: Lint
-  run: |
-    black --check .
-    isort --check-only .
-    ruff check .
-
-- name: Run tests
-  env:
-    API_KEY: ${{ secrets.API_KEY }}
-  run: |
-    pytest -q 
+        run: pytest -q
