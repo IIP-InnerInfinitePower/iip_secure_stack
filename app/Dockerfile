@@ -6,11 +6,11 @@ RUN addgroup --system --gid $GID appgroup \
 
 WORKDIR /app
 
-COPY app/requirements.txt requirements.txt
-COPY app/requirements-dev.txt requirements-dev.txt
+COPY requirements.txt requirements.txt
+COPY requirements-dev.txt requirements-dev.txt
 RUN pip install --no-cache-dir -r requirements.txt -r requirements-dev.txt
 
-COPY app/ ./app
+COPY . ./app
 
 USER appuser
 
