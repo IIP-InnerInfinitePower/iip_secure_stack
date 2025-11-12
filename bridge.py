@@ -1,22 +1,18 @@
 import os
+from flask import Flask, jsonify
 
 API_KEY = os.getenv("API_KEY", "")
 
-async def app(scope, receive, send):
-    if scope.get("type") != "http":
-        await send({"type": "http.response.start", "status": 500, "headers": []})
-        await send({"type": "http.response.body", "body": b""})
-        return
+app = Flask(__name__)
 
-    path = scope.get("path", "/")
-    method = scope.get("method", "GET").upper()
+@app.get("/health")
+def health():
+    return jsonify(status="ok"), 200
 
-    if method == "GET" and path in ("/", "/health", "/healthz"):
-        body = b'{"status":"ok"}'
-        headers = [(b"content-type", b"application/json")]
-        await send({"type": "http.response.start", "status": 200, "headers": headers})
-        await send({"type": "http.response.body", "body": body})
-    else:
-        await send({"type": "http.response.start", "status": 404,
-                    "headers": [(b"content-type", b"application/json")]})
-        await send({"type": "http.response.body", "body": b'{"detail":"Not Found"}'})
+@app.get("/healthz")
+def healthz():
+    return jsonify(status="ok"), 200
+
+@app.get("/")
+def root():
+    return jsonify(status="ok"), 200
