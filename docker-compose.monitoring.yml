@@ -18,7 +18,7 @@ services:
     container_name: iip_secure_stack-grafana-1
     environment:
       - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=<redacted>
+      - GF_SECURITY_ADMIN_PASSWORD=${GF_SECURITY_ADMIN_PASSWORD:-admin}
     ports:
       - "3000:3000"
     depends_on:

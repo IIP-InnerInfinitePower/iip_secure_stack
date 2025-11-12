@@ -1,0 +1,4 @@
+regex:(Authorization:[[:space:]]*Bearer)[[:space:]]+[A-Za-z0-9._-]+==>\1 ${API_TOKEN}
+regex:^(API_KEY[[:space:]]*=[[:space:]]*)\S+==>\1<set-in-secret>
+regex:(^secret_key[[:space:]]*=[[:space:]]*)\S+==>\1${AIRFLOW_SECRET_KEY}
+regex:(^jwt_secret[[:space:]]*=[[:space:]]*)\S+==>\1${AIRFLOW_JWT_SECRET}
