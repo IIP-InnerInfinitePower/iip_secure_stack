@@ -30,3 +30,6 @@ phase*/**/*.db
 
 # OS/editor
 .DS_Store
+
+# sed backups
+*.bak
