@@ -30,12 +30,3 @@ phase*/**/*.db
 
 # OS/editor
 .DS_Store
-certs/
-api-gateway/certs/
-tls/
-*.pem
-*.key
-phase14_orchestration/airflow.cfg
-phase14_orchestration/airflow.cfg.bak
-.env
-.env.local
