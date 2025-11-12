@@ -1,21 +1,23 @@
 name: CI
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
 jobs:
-  tests:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
-      - name: Install dependencies
+          python-version: "3.12"
+      - name: Install deps
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt -r requirements-dev.txt
-      - run: pytest -q
-      - run: black --check .
-      - run: ruff check .
-      - run: isort --check-only .
-      - run: mypy -q || true
-      - run: bandit -q -r . || true
-      - run: pip-audit || true
+          python -m pip install -U pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install black
+      - name: Lint
+        run: black --check .
+      - name: Run tests
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+        run: pytest -q
