@@ -62,7 +62,7 @@ jobs:
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_TOKEN }}
 
-      - name: Build & push: app
+      - name: "Build & push: app"
         uses: docker/build-push-action@v6
         with:
           context: ./app
