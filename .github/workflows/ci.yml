@@ -1,11 +1,30 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
       - name: Install deps
         run: |
           python -m pip install -U pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
-          # fallback in case pytest not in requirements-dev.txt
-          python -m pip install pytest
-          python -m pip install black
+          # fallback in case pytest not in requirements
+          python -m pip install pytest || true
+          python -m pip install black || true
 
       - name: Lint
         run: black --check .
